@@ -87,39 +87,8 @@
     });
   }
 
-  // --- AI STATUS INDICATORS ---
-  function initAIStatusIndicators() {
-    // Add to hero badge area
-    const heroBadge = document.querySelector('.hero-badge');
-    if (heroBadge) {
-      const status = document.createElement('div');
-      status.className = 'edf-ai-status';
-      status.setAttribute('data-edf-enhanced', '');
-
-      const dot = document.createElement('span');
-      dot.className = 'edf-status-dot';
-      status.appendChild(dot);
-      status.appendChild(document.createTextNode('AI Engine Active'));
-
-      heroBadge.parentNode.insertBefore(status, heroBadge.nextSibling);
-    }
-
-    // Add to metrics section
-    const metricsHeader = document.querySelector('.bg-light .section-header');
-    if (metricsHeader) {
-      const status = document.createElement('div');
-      status.className = 'edf-ai-status';
-      status.setAttribute('data-edf-enhanced', '');
-      status.style.marginTop = '12px';
-
-      const dot = document.createElement('span');
-      dot.className = 'edf-status-dot';
-      status.appendChild(dot);
-      status.appendChild(document.createTextNode('Live Performance Data'));
-
-      metricsHeader.appendChild(status);
-    }
-  }
+  // --- AI STATUS INDICATORS (removed) ---
+  function initAIStatusIndicators() {}
 
   // --- 3D CARD ROTATION ON MOUSE MOVE ---
   function init3DCards() {
