@@ -457,40 +457,12 @@
 }
 
 /* ============================================
-   HERO VISUAL — Animated Gradient Border
+   HERO VISUAL — Subtle glow border (no animation)
    ============================================ */
 .edf-full-pop .hero-visual .product-visual {
   position: relative;
   border-radius: var(--radius-xl, 16px);
-  padding: 2px;
-}
-
-.edf-full-pop .hero-visual .product-visual::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--edf-border-angle, 0deg),
-    transparent 40%,
-    #00d4ff 50%,
-    #00ffc8 55%,
-    #7c3aed 60%,
-    transparent 70%
-  );
-  animation: edf-border-spin 4s linear infinite;
-  opacity: 0.6;
-  z-index: -1;
-}
-
-@property --edf-border-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes edf-border-spin {
-  to { --edf-border-angle: 360deg; }
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.06), 0 0 0 1px rgba(0, 212, 255, 0.1);
 }
 
 /* ============================================

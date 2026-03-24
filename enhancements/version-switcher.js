@@ -7,15 +7,15 @@
   'use strict';
 
   const VERSIONS = [
-    { id: 'original', label: 'Original', description: 'Current production site', css: null, js: null },
-    { id: 'polished', label: 'Polished', description: 'Typography, shadows, texture, easing', css: 'enhancements/v2-polished.css', js: null },
-    { id: 'full-pop', label: 'Full Pop', description: 'All enhancements + AI feel + interactions', css: 'enhancements/v2-full-pop.css', js: 'enhancements/v2-enhanced.js' }
+    { id: 'original', label: 'Original', description: 'Current production site', css: null, js: [] },
+    { id: 'polished', label: 'Polished', description: 'Typography, shadows, texture, easing', css: 'enhancements/v2-polished.css', js: [] },
+    { id: 'full-pop', label: 'Full Pop', description: 'All enhancements + AI components + interactions', css: 'enhancements/v2-full-pop.css', js: ['enhancements/v2-enhanced.js', 'enhancements/ai-components.js'] }
   ];
 
   let dropdownOpen = false;
   let currentVersion = sessionStorage.getItem('edf-version') || 'original';
   let loadedCSS = null;
-  let loadedJS = null;
+  let loadedJSList = [];
   let fabEl = null;
   let dropEl = null;
 
@@ -143,9 +143,11 @@
 
     // Remove current enhancements
     if (loadedCSS) { loadedCSS.remove(); loadedCSS = null; }
-    if (loadedJS) { loadedJS.remove(); loadedJS = null; }
+    loadedJSList.forEach(function(s) { s.remove(); });
+    loadedJSList = [];
     document.body.classList.remove('edf-polished', 'edf-full-pop');
     document.querySelectorAll('[data-edf-enhanced]').forEach(function(el) { el.remove(); });
+    document.querySelectorAll('[data-edf-component]').forEach(function(el) { el.remove(); });
     window.dispatchEvent(new CustomEvent('edf-version-cleanup'));
 
     // Load new version
@@ -157,11 +159,14 @@
       document.head.appendChild(loadedCSS);
     }
 
-    if (version.js) {
-      loadedJS = document.createElement('script');
-      loadedJS.src = basePath + version.js;
-      loadedJS.id = 'edf-enhancement-js';
-      document.body.appendChild(loadedJS);
+    if (version.js && version.js.length) {
+      version.js.forEach(function(jsSrc, i) {
+        var script = document.createElement('script');
+        script.src = basePath + jsSrc;
+        script.id = 'edf-enhancement-js-' + i;
+        document.body.appendChild(script);
+        loadedJSList.push(script);
+      });
     }
 
     if (versionId !== 'original') {
