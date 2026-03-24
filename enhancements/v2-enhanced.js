@@ -87,22 +87,31 @@
     });
   }
 
-  // --- AI STATUS INDICATORS (removed) ---
-  function initAIStatusIndicators() {}
-
-  // --- 3D CARD ROTATION ON MOUSE MOVE ---
+  // --- 3D CARD ROTATION + SPOTLIGHT ON MOUSE MOVE ---
   function init3DCards() {
     const cards = document.querySelectorAll('.feature-card, .resource-card, .metric-card');
 
     cards.forEach(card => {
+      // Add spotlight overlay element
+      const spotlight = document.createElement('div');
+      spotlight.className = 'edf-spotlight';
+      card.insertBefore(spotlight, card.firstChild);
+
       card.addEventListener('mousemove', function(e) {
         if (cleanedUp) return;
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const px = e.clientX - rect.left;
+        const py = e.clientY - rect.top;
 
+        // 3D rotation
         card.style.transform =
           'translateY(-8px) perspective(800px) rotateX(' + (-y * 6) + 'deg) rotateY(' + (x * 6) + 'deg)';
+
+        // Spotlight follows mouse
+        spotlight.style.background =
+          'radial-gradient(600px circle at ' + px + 'px ' + py + 'px, rgba(0, 212, 255, 0.06), transparent 40%)';
       });
 
       card.addEventListener('mouseleave', function() {
@@ -111,7 +120,11 @@
     });
 
     cleanupFns.push(() => {
-      cards.forEach(card => { card.style.transform = ''; });
+      cards.forEach(card => {
+        card.style.transform = '';
+        const sl = card.querySelector('.edf-spotlight');
+        if (sl) sl.remove();
+      });
     });
   }
 
@@ -281,18 +294,163 @@
     });
   }
 
+  // --- FLOATING GRADIENT ORBS ---
+  function initFloatingOrbs() {
+    const sections = document.querySelectorAll('.section');
+    const orbConfigs = [
+      { cls: 'edf-orb--cyan', w: 300, h: 300, top: '10%', left: '-5%' },
+      { cls: 'edf-orb--purple', w: 250, h: 250, top: '60%', right: '-3%' },
+      { cls: 'edf-orb--green', w: 200, h: 200, top: '30%', right: '10%' }
+    ];
+
+    // Add orbs to alternating sections
+    sections.forEach((section, i) => {
+      if (i % 2 === 0 && i < 6) {
+        const config = orbConfigs[i % orbConfigs.length];
+        const orb = document.createElement('div');
+        orb.className = 'edf-orb ' + config.cls;
+        orb.setAttribute('data-edf-enhanced', '');
+        orb.style.width = config.w + 'px';
+        orb.style.height = config.h + 'px';
+        if (config.top) orb.style.top = config.top;
+        if (config.left) orb.style.left = config.left;
+        if (config.right) orb.style.right = config.right;
+        section.style.position = 'relative';
+        section.style.overflow = 'hidden';
+        section.appendChild(orb);
+      }
+    });
+  }
+
+  // --- BUTTON CLICK RIPPLE ---
+  function initButtonRipple() {
+    const buttons = document.querySelectorAll('.btn');
+
+    function handleClick(e) {
+      if (cleanedUp) return;
+      const btn = e.currentTarget;
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'edf-ripple';
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend', function() { ripple.remove(); });
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', handleClick));
+
+    cleanupFns.push(() => {
+      buttons.forEach(btn => btn.removeEventListener('click', handleClick));
+    });
+  }
+
+  // --- CLIP-PATH SECTION REVEALS ---
+  function initClipReveals() {
+    const splits = document.querySelectorAll('.split-section');
+    if (!splits.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('edf-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    splits.forEach(s => observer.observe(s));
+
+    cleanupFns.push(() => {
+      observer.disconnect();
+      splits.forEach(s => {
+        s.classList.remove('edf-revealed');
+        s.style.opacity = '';
+        s.style.clipPath = '';
+      });
+    });
+  }
+
+  // --- SCROLL HINT ARROW ---
+  function initScrollHint() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const hint = document.createElement('div');
+    hint.className = 'edf-scroll-hint';
+    hint.setAttribute('data-edf-enhanced', '');
+
+    const arrow = document.createElement('div');
+    arrow.className = 'edf-scroll-hint-arrow';
+    hint.appendChild(arrow);
+
+    const text = document.createElement('span');
+    text.textContent = 'scroll';
+    hint.appendChild(text);
+
+    hero.appendChild(hint);
+
+    // Fade out on scroll
+    function onScroll() {
+      if (cleanedUp) return;
+      var scrollY = window.pageYOffset;
+      hint.style.opacity = Math.max(0, 1 - scrollY / 200);
+      if (scrollY > 300 && hint.parentNode) hint.remove();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    cleanupFns.push(() => {
+      window.removeEventListener('scroll', onScroll);
+    });
+  }
+
+  // --- SMOOTH IMAGE REVEAL ON SCROLL ---
+  function initImageReveals() {
+    const images = document.querySelectorAll('.product-visual');
+
+    images.forEach(img => {
+      img.style.clipPath = 'inset(8% 4% 8% 4% round 8px)';
+      img.style.transition = 'clip-path 1s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.clipPath = 'inset(0% 0% 0% 0% round 8px)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    images.forEach(img => observer.observe(img));
+
+    cleanupFns.push(() => {
+      observer.disconnect();
+      images.forEach(img => {
+        img.style.clipPath = '';
+        img.style.transition = '';
+      });
+    });
+  }
+
   // --- INIT ALL ---
   function init() {
     if (cleanedUp) return;
     initScrollProgress();
     initTypingAnimation();
-    initAIStatusIndicators();
     init3DCards();
     initStaggeredReveal();
     initEnhancedCounters();
     initHeroParallax();
     initMagneticButtons();
     initSectionFade();
+    initFloatingOrbs();
+    initButtonRipple();
+    initClipReveals();
+    initScrollHint();
+    initImageReveals();
   }
 
   // Run when DOM is ready (script may be loaded dynamically after DOMContentLoaded)

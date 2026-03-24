@@ -421,3 +421,284 @@
 .edf-full-pop .section {
   position: relative;
 }
+
+/* ============================================
+   CARD SPOTLIGHT — Radial gradient follows mouse
+   ============================================ */
+.edf-full-pop .feature-card,
+.edf-full-pop .resource-card,
+.edf-full-pop .metric-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.edf-full-pop .edf-spotlight {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.edf-full-pop .feature-card:hover .edf-spotlight,
+.edf-full-pop .resource-card:hover .edf-spotlight,
+.edf-full-pop .metric-card:hover .edf-spotlight {
+  opacity: 1;
+}
+
+/* Ensure card content stays above spotlight */
+.edf-full-pop .feature-card > *:not(.edf-spotlight),
+.edf-full-pop .resource-card > *:not(.edf-spotlight),
+.edf-full-pop .metric-card > *:not(.edf-spotlight) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   HERO VISUAL — Animated Gradient Border
+   ============================================ */
+.edf-full-pop .hero-visual .product-visual {
+  position: relative;
+  border-radius: var(--radius-xl, 16px);
+  padding: 2px;
+}
+
+.edf-full-pop .hero-visual .product-visual::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--edf-border-angle, 0deg),
+    transparent 40%,
+    #00d4ff 50%,
+    #00ffc8 55%,
+    #7c3aed 60%,
+    transparent 70%
+  );
+  animation: edf-border-spin 4s linear infinite;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@property --edf-border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes edf-border-spin {
+  to { --edf-border-angle: 360deg; }
+}
+
+/* ============================================
+   TEXT SHIMMER — Animated gradient on headings
+   ============================================ */
+.edf-full-pop .cta-band h2 {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #00d4ff 50%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: edf-text-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes edf-text-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ============================================
+   FLOATING GRADIENT ORBS — Ambient background
+   ============================================ */
+.edf-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  animation: edf-orb-float 20s ease-in-out infinite alternate;
+}
+
+.edf-orb--cyan {
+  background: radial-gradient(circle, #00d4ff, transparent 70%);
+}
+
+.edf-orb--purple {
+  background: radial-gradient(circle, #7c3aed, transparent 70%);
+  animation-delay: -7s;
+  animation-duration: 25s;
+}
+
+.edf-orb--green {
+  background: radial-gradient(circle, #00ffc8, transparent 70%);
+  animation-delay: -13s;
+  animation-duration: 22s;
+}
+
+@keyframes edf-orb-float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.1); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+  100% { transform: translate(10px, -10px) scale(1.05); }
+}
+
+/* ============================================
+   TRUST BAR LOGOS — 3D Tilt on Hover
+   ============================================ */
+.edf-full-pop .trust-bar-logos img {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 212, 255, 0.08));
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.edf-full-pop .trust-bar-logos img:hover {
+  filter: brightness(1.5) drop-shadow(0 0 12px rgba(0, 212, 255, 0.2));
+  transform: perspective(400px) rotateY(8deg) scale(1.08);
+}
+
+/* ============================================
+   BUTTON CLICK RIPPLE
+   ============================================ */
+.edf-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(0);
+  animation: edf-ripple-expand 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes edf-ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ============================================
+   CLIP-PATH REVEALS — Content wipes in
+   ============================================ */
+.edf-full-pop .split-section {
+  opacity: 0;
+  clip-path: inset(10% 0% 10% 0%);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), clip-path 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.edf-full-pop .split-section.edf-revealed {
+  opacity: 1;
+  clip-path: inset(0% 0% 0% 0%);
+}
+
+/* ============================================
+   OVERLINE — Dash before text
+   ============================================ */
+.edf-full-pop .overline::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: #00d4ff;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.3);
+}
+
+/* ============================================
+   FEATURE LIST CHECKS — Animated on reveal
+   ============================================ */
+.edf-full-pop .feature-list li svg {
+  color: #00d4ff;
+  filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.3));
+}
+
+.edf-full-pop .feature-card.edf-visible .feature-list li {
+  opacity: 0;
+  animation: edf-list-in 0.4s var(--ease-out-expo) forwards;
+}
+
+.edf-full-pop .feature-card.edf-visible .feature-list li:nth-child(1) { animation-delay: 0.3s; }
+.edf-full-pop .feature-card.edf-visible .feature-list li:nth-child(2) { animation-delay: 0.4s; }
+.edf-full-pop .feature-card.edf-visible .feature-list li:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes edf-list-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================
+   METRIC CARD — Highlight bar on top
+   ============================================ */
+.edf-full-pop .metric-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  border-radius: 0 0 2px 2px;
+  opacity: 0;
+  transition: opacity 0.4s ease, left 0.4s ease, right 0.4s ease;
+}
+
+.edf-full-pop .metric-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.edf-full-pop .metric-card:hover::after {
+  opacity: 1;
+  left: 5%;
+  right: 5%;
+}
+
+/* ============================================
+   SMOOTH SCROLL SNAP HINT
+   ============================================ */
+.edf-full-pop .hero {
+  position: relative;
+}
+
+.edf-scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  animation: edf-scroll-hint-fade 3s ease-in-out infinite;
+}
+
+.edf-scroll-hint-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: rotate(45deg);
+  animation: edf-scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes edf-scroll-bounce {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); opacity: 0.6; }
+  50% { transform: rotate(45deg) translate(4px, 4px); opacity: 1; }
+}
+
+@keyframes edf-scroll-hint-fade {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
