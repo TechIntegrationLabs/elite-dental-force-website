@@ -1,0 +1,357 @@
+/**
+ * EDF V2: Polished
+ * Typography, shadows, texture, easing, micro-interactions
+ * Loaded dynamically by version-switcher.js
+ */
+
+/* ============================================
+   FONT IMPORTS — Premium Typography Stack
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ============================================
+   DESIGN TOKEN OVERRIDES
+   ============================================ */
+.edf-polished {
+  /* Typography */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Enhanced Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 500ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Enhanced Shadows — Dual Layer */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.08), 0 0 80px rgba(0, 212, 255, 0.04);
+  --shadow-float-hover: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* ============================================
+   NOISE TEXTURE OVERLAY — Film Grain
+   ============================================ */
+.edf-polished::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure content is above noise */
+.edf-polished > *:not(#edf-version-menu):not(#edf-toast):not(style) {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   TYPOGRAPHY — Tighter, Bolder, Premium
+   ============================================ */
+.edf-polished h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.edf-polished h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.edf-polished h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 2.5vw, 1.875rem);
+  letter-spacing: -0.02em;
+}
+
+.edf-polished h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.edf-polished .lead {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: #94a3b8;
+}
+
+.edf-polished .overline {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+.edf-polished .metric-value {
+  font-family: var(--font-heading);
+  letter-spacing: -0.04em;
+}
+
+/* ============================================
+   GRADIENT TEXT — Accent Headings
+   ============================================ */
+.edf-polished .section-header h2 {
+  background: linear-gradient(135deg, #ffffff 0%, #e8f4f8 40%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   CARD ENHANCEMENTS — Rim Light + Better Hover
+   ============================================ */
+.edf-polished .feature-card {
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.edf-polished .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-float-hover), var(--shadow-glow);
+  border-color: rgba(0, 212, 255, 0.25);
+}
+
+.edf-polished .resource-card {
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.edf-polished .resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.edf-polished .metric-card {
+  transition: all 0.4s var(--ease-out-expo);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.edf-polished .metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), 0 0 30px rgba(0, 212, 255, 0.06);
+}
+
+/* ============================================
+   BUTTON ENHANCEMENTS — Shimmer + Better Easing
+   ============================================ */
+.edf-polished .btn {
+  transition: all 0.3s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.edf-polished .btn:hover {
+  transform: translateY(-2px);
+}
+
+.edf-polished .btn-primary {
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.edf-polished .btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(0, 212, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Shimmer sweep effect */
+.edf-polished .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.15) 50%, transparent 100%);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.edf-polished .btn-primary:hover::after {
+  left: 100%;
+}
+
+/* ============================================
+   NAV ENHANCEMENTS — Gradient Underline
+   ============================================ */
+.edf-polished .nav-link {
+  position: relative;
+  transition: color 0.3s var(--ease-out-expo);
+}
+
+.edf-polished .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #00ffc8);
+  transition: width 0.3s var(--ease-out-expo), left 0.3s var(--ease-out-expo);
+  border-radius: 2px;
+}
+
+.edf-polished .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ============================================
+   HEADER — Enhanced Glass on Scroll
+   ============================================ */
+.edf-polished .header.scrolled {
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 212, 255, 0.04);
+  border-bottom-color: rgba(0, 212, 255, 0.06);
+}
+
+/* ============================================
+   HERO BADGE — Glow Breathing
+   ============================================ */
+.edf-polished .hero-badge {
+  animation: edf-badge-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes edf-badge-glow {
+  0% { box-shadow: 0 0 0 rgba(0, 212, 255, 0); }
+  100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.1); }
+}
+
+/* ============================================
+   SCROLL ANIMATIONS — Staggered Wave
+   ============================================ */
+.edf-polished .feature-card,
+.edf-polished .metric-card,
+.edf-polished .resource-card,
+.edf-polished .workflow-step {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: edf-wave-in 0.8s var(--ease-out-expo) forwards;
+}
+
+/* Stagger children */
+.edf-polished .grid .feature-card:nth-child(1),
+.edf-polished .feature-grid .feature-card:nth-child(1),
+.edf-polished .metrics-grid .metric-card:nth-child(1),
+.edf-polished .resource-grid .resource-card:nth-child(1),
+.edf-polished .workflow-steps .workflow-step:nth-child(1) {
+  animation-delay: 0s;
+}
+.edf-polished .grid .feature-card:nth-child(2),
+.edf-polished .feature-grid .feature-card:nth-child(2),
+.edf-polished .metrics-grid .metric-card:nth-child(2),
+.edf-polished .resource-grid .resource-card:nth-child(2),
+.edf-polished .workflow-steps .workflow-step:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.edf-polished .grid .feature-card:nth-child(3),
+.edf-polished .feature-grid .feature-card:nth-child(3),
+.edf-polished .metrics-grid .metric-card:nth-child(3),
+.edf-polished .resource-grid .resource-card:nth-child(3),
+.edf-polished .workflow-steps .workflow-step:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.edf-polished .grid .feature-card:nth-child(4),
+.edf-polished .feature-grid .feature-card:nth-child(4),
+.edf-polished .metrics-grid .metric-card:nth-child(4),
+.edf-polished .workflow-steps .workflow-step:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+@keyframes edf-wave-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   HERO CONTENT — Line-by-Line Entrance
+   ============================================ */
+.edf-polished .hero-badge {
+  opacity: 0;
+  animation: edf-wave-in 0.6s var(--ease-out-expo) 0.1s forwards, edf-badge-glow 3s ease-in-out 1s infinite alternate;
+}
+
+.edf-polished .hero-content h1 {
+  opacity: 0;
+  animation: edf-wave-in 0.8s var(--ease-out-expo) 0.2s forwards;
+}
+
+.edf-polished .hero-content .lead {
+  opacity: 0;
+  animation: edf-wave-in 0.8s var(--ease-out-expo) 0.35s forwards;
+}
+
+.edf-polished .hero-actions {
+  opacity: 0;
+  animation: edf-wave-in 0.8s var(--ease-out-expo) 0.5s forwards;
+}
+
+.edf-polished .hero-visual {
+  opacity: 0;
+  animation: edf-wave-in 1s var(--ease-out-expo) 0.4s forwards;
+}
+
+/* ============================================
+   CTA BAND — Breathing Glow
+   ============================================ */
+.edf-polished .cta-band {
+  position: relative;
+}
+
+.edf-polished .cta-band::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.05));
+  animation: edf-cta-glow 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes edf-cta-glow {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ============================================
+   FEATURE ICON — Gradient Box
+   ============================================ */
+.edf-polished .feature-icon {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================
+   PRODUCT VISUAL — Image Reveal
+   ============================================ */
+.edf-polished .product-visual img {
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.edf-polished .product-visual:hover img {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   FOOTER — Subtle Enhancements
+   ============================================ */
+.edf-polished .footer-links a {
+  transition: color 0.2s var(--ease-out-expo), transform 0.2s var(--ease-out-expo);
+  display: inline-block;
+}
+
+.edf-polished .footer-links a:hover {
+  color: #00d4ff;
+  transform: translateX(4px);
+}
