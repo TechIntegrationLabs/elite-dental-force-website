@@ -1,6 +1,6 @@
 /**
  * EDF Version Switcher
- * Triple-click the logo to reveal secret version menu
+ * Fixed button in bottom-left corner with dropdown menu
  * Dynamically loads/unloads enhancement CSS and JS
  */
 (function() {
@@ -12,152 +12,140 @@
     { id: 'full-pop', label: 'Full Pop', description: 'All enhancements + AI feel + interactions', css: 'enhancements/v2-full-pop.css', js: 'enhancements/v2-enhanced.js' }
   ];
 
-  let clickCount = 0;
-  let clickTimer = null;
-  let menuEl = null;
+  let dropdownOpen = false;
   let currentVersion = sessionStorage.getItem('edf-version') || 'original';
   let loadedCSS = null;
   let loadedJS = null;
+  let fabEl = null;
+  let dropEl = null;
 
   function getBasePath() {
-    // Find path relative to the version-switcher.js script location
     var scripts = document.querySelectorAll('script[src*="version-switcher"]');
     if (scripts.length > 0) {
       var src = scripts[0].getAttribute('src');
-      // src is like "enhancements/version-switcher.js" or "../enhancements/..." or "../../enhancements/..."
-      // We need the prefix before "enhancements/"
       var idx = src.indexOf('enhancements/');
       if (idx >= 0) return src.substring(0, idx);
     }
     return '';
   }
 
-  // --- DOM builders (no innerHTML) ---
+  // --- Build the fixed FAB + dropdown ---
+  function createFAB() {
+    // Container
+    fabEl = document.createElement('div');
+    fabEl.id = 'edf-fab';
 
-  function createMenu() {
-    const root = document.createElement('div');
-    root.id = 'edf-version-menu';
+    // Dropdown (built above the button)
+    dropEl = document.createElement('div');
+    dropEl.id = 'edf-fab-dropdown';
 
-    const backdrop = document.createElement('div');
-    backdrop.className = 'edf-vm-backdrop';
-    root.appendChild(backdrop);
-
-    const panel = document.createElement('div');
-    panel.className = 'edf-vm-panel';
-
-    // Header
-    const header = document.createElement('div');
-    header.className = 'edf-vm-header';
-    const title = document.createElement('div');
-    title.className = 'edf-vm-title';
-    const dot = document.createElement('span');
-    dot.className = 'edf-vm-dot';
-    title.appendChild(dot);
-    title.appendChild(document.createTextNode(' Design Versions'));
-    header.appendChild(title);
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'edf-vm-close';
-    closeBtn.textContent = '\u00d7';
-    header.appendChild(closeBtn);
-    panel.appendChild(header);
-
-    // Body
-    const body = document.createElement('div');
-    body.className = 'edf-vm-body';
     VERSIONS.forEach(v => {
-      const btn = document.createElement('button');
-      btn.className = 'edf-vm-option' + (v.id === currentVersion ? ' active' : '');
+      var btn = document.createElement('button');
+      btn.className = 'edf-fab-option' + (v.id === currentVersion ? ' active' : '');
       btn.dataset.version = v.id;
 
-      const name = document.createElement('div');
-      name.className = 'edf-vm-option-name';
+      var name = document.createElement('span');
+      name.className = 'edf-fab-opt-name';
       name.textContent = v.label;
       btn.appendChild(name);
 
-      const desc = document.createElement('div');
-      desc.className = 'edf-vm-option-desc';
-      desc.textContent = v.description;
-      btn.appendChild(desc);
-
       if (v.id === currentVersion) {
-        const badge = document.createElement('div');
-        badge.className = 'edf-vm-active-badge';
-        badge.textContent = 'Active';
-        btn.appendChild(badge);
+        var dot = document.createElement('span');
+        dot.className = 'edf-fab-opt-dot';
+        btn.appendChild(dot);
       }
 
-      btn.addEventListener('click', function() { switchVersion(this.dataset.version); });
-      body.appendChild(btn);
-    });
-    panel.appendChild(body);
-
-    // Footer
-    const footer = document.createElement('div');
-    footer.className = 'edf-vm-footer';
-    footer.textContent = 'Triple-click logo to toggle this menu';
-    panel.appendChild(footer);
-
-    root.appendChild(panel);
-
-    // Close handlers
-    backdrop.addEventListener('click', closeMenu);
-    closeBtn.addEventListener('click', closeMenu);
-
-    return root;
-  }
-
-  // Triple-click detection
-  function initTripleClick() {
-    const logos = document.querySelectorAll('.logo');
-    logos.forEach(logo => {
-      logo.addEventListener('click', function(e) {
-        clickCount++;
-        if (clickCount === 1) {
-          clickTimer = setTimeout(() => { clickCount = 0; }, 600);
-        }
-        if (clickCount === 3) {
-          e.preventDefault();
-          e.stopPropagation();
-          clearTimeout(clickTimer);
-          clickCount = 0;
-          toggleMenu();
-        }
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        switchVersion(this.dataset.version);
       });
+      dropEl.appendChild(btn);
+    });
+
+    fabEl.appendChild(dropEl);
+
+    // The button itself
+    var trigger = document.createElement('button');
+    trigger.id = 'edf-fab-btn';
+    trigger.setAttribute('aria-label', 'Switch design version');
+
+    // Icon: layers/stack icon via SVG
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '20');
+    svg.setAttribute('height', '20');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    var p1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    p1.setAttribute('points', '12 2 2 7 12 12 22 7 12 2');
+    var pl1 = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    pl1.setAttribute('points', '2 17 12 22 22 17');
+    var pl2 = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    pl2.setAttribute('points', '2 12 12 17 22 12');
+    svg.appendChild(p1);
+    svg.appendChild(pl1);
+    svg.appendChild(pl2);
+    trigger.appendChild(svg);
+
+    // Label text
+    var label = document.createElement('span');
+    label.id = 'edf-fab-label';
+    label.textContent = getCurrentLabel();
+    trigger.appendChild(label);
+
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    fabEl.appendChild(trigger);
+    document.body.appendChild(fabEl);
+
+    // Close dropdown when clicking elsewhere
+    document.addEventListener('click', function() {
+      if (dropdownOpen) closeDropdown();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && dropdownOpen) closeDropdown();
     });
   }
 
-  function toggleMenu() {
-    if (menuEl) { closeMenu(); return; }
-    menuEl = createMenu();
-    document.body.appendChild(menuEl);
-    requestAnimationFrame(() => menuEl.classList.add('visible'));
-    document.addEventListener('keydown', escHandler);
+  function getCurrentLabel() {
+    var v = VERSIONS.find(function(x) { return x.id === currentVersion; });
+    return v ? v.label : 'Original';
   }
 
-  function closeMenu() {
-    if (menuEl) {
-      menuEl.classList.remove('visible');
-      const el = menuEl;
-      menuEl = null;
-      setTimeout(() => el.remove(), 300);
-    }
-    document.removeEventListener('keydown', escHandler);
+  function toggleDropdown() {
+    if (dropdownOpen) { closeDropdown(); } else { openDropdown(); }
   }
 
-  function escHandler(e) { if (e.key === 'Escape') closeMenu(); }
+  function openDropdown() {
+    dropdownOpen = true;
+    dropEl.classList.add('open');
+    fabEl.classList.add('open');
+  }
 
-  // Switch between versions
+  function closeDropdown() {
+    dropdownOpen = false;
+    dropEl.classList.remove('open');
+    fabEl.classList.remove('open');
+  }
+
+  // --- Version switching ---
   function switchVersion(versionId) {
-    const version = VERSIONS.find(v => v.id === versionId);
+    var version = VERSIONS.find(function(v) { return v.id === versionId; });
     if (!version) return;
 
-    const basePath = getBasePath();
+    var basePath = getBasePath();
 
     // Remove current enhancements
     if (loadedCSS) { loadedCSS.remove(); loadedCSS = null; }
     if (loadedJS) { loadedJS.remove(); loadedJS = null; }
     document.body.classList.remove('edf-polished', 'edf-full-pop');
-    document.querySelectorAll('[data-edf-enhanced]').forEach(el => el.remove());
+    document.querySelectorAll('[data-edf-enhanced]').forEach(function(el) { el.remove(); });
     window.dispatchEvent(new CustomEvent('edf-version-cleanup'));
 
     // Load new version
@@ -183,36 +171,43 @@
     currentVersion = versionId;
     sessionStorage.setItem('edf-version', versionId);
 
-    // Update menu UI
-    if (menuEl) {
-      menuEl.querySelectorAll('.edf-vm-option').forEach(btn => {
-        const isActive = btn.dataset.version === versionId;
-        btn.classList.toggle('active', isActive);
-        const badge = btn.querySelector('.edf-vm-active-badge');
-        if (badge) badge.remove();
-        if (isActive) {
-          const newBadge = document.createElement('div');
-          newBadge.className = 'edf-vm-active-badge';
-          newBadge.textContent = 'Active';
-          btn.appendChild(newBadge);
-        }
-      });
-    }
+    // Update dropdown UI
+    updateDropdownUI();
 
+    // Update label
+    var label = document.getElementById('edf-fab-label');
+    if (label) label.textContent = getCurrentLabel();
+
+    closeDropdown();
     showToast('Switched to: ' + version.label);
   }
 
+  function updateDropdownUI() {
+    if (!dropEl) return;
+    dropEl.querySelectorAll('.edf-fab-option').forEach(function(btn) {
+      var isActive = btn.dataset.version === currentVersion;
+      btn.classList.toggle('active', isActive);
+      var dot = btn.querySelector('.edf-fab-opt-dot');
+      if (dot) dot.remove();
+      if (isActive) {
+        var newDot = document.createElement('span');
+        newDot.className = 'edf-fab-opt-dot';
+        btn.appendChild(newDot);
+      }
+    });
+  }
+
   function showToast(message) {
-    const existing = document.getElementById('edf-toast');
+    var existing = document.getElementById('edf-toast');
     if (existing) existing.remove();
-    const toast = document.createElement('div');
+    var toast = document.createElement('div');
     toast.id = 'edf-toast';
     toast.textContent = message;
     document.body.appendChild(toast);
-    requestAnimationFrame(() => toast.classList.add('visible'));
-    setTimeout(() => {
+    requestAnimationFrame(function() { toast.classList.add('visible'); });
+    setTimeout(function() {
       toast.classList.remove('visible');
-      setTimeout(() => toast.remove(), 300);
+      setTimeout(function() { toast.remove(); }, 300);
     }, 2000);
   }
 
@@ -220,32 +215,40 @@
     if (currentVersion !== 'original') switchVersion(currentVersion);
   }
 
-  // Inject menu + toast styles
+  // --- Styles ---
   function injectStyles() {
-    const style = document.createElement('style');
+    var style = document.createElement('style');
     style.id = 'edf-version-switcher-styles';
     style.textContent = [
-      '#edf-version-menu{position:fixed;inset:0;z-index:100000;opacity:0;transition:opacity .3s cubic-bezier(.16,1,.3,1);font-family:"Inter",-apple-system,sans-serif}',
-      '#edf-version-menu.visible{opacity:1}',
-      '.edf-vm-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px)}',
-      '.edf-vm-panel{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);background:#0d1a2d;border:1px solid rgba(0,212,255,.2);border-radius:16px;width:420px;max-width:90vw;box-shadow:0 24px 80px rgba(0,0,0,.6),0 0 60px rgba(0,212,255,.08);transition:transform .3s cubic-bezier(.16,1,.3,1);overflow:hidden}',
-      '#edf-version-menu.visible .edf-vm-panel{transform:translate(-50%,-50%) scale(1)}',
-      '.edf-vm-header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.06)}',
-      '.edf-vm-title{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#e8f4f8;letter-spacing:.02em;text-transform:uppercase}',
-      '.edf-vm-dot{width:8px;height:8px;border-radius:50%;background:#00d4ff;box-shadow:0 0 12px rgba(0,212,255,.6);animation:edf-dot-pulse 2s ease-in-out infinite}',
-      '@keyframes edf-dot-pulse{0%,100%{opacity:1}50%{opacity:.4}}',
-      '.edf-vm-close{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:#94a3b8;font-size:20px;transition:all .2s;cursor:pointer;background:none;border:none}',
-      '.edf-vm-close:hover{background:rgba(255,255,255,.06);color:#fff}',
-      '.edf-vm-body{padding:16px;display:flex;flex-direction:column;gap:8px}',
-      '.edf-vm-option{display:block;width:100%;text-align:left;padding:16px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);color:#e8f4f8;cursor:pointer;transition:all .25s cubic-bezier(.16,1,.3,1);position:relative}',
-      '.edf-vm-option:hover{background:rgba(0,212,255,.06);border-color:rgba(0,212,255,.2);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.3)}',
-      '.edf-vm-option.active{background:rgba(0,212,255,.08);border-color:rgba(0,212,255,.3);box-shadow:0 0 30px rgba(0,212,255,.06)}',
-      '.edf-vm-option-name{font-size:16px;font-weight:600;margin-bottom:4px}',
-      '.edf-vm-option-desc{font-size:13px;color:#94a3b8}',
-      '.edf-vm-active-badge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:600;color:#00d4ff;background:rgba(0,212,255,.1);padding:3px 10px;border-radius:100px;letter-spacing:.04em;text-transform:uppercase}',
-      '.edf-vm-footer{padding:14px 24px;border-top:1px solid rgba(255,255,255,.04);font-size:12px;color:#64748b;text-align:center}',
+      /* FAB container */
+      '#edf-fab{position:fixed;bottom:20px;left:20px;z-index:99999;font-family:"Inter",-apple-system,sans-serif}',
+
+      /* Trigger button */
+      '#edf-fab-btn{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#0d1a2d;color:#00d4ff;border:1px solid rgba(0,212,255,.2);border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,0,0,.4),0 0 20px rgba(0,212,255,.06);backdrop-filter:blur(12px);white-space:nowrap}',
+      '#edf-fab-btn:hover{border-color:rgba(0,212,255,.4);box-shadow:0 4px 24px rgba(0,0,0,.5),0 0 30px rgba(0,212,255,.12);transform:translateY(-2px)}',
+      '#edf-fab.open #edf-fab-btn{border-color:rgba(0,212,255,.4);background:#0f2035}',
+      '#edf-fab-btn svg{flex-shrink:0}',
+      '#edf-fab-label{letter-spacing:.02em}',
+
+      /* Dropdown */
+      '#edf-fab-dropdown{position:absolute;bottom:calc(100% + 8px);left:0;min-width:220px;background:#0d1a2d;border:1px solid rgba(0,212,255,.15);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 40px rgba(0,212,255,.06);overflow:hidden;opacity:0;transform:translateY(8px) scale(.95);pointer-events:none;transition:all .25s cubic-bezier(.16,1,.3,1)}',
+      '#edf-fab-dropdown.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}',
+
+      /* Options */
+      '.edf-fab-option{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 16px;border:none;background:none;color:#94a3b8;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit}',
+      '.edf-fab-option:hover{background:rgba(0,212,255,.06);color:#e8f4f8}',
+      '.edf-fab-option.active{color:#00d4ff}',
+      '.edf-fab-option + .edf-fab-option{border-top:1px solid rgba(255,255,255,.04)}',
+
+      /* Active dot */
+      '.edf-fab-opt-dot{width:6px;height:6px;border-radius:50%;background:#00d4ff;box-shadow:0 0 8px rgba(0,212,255,.6);flex-shrink:0}',
+
+      /* Toast */
       '#edf-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#0d1a2d;color:#00d4ff;padding:12px 24px;border-radius:100px;font-size:14px;font-weight:500;border:1px solid rgba(0,212,255,.2);box-shadow:0 8px 32px rgba(0,0,0,.4),0 0 20px rgba(0,212,255,.08);opacity:0;transition:all .3s cubic-bezier(.16,1,.3,1);z-index:100001;pointer-events:none;font-family:"Inter",-apple-system,sans-serif}',
-      '#edf-toast.visible{opacity:1;transform:translateX(-50%) translateY(0)}'
+      '#edf-toast.visible{opacity:1;transform:translateX(-50%) translateY(0)}',
+
+      /* Mobile */
+      '@media(max-width:480px){#edf-fab-btn{padding:8px 12px;font-size:12px}#edf-fab-dropdown{min-width:180px}}'
     ].join('\n');
     document.head.appendChild(style);
   }
@@ -253,7 +256,7 @@
   // Boot
   document.addEventListener('DOMContentLoaded', function() {
     injectStyles();
-    initTripleClick();
+    createFAB();
     autoLoad();
   });
 })();
