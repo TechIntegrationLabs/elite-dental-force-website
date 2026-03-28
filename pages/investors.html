@@ -1,417 +1,370 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Elite Dental Force Investor Relations - Learn about our market opportunity, differentiation, and growth trajectory in dental revenue intelligence.">
+  <meta name="description" content="Elite Dental Force Investor Relations - Market opportunity, investment thesis, differentiation, and leadership for dental revenue intelligence infrastructure.">
   <title>Investors - Elite Dental Force</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="../css/v3.css">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../index.html" class="logo">
-          <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="platform.html" class="nav-link">Platform</a>
-              <ul class="dropdown">
-                <li><a href="platform.html">Platform Overview</a></li>
-                <li><a href="ai-consultants.html">AI Consultants</a></li>
-                <li><a href="edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="services.html" class="nav-link">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="resources.html" class="nav-link">Resources</a>
-              <ul class="dropdown">
-                <li><a href="resources/blog.html">Blog</a></li>
-                <li><a href="resources/podcast.html">Podcast</a></li>
-                <li><a href="resources/webinars.html">Webinars</a></li>
-                <li><a href="resources/news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="company.html" class="nav-link active">Company</a>
-              <ul class="dropdown">
-                <li><a href="company.html">About Us</a></li>
-                <li><a href="company/security.html">Security</a></li>
-                <li><a href="company/faq.html">FAQ</a></li>
-                <li><a href="investors.html">Investors</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../index-v3.html" class="flex items-center gap-3"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
+        </div>
       </div>
     </div>
-  </header>
+    <div class="flex items-center gap-4">
+      <a href="contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="contact.html" class="text-white hover:text-[#00d4ff]">Contact</a>
+</div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-brand) 100%);">
-      <div class="container">
-        <div class="hero-content" style="max-width: 700px; margin: 0 auto; text-align: center;">
-          <span class="hero-badge">Investor Relations</span>
-          <h1>Building Infrastructure for Dental Revenue Intelligence</h1>
-          <p class="lead">Elite Dental Force is creating the operating system for dental practice revenue management, positioned at the intersection of AI, healthcare, and financial technology.</p>
-          <div class="hero-actions" style="justify-content: center;">
-            <a href="#access" class="btn btn-white btn-lg">Request Investor Access</a>
-          </div>
+<main class="pt-20">
+
+  <!-- HERO -->
+  <section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[500px] h-[500px] -top-40 -right-40"></div>
+    <div class="float-orb float-orb--purple w-[400px] h-[400px] bottom-0 -left-32"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold font-headline tracking-wider uppercase bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/20 badge-glow mb-6">
+        <span class="material-symbols-outlined text-sm">trending_up</span>Investor Relations
+      </span>
+      <h1 class="font-headline font-extrabold text-4xl md:text-6xl tracking-tight mb-6 gradient-text">Building Infrastructure for Dental Revenue Intelligence</h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">We're building the operating system for dental revenue. AI Consultants deliver immediate value while EDiFi creates a durable data and workflow platform with compounding network effects.</p>
+    </div>
+  </section>
+
+  <!-- MARKET OPPORTUNITY -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-14">
+        <span class="overline-dash mr-2"></span><span class="text-xs font-bold font-headline tracking-widest uppercase text-[#00d4ff]">Market Opportunity</span>
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mt-4 mb-4">A Massive, Underserved Market</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">Dental practices lose billions annually to eligibility errors, coding mistakes, and revenue cycle inefficiency. The market is ripe for intelligent infrastructure.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <p class="font-mono font-bold text-3xl md:text-4xl text-[#00d4ff] mb-2">$160B+</p>
+          <p class="text-sm text-slate-400 font-headline font-bold">Industry Size</p>
+          <p class="text-xs text-slate-600 mt-1">U.S. dental services market</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <p class="font-mono font-bold text-3xl md:text-4xl text-[#00fdc6] mb-2">200K+</p>
+          <p class="text-sm text-slate-400 font-headline font-bold">Dental Practices</p>
+          <p class="text-xs text-slate-600 mt-1">Active practices in the U.S.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <p class="font-mono font-bold text-3xl md:text-4xl text-[#cfb7ff] mb-2">15%+</p>
+          <p class="text-sm text-slate-400 font-headline font-bold">Revenue Lost</p>
+          <p class="text-xs text-slate-600 mt-1">To billing & eligibility errors</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <p class="font-mono font-bold text-3xl md:text-4xl text-[#f59e0b] mb-2">$8B+</p>
+          <p class="text-sm text-slate-400 font-headline font-bold">Total Addressable Market</p>
+          <p class="text-xs text-slate-600 mt-1">Revenue intelligence solutions</p>
         </div>
       </div>
-    </section>
+      <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10 max-w-3xl mx-auto">
+        <p class="text-slate-400 leading-relaxed">Despite the size and fragmentation of the dental industry, most practices still rely on manual processes for eligibility verification, claims submission, and revenue cycle management. This creates a massive opportunity for an intelligent platform that can automate these workflows while continuously improving through data-driven insights.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Market Opportunity -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Market Opportunity</span>
-          <h2>A Massive, Underserved Market</h2>
-          <p>The dental industry represents a significant opportunity for technology-driven transformation.</p>
+  <!-- INVESTMENT THESIS -->
+  <section class="py-20 relative bg-surface-container-lowest/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-14">
+        <span class="overline-dash mr-2"></span><span class="text-xs font-bold font-headline tracking-widest uppercase text-[#00d4ff]">Investment Thesis</span>
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mt-4 mb-4">Infrastructure, Not Just Software</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-[#00d4ff] text-2xl">layers</span>
+            <h3 class="font-headline font-bold text-lg text-white">Two-Layer Architecture</h3>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">AI Consultants deliver immediate ROI while EDiFi builds the underlying data platform. This dual approach creates rapid customer acquisition paired with deep, sticky infrastructure.</p>
         </div>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">$160B+</div>
-            <div class="metric-label">U.S. Dental Industry</div>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-[#00fdc6] text-2xl">hub</span>
+            <h3 class="font-headline font-bold text-lg text-white">Network Effects</h3>
           </div>
-          <div class="metric-card">
-            <div class="metric-value">200K+</div>
-            <div class="metric-label">Dental Practices</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">15%+</div>
-            <div class="metric-label">Revenue Lost to Denials</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">$8B+</div>
-            <div class="metric-label">RCM TAM</div>
-          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">Every practice that joins the platform contributes anonymized data that improves AI models, payer intelligence, and coding accuracy for all customers. The product gets better with scale.</p>
         </div>
-
-        <div style="max-width: 800px; margin: var(--space-16) auto 0; text-align: center;">
-          <p style="font-size: var(--text-lg); color: var(--color-text-light);">Despite the scale of the dental industry, most practices still rely on outdated, manual processes for revenue management. The opportunity for intelligent automation is immense.</p>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-[#cfb7ff] text-2xl">database</span>
+            <h3 class="font-headline font-bold text-lg text-white">Data Moat</h3>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">Proprietary datasets on payer behavior, denial patterns, and reimbursement trends create a defensible competitive advantage that deepens over time.</p>
+        </div>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-[#f59e0b] text-2xl">trending_up</span>
+            <h3 class="font-headline font-bold text-lg text-white">Expansion Revenue</h3>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">Customers naturally expand from AI Consultants to EDiFi to additional modules. Net revenue retention exceeds 120% as practices unlock more value from the platform.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Infrastructure Thesis -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Investment Thesis</span>
-          <h2>Infrastructure, Not Just Software</h2>
-          <p>We're building the foundational layer that dental practices will rely on for revenue operations.</p>
+  <!-- DIFFERENTIATION -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-14">
+        <span class="overline-dash mr-2"></span><span class="text-xs font-bold font-headline tracking-widest uppercase text-[#00d4ff]">Differentiation</span>
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mt-4 mb-4">Why Elite Dental Force Wins</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-4">layers</span>
+          <h3 class="font-headline font-bold text-white mb-2">Two-Layer Architecture</h3>
+          <p class="text-sm text-slate-400">AI Consultants for immediate value. EDiFi for long-term infrastructure. Together, they create an unmatched platform.</p>
         </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#00fdc6] text-3xl mb-4">bolt</span>
+          <h3 class="font-headline font-bold text-white mb-2">Real-Time Intelligence</h3>
+          <p class="text-sm text-slate-400">Live eligibility verification, instant coding recommendations, and real-time revenue insights. No batch processing or overnight updates.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#cfb7ff] text-3xl mb-4">rocket_launch</span>
+          <h3 class="font-headline font-bold text-white mb-2">Scales With Customers</h3>
+          <p class="text-sm text-slate-400">From solo practitioners to 100+ location DSOs. The platform adapts to any practice size without requiring custom builds.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#f59e0b] text-3xl mb-4">shield</span>
+          <h3 class="font-headline font-bold text-white mb-2">Enterprise Security</h3>
+          <p class="text-sm text-slate-400">HIPAA-aligned, SOC 2 Type II compliant infrastructure with end-to-end encryption and zero-trust architecture.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-4">integration_instructions</span>
+          <h3 class="font-headline font-bold text-white mb-2">Deep Integrations</h3>
+          <p class="text-sm text-slate-400">Native connections to Dentrix, Eaglesoft, Open Dental, and all major practice management systems. Frictionless adoption.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <span class="material-symbols-outlined text-[#00fdc6] text-3xl mb-4">handshake</span>
+          <h3 class="font-headline font-bold text-white mb-2">Aligned Incentives</h3>
+          <p class="text-sm text-slate-400">Our success is directly tied to customer revenue improvement. When practices collect more, we grow together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="grid grid-2" style="gap: var(--space-12); align-items: center;">
+  <!-- TRACTION -->
+  <section class="py-20 relative bg-surface-container-lowest/50">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="section-header-fade mb-12">
+        <span class="overline-dash mr-2"></span><span class="text-xs font-bold font-headline tracking-widest uppercase text-[#00d4ff]">Traction</span>
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mt-4 mb-4">Momentum & Validation</h2>
+      </div>
+      <div class="glass-card rounded-2xl border border-outline-variant/10 p-10 md:p-14">
+        <span class="material-symbols-outlined text-[#00d4ff] text-5xl mb-6">lock</span>
+        <h3 class="font-headline font-bold text-xl text-white mb-4">Detailed Metrics Available Upon Request</h3>
+        <p class="text-slate-400 leading-relaxed mb-8 max-w-lg mx-auto">We share detailed traction metrics, financial projections, and customer case studies with qualified investors under NDA. Request access below to receive our full investor deck.</p>
+        <a href="#investor-form" class="btn-shimmer inline-flex px-8 py-3.5 bg-gradient-to-r from-[#00d4ff] to-[#00d4ff]/80 text-on-primary font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(0,212,255,0.3)] transition-all">Request Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-14">
+        <span class="overline-dash mr-2"></span><span class="text-xs font-bold font-headline tracking-widest uppercase text-[#00d4ff]">Leadership</span>
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mt-4 mb-4">Executive Team</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#00d4ff]/20 to-[#00d4ff]/5 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-[#00d4ff] text-3xl">person</span>
+          </div>
+          <h3 class="font-headline font-bold text-white">Chief Executive Officer</h3>
+          <p class="text-xs text-[#00d4ff] font-mono mt-1 mb-3">CEO</p>
+          <p class="text-sm text-slate-400">Visionary leader with deep expertise in dental industry operations and technology-driven business transformation.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#00fdc6]/20 to-[#00fdc6]/5 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-[#00fdc6] text-3xl">person</span>
+          </div>
+          <h3 class="font-headline font-bold text-white">Chief Technology Officer</h3>
+          <p class="text-xs text-[#00fdc6] font-mono mt-1 mb-3">CTO</p>
+          <p class="text-sm text-slate-400">Engineering leader specializing in AI/ML systems, healthcare data platforms, and scalable cloud architecture.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#cfb7ff]/20 to-[#cfb7ff]/5 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-[#cfb7ff] text-3xl">person</span>
+          </div>
+          <h3 class="font-headline font-bold text-white">Chief Operating Officer</h3>
+          <p class="text-xs text-[#cfb7ff] font-mono mt-1 mb-3">COO</p>
+          <p class="text-sm text-slate-400">Operations expert with experience scaling dental service organizations and building high-performance teams.</p>
+        </div>
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 text-center reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-[#f59e0b] text-3xl">person</span>
+          </div>
+          <h3 class="font-headline font-bold text-white">Chief Financial Officer</h3>
+          <p class="text-xs text-[#f59e0b] font-mono mt-1 mb-3">CFO</p>
+          <p class="text-sm text-slate-400">Finance leader with healthcare SaaS experience, driving capital efficiency and sustainable growth strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTOR ACCESS FORM -->
+  <section id="investor-form" class="py-20 relative">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-10">
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mb-4">Request Investor Access</h2>
+        <p class="text-slate-400">Complete the form below to receive our detailed investor materials, including financial projections, traction metrics, and case studies.</p>
+      </div>
+      <div class="glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10">
+        <form class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div><label class="block text-xs font-medium text-slate-500 mb-1.5">First Name *</label><input type="text" required placeholder="Jane"></div>
+            <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Last Name *</label><input type="text" required placeholder="Smith"></div>
+          </div>
+          <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Email *</label><input type="email" required placeholder="jane@firm.com"></div>
+          <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Firm / Organization</label><input type="text" placeholder="Venture Capital Partners"></div>
           <div>
-            <h3>Long-Term Infrastructure Play</h3>
-            <p>Elite Dental Force isn't building a point solution. We're creating the infrastructure layer that powers intelligent revenue operations for dental practices of all sizes.</p>
-            <ul style="margin: var(--space-6) 0;">
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span><strong>Two-layer architecture</strong> creates multiple revenue streams and deep customer relationships</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span><strong>Network effects</strong> as more practices and payers join the platform</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span><strong>Defensible data moat</strong> through aggregated insights and intelligence</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span><strong>Expansion revenue</strong> through upsell, cross-sell, and usage-based pricing</span>
-              </li>
-            </ul>
+            <label class="block text-xs font-medium text-slate-500 mb-1.5">Investor Type</label>
+            <select><option value="">Select type...</option><option>Venture Capital</option><option>Private Equity</option><option>Strategic Investor</option><option>Angel Investor</option><option>Other</option></select>
           </div>
-          <div class="product-visual">
-            <img src="../images/investor-platform.png" alt="EDiFi Platform showing revenue analytics" style="border-radius: var(--radius-xl);">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Differentiation -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Differentiation</span>
-          <h2>Why Elite Dental Force Wins</h2>
-          <p>Clear competitive advantages in a fragmented market.</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <h3>Two-Layer Architecture</h3>
-            <p>Unique combination of AI consultants and software platform creates multiple value propositions and revenue streams.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3>Real-Time Intelligence</h3>
-            <p>Not just analytics. Actionable intelligence delivered in the moment decisions are made.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Scales With Customers</h3>
-            <p>Platform serves single practices to enterprise DSOs without architectural changes.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3>Enterprise Security</h3>
-            <p>HIPAA-aligned, SOC 2 certified infrastructure ready for regulated healthcare environments.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-            </div>
-            <h3>Deep Integrations</h3>
-            <p>Pre-built connections to major PMS systems, clearinghouses, and payers.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <h3>Aligned Incentives</h3>
-            <p>Our success is directly tied to improving customer revenue outcomes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Traction Signals -->
-    <section class="section bg-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Traction</span>
-          <h2>Momentum & Validation</h2>
-          <p>Key indicators of market fit and growth trajectory.</p>
-        </div>
-
-        <div style="max-width: 800px; margin: 0 auto; background: var(--color-white); padding: var(--space-10); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
-          <p style="text-align: center; color: var(--color-text-muted); font-size: var(--text-lg);">Detailed traction metrics available upon request through investor access.</p>
-          <div style="text-align: center; margin-top: var(--space-6);">
-            <a href="#access" class="btn btn-primary">Request Access</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Leadership</span>
-          <h2>Experienced Team</h2>
-          <p>Proven operators with deep domain expertise.</p>
-        </div>
-
-        <div class="grid grid-4" style="gap: var(--space-6);">
-          <div style="text-align: center;">
-            <div style="width: 120px; height: 120px; background: var(--color-alt-bg); border-radius: var(--radius-full); margin: 0 auto var(--space-4); overflow: hidden;">
-              <img src="../images/team/ceo.jpg" alt="CEO" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h5 style="margin-bottom: var(--space-1);">CEO</h5>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive); margin-bottom: var(--space-2);">Chief Executive Officer</p>
-            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0;">Healthcare tech veteran</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 120px; height: 120px; background: var(--color-alt-bg); border-radius: var(--radius-full); margin: 0 auto var(--space-4); overflow: hidden;">
-              <img src="../images/team/cto.jpg" alt="CTO" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h5 style="margin-bottom: var(--space-1);">CTO</h5>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive); margin-bottom: var(--space-2);">Chief Technology Officer</p>
-            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0;">Enterprise SaaS builder</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 120px; height: 120px; background: var(--color-alt-bg); border-radius: var(--radius-full); margin: 0 auto var(--space-4); overflow: hidden;">
-              <img src="../images/team/coo.jpg" alt="COO" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h5 style="margin-bottom: var(--space-1);">COO</h5>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive); margin-bottom: var(--space-2);">Chief Operating Officer</p>
-            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0;">Dental ops expert</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 120px; height: 120px; background: var(--color-alt-bg); border-radius: var(--radius-full); margin: 0 auto var(--space-4); overflow: hidden;">
-              <img src="../images/team/cfo.jpg" alt="CFO" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <h5 style="margin-bottom: var(--space-1);">CFO</h5>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive); margin-bottom: var(--space-2);">Chief Financial Officer</p>
-            <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin: 0;">Growth stage finance</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Investor Access Form -->
-    <section class="section bg-deep" id="access" style="color: white;">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <span class="overline" style="color: var(--color-interactive);">Investor Access</span>
-          <h2 style="color: white;">Request Information</h2>
-          <p style="color: rgba(255,255,255,0.8);">Submit your information to receive our investor materials and schedule a conversation with our team.</p>
-        </div>
-
-        <!-- GoHighLevel Form Placeholder -->
-        <div style="background: rgba(255,255,255,0.05); padding: var(--space-10); border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.1);">
-          <form data-validate>
-            <div class="grid grid-2" style="gap: var(--space-6);">
-              <div class="form-group">
-                <label class="form-label" for="firstName" style="color: rgba(255,255,255,0.9);">First Name *</label>
-                <input type="text" id="firstName" name="firstName" class="form-input" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="lastName" style="color: rgba(255,255,255,0.9);">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" class="form-input" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email" style="color: rgba(255,255,255,0.9);">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="firm" style="color: rgba(255,255,255,0.9);">Firm / Organization *</label>
-              <input type="text" id="firm" name="firm" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="role" style="color: rgba(255,255,255,0.9);">Your Role</label>
-              <select id="role" name="role" class="form-select">
-                <option value="">Select...</option>
-                <option value="vc">Venture Capital</option>
-                <option value="pe">Private Equity</option>
-                <option value="strategic">Strategic Investor</option>
-                <option value="angel">Angel Investor</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="message" style="color: rgba(255,255,255,0.9);">Additional Information</label>
-              <textarea id="message" name="message" class="form-textarea" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Request Access</button>
-          </form>
-          <p style="text-align: center; font-size: var(--text-sm); color: rgba(255,255,255,0.5); margin-top: var(--space-4);">This form will be connected to GoHighLevel and tagged as "Investor Request"</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="logo">
-            <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="platform.html">Overview</a></li>
-            <li><a href="ai-consultants.html">AI Consultants</a></li>
-            <li><a href="edifi.html">EDiFi Software</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources/blog.html">Blog</a></li>
-            <li><a href="resources/podcast.html">Podcast</a></li>
-            <li><a href="resources/webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="company.html">About Us</a></li>
-            <li><a href="company/security.html">Security</a></li>
-            <li><a href="company/faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="contact.html#sales">Sales</a></li>
-            <li><a href="contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
-        </div>
+          <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Message (optional)</label><textarea rows="3" placeholder="Tell us about your investment focus or any specific questions..."></textarea></div>
+          <button type="submit" class="btn-shimmer w-full py-3.5 bg-gradient-to-r from-[#00d4ff] to-[#00d4ff]/80 text-on-primary font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(0,212,255,0.3)] transition-all">Request Investor Deck</button>
+          <p class="text-xs text-slate-600 text-center">Materials shared under NDA. We typically respond within 2 business days.</p>
+        </form>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../enhancements/version-switcher.js"></script>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../index-v3.html"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10 mb-4"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+      </div>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="../js/v3.js"></script>
 </body>
 </html>

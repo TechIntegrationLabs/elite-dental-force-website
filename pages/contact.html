@@ -1,415 +1,354 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Elite Dental Force</title>
-    <meta name="description" content="Get in touch with Elite Dental Force. Contact our sales, partnerships, support, or media teams for inquiries about dental revenue intelligence solutions.">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Elite Dental Force - Sales inquiries, partnership opportunities, customer support, and media requests for dental revenue intelligence solutions.">
+  <title>Contact Us - Elite Dental Force</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="../css/v3.css">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-                </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="has-dropdown">
-                            <a href="platform.html" class="nav-link">Platform</a>
-                            <ul class="dropdown">
-                                <li><a href="platform.html">Platform Overview</a></li>
-                                <li><a href="ai-consultants.html">AI Consultants</a></li>
-                                <li><a href="edifi.html">EDiFi Software</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="services.html" class="nav-link">Solutions</a>
-                            <ul class="dropdown">
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="partners.html">Partners</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="resources.html" class="nav-link">Resources</a>
-                            <ul class="dropdown">
-                                <li><a href="resources/blog.html">Blog</a></li>
-                                <li><a href="resources/podcast.html">Podcast</a></li>
-                                <li><a href="resources/webinars.html">Webinars</a></li>
-                                <li><a href="resources/news.html">News</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-dropdown">
-                            <a href="company.html" class="nav-link active">Company</a>
-                            <ul class="dropdown">
-                                <li><a href="company.html">About Us</a></li>
-                                <li><a href="company/security.html">Security</a></li>
-                                <li><a href="company/faq.html">FAQ</a></li>
-                                <li><a href="investors.html">Investors</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="nav-cta">
-                        <a href="contact.html#sales" class="btn btn-primary">Book a Demo</a>
-                    </div>
-                </nav>
-
-                <button class="mobile-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../index-v3.html" class="flex items-center gap-3"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
         </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero hero-short">
-            <div class="container">
-                <div class="hero-content centered">
-                    <h1>Let's Connect</h1>
-                    <p class="hero-subtitle">Whether you're ready to transform your revenue cycle, explore partnership opportunities, or need support—we're here to help.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Paths Section -->
-        <section class="section contact-paths">
-            <div class="container">
-                <div class="contact-grid">
-                    <!-- Sales Inquiry -->
-                    <div class="contact-card" id="sales">
-                        <div class="contact-card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="24" fill="#d3edfc"/>
-                                <path d="M24 14v20M14 24h20" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M17 17l14 14M31 17L17 31" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3>Sales Inquiries</h3>
-                        <p>Ready to see how Elite Dental Force can transform your practice's revenue cycle? Schedule a personalized demo with our team.</p>
-                        <ul class="contact-benefits">
-                            <li>Personalized platform walkthrough</li>
-                            <li>ROI assessment for your practice</li>
-                            <li>Custom pricing consultation</li>
-                            <li>Implementation timeline review</li>
-                        </ul>
-                        <!-- GoHighLevel Form Placeholder - Tag: Contact Sales -->
-                        <form class="contact-form" data-form-tag="Contact Sales">
-                            <div class="form-group">
-                                <label for="sales-name">Full Name *</label>
-                                <input type="text" id="sales-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sales-email">Work Email *</label>
-                                <input type="email" id="sales-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sales-phone">Phone Number</label>
-                                <input type="tel" id="sales-phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="sales-practice">Practice Name *</label>
-                                <input type="text" id="sales-practice" name="practice" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sales-size">Practice Size *</label>
-                                <select id="sales-size" name="practice_size" required>
-                                    <option value="">Select practice size</option>
-                                    <option value="1-2">1-2 Locations</option>
-                                    <option value="3-10">3-10 Locations</option>
-                                    <option value="11-50">11-50 Locations</option>
-                                    <option value="50+">50+ Locations (DSO)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="sales-interest">Primary Interest *</label>
-                                <select id="sales-interest" name="interest" required>
-                                    <option value="">Select your interest</option>
-                                    <option value="ai-consultants">AI Consultants</option>
-                                    <option value="edifi">EDiFi Software</option>
-                                    <option value="both">Complete Platform</option>
-                                    <option value="not-sure">Not Sure Yet</option>
-                                </select>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="sales-message">Tell us about your needs</label>
-                                <textarea id="sales-message" name="message" rows="4" placeholder="What challenges are you facing with your revenue cycle?"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary full-width">Book a Demo</button>
-                        </form>
-                    </div>
-
-                    <!-- Partnership Inquiry -->
-                    <div class="contact-card" id="partnerships">
-                        <div class="contact-card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="24" fill="#d3edfc"/>
-                                <path d="M16 28c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="24" cy="16" r="4" stroke="#095ba7" stroke-width="2"/>
-                                <path d="M30 32c0-3.3 2.7-6 6-6M12 32c0-3.3 2.7-6 6-6" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3>Partnership Opportunities</h3>
-                        <p>Interested in partnering with Elite Dental Force? We work with technology providers, integrators, and industry affiliates.</p>
-                        <ul class="contact-benefits">
-                            <li>Technology integration partnerships</li>
-                            <li>Reseller and referral programs</li>
-                            <li>Co-marketing opportunities</li>
-                            <li>Strategic alliance discussions</li>
-                        </ul>
-                        <!-- GoHighLevel Form Placeholder - Tag: Contact Partner -->
-                        <form class="contact-form" data-form-tag="Contact Partner">
-                            <div class="form-group">
-                                <label for="partner-name">Full Name *</label>
-                                <input type="text" id="partner-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="partner-email">Work Email *</label>
-                                <input type="email" id="partner-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="partner-company">Company Name *</label>
-                                <input type="text" id="partner-company" name="company" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="partner-type">Partnership Type *</label>
-                                <select id="partner-type" name="partnership_type" required>
-                                    <option value="">Select partnership type</option>
-                                    <option value="technology">Technology Integration</option>
-                                    <option value="reseller">Reseller / Referral</option>
-                                    <option value="affiliate">Affiliate Partner</option>
-                                    <option value="strategic">Strategic Alliance</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="partner-message">Partnership Proposal *</label>
-                                <textarea id="partner-message" name="message" rows="4" placeholder="Describe the partnership opportunity you're proposing..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary full-width">Submit Partnership Inquiry</button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="contact-grid secondary-row">
-                    <!-- Support Inquiry -->
-                    <div class="contact-card" id="support">
-                        <div class="contact-card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="24" fill="#d3edfc"/>
-                                <circle cx="24" cy="24" r="10" stroke="#095ba7" stroke-width="2"/>
-                                <path d="M24 20v4l3 3" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M14 14l4 4M34 14l-4 4M14 34l4-4M34 34l-4-4" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3>Customer Support</h3>
-                        <p>Already a customer? Our support team is here to help you get the most out of Elite Dental Force.</p>
-                        <ul class="contact-benefits">
-                            <li>Technical assistance</li>
-                            <li>Account questions</li>
-                            <li>Training requests</li>
-                            <li>Feature guidance</li>
-                        </ul>
-                        <!-- GoHighLevel Form Placeholder - Tag: Contact Support -->
-                        <form class="contact-form" data-form-tag="Contact Support">
-                            <div class="form-group">
-                                <label for="support-name">Full Name *</label>
-                                <input type="text" id="support-name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="support-email">Work Email *</label>
-                                <input type="email" id="support-email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="support-practice">Practice Name *</label>
-                                <input type="text" id="support-practice" name="practice" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="support-type">Support Type *</label>
-                                <select id="support-type" name="support_type" required>
-                                    <option value="">Select support type</option>
-                                    <option value="technical">Technical Issue</option>
-                                    <option value="billing">Billing Question</option>
-                                    <option value="training">Training Request</option>
-                                    <option value="feature">Feature Question</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="support-message">Describe Your Issue *</label>
-                                <textarea id="support-message" name="message" rows="4" placeholder="Please provide details about your support request..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary full-width">Submit Support Request</button>
-                        </form>
-                    </div>
-
-                    <!-- Media Inquiry -->
-                    <div class="contact-card" id="media">
-                        <div class="contact-card-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="24" cy="24" r="24" fill="#d3edfc"/>
-                                <rect x="14" y="16" width="20" height="16" rx="2" stroke="#095ba7" stroke-width="2"/>
-                                <circle cx="24" cy="24" r="4" stroke="#095ba7" stroke-width="2"/>
-                                <path d="M14 20h4M30 20h4" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3>Media & Press</h3>
-                        <p>For press inquiries, interview requests, or media resources about Elite Dental Force.</p>
-                        <ul class="contact-benefits">
-                            <li>Press releases & news</li>
-                            <li>Executive interviews</li>
-                            <li>Industry commentary</li>
-                            <li>Brand assets & resources</li>
-                        </ul>
-                        <div class="media-contact-info">
-                            <p><strong>Press Contact:</strong></p>
-                            <p>Email: <a href="mailto:press@elitedentalforce.com">press@elitedentalforce.com</a></p>
-                        </div>
-                        <div class="media-resources">
-                            <h4>Media Resources</h4>
-                            <ul class="resource-links">
-                                <li><a href="#" class="resource-link">Press Kit (PDF)</a></li>
-                                <li><a href="#" class="resource-link">Logo & Brand Assets</a></li>
-                                <li><a href="#" class="resource-link">Executive Bios</a></li>
-                                <li><a href="#" class="resource-link">Recent Press Releases</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Contact Info Section -->
-        <section class="section bg-light">
-            <div class="container">
-                <div class="quick-contact-grid">
-                    <div class="quick-contact-item">
-                        <div class="quick-contact-icon">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 8l12 8 12-8" stroke="#095ba7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <rect x="4" y="6" width="24" height="20" rx="2" stroke="#095ba7" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <h4>Email Us</h4>
-                        <p><a href="mailto:info@elitedentalforce.com">info@elitedentalforce.com</a></p>
-                    </div>
-                    <div class="quick-contact-item">
-                        <div class="quick-contact-icon">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 6h8l2 6-4 4c2 4 5 7 9 9l4-4 6 2v8c-14 0-25-11-25-25z" stroke="#095ba7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h4>Call Us</h4>
-                        <p><a href="tel:+18005551234">(800) 555-1234</a></p>
-                    </div>
-                    <div class="quick-contact-item">
-                        <div class="quick-contact-icon">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12z" stroke="#095ba7" stroke-width="2"/>
-                                <path d="M16 8v8l6 3" stroke="#095ba7" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h4>Business Hours</h4>
-                        <p>Mon-Fri: 8am - 6pm EST</p>
-                    </div>
-                    <div class="quick-contact-item">
-                        <div class="quick-contact-icon">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 2C10.48 2 6 6.48 6 12c0 7 10 18 10 18s10-11 10-18c0-5.52-4.48-10-10-10z" stroke="#095ba7" stroke-width="2"/>
-                                <circle cx="16" cy="12" r="3" stroke="#095ba7" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <h4>Headquarters</h4>
-                        <p>United States</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-band">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready to Transform Your Revenue Cycle?</h2>
-                    <p>Join leading dental practices who trust Elite Dental Force for revenue intelligence infrastructure.</p>
-                    <a href="#sales" class="btn btn-white">Book Your Demo Today</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="../index.html" class="logo">
-                        <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-                    </a>
-                    <p>Revenue Intelligence Infrastructure for Modern Dental Practices</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="platform.html">Overview</a></li>
-                        <li><a href="ai-consultants.html">AI Consultants</a></li>
-                        <li><a href="edifi.html">EDiFi Software</a></li>
-                        <li><a href="services.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="resources.html">Resource Hub</a></li>
-                        <li><a href="resources/blog.html">Blog</a></li>
-                        <li><a href="resources/podcast.html">Podcast</a></li>
-                        <li><a href="resources/webinars.html">Webinars</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="company.html">About Us</a></li>
-                        <li><a href="company/security.html">Security</a></li>
-                        <li><a href="company/faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="company/security.html">Security</a>
-                </div>
-            </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
         </div>
-    </footer>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="contact.html" class="text-white hover:text-[#00d4ff]">Contact</a>
+</div>
 
-    <script src="../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../enhancements/version-switcher.js"></script>
+<main class="pt-20">
+
+  <!-- HERO -->
+  <section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[500px] h-[500px] -top-40 -right-40"></div>
+    <div class="float-orb float-orb--purple w-[400px] h-[400px] bottom-0 -left-32"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h1 class="font-headline font-extrabold text-4xl md:text-6xl tracking-tight mb-6 gradient-text">Let's Connect</h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">Whether you're ready to transform your revenue cycle, explore partnership opportunities, or need support — we're here to help.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT PATH CARDS -->
+  <section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Sales Inquiries -->
+        <div id="sales" class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10 transition-all duration-300 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00d4ff]/20 to-[#00d4ff]/5 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00d4ff] text-3xl">add_business</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-xl text-white">Sales Inquiries</h3>
+              <p class="text-sm text-slate-500">Get a personalized demo and see how we can transform your revenue operations.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Personalized walkthrough</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>ROI assessment</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Pricing consultation</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Timeline review</div>
+          </div>
+          <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Full Name *</label><input type="text" required placeholder="Jane Smith"></div>
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Email *</label><input type="email" required placeholder="jane@practice.com"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Phone</label><input type="tel" placeholder="(555) 123-4567"></div>
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Practice Name *</label><input type="text" required placeholder="Bright Smiles Dental"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-medium text-slate-500 mb-1.5">Practice Size</label>
+                <select><option value="">Select size...</option><option>1-2 providers</option><option>3-10 providers</option><option>11-50 providers</option><option>50+ providers</option></select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-500 mb-1.5">Interest</label>
+                <select><option value="">What interests you?</option><option>AI Consultants</option><option>EDiFi Software</option><option>Complete Platform</option><option>Not Sure Yet</option></select>
+              </div>
+            </div>
+            <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Tell us about your needs</label><textarea rows="3" placeholder="What challenges are you facing?"></textarea></div>
+            <button type="submit" class="btn-shimmer w-full py-3 bg-gradient-to-r from-[#00d4ff] to-[#00d4ff]/80 text-on-primary font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(0,212,255,0.3)] transition-all">Submit Sales Inquiry</button>
+          </form>
+        </div>
+
+        <!-- Partnership Opportunities -->
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10 transition-all duration-300 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7c3aed]/20 to-[#7c3aed]/5 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#cfb7ff] text-3xl">handshake</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-xl text-white">Partnership Opportunities</h3>
+              <p class="text-sm text-slate-500">Partner with us to deliver dental revenue intelligence at scale.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Revenue sharing</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Co-marketing support</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Technical integration</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Dedicated support</div>
+          </div>
+          <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Full Name *</label><input type="text" required placeholder="John Doe"></div>
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Email *</label><input type="email" required placeholder="john@company.com"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Company *</label><input type="text" required placeholder="Acme Dental Solutions"></div>
+              <div>
+                <label class="block text-xs font-medium text-slate-500 mb-1.5">Partnership Type</label>
+                <select><option value="">Select type...</option><option>Technology Partner</option><option>Reseller</option><option>Affiliate</option><option>Strategic Alliance</option><option>Other</option></select>
+              </div>
+            </div>
+            <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Tell us about your partnership vision</label><textarea rows="3" placeholder="How do you see us working together?"></textarea></div>
+            <button type="submit" class="btn-shimmer w-full py-3 bg-gradient-to-r from-[#7c3aed] to-[#7c3aed]/80 text-white font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(124,58,237,0.3)] transition-all">Submit Partnership Inquiry</button>
+          </form>
+        </div>
+
+        <!-- Customer Support -->
+        <div id="support" class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10 transition-all duration-300 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00fdc6]/20 to-[#00fdc6]/5 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00fdc6] text-3xl">support_agent</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-xl text-white">Customer Support</h3>
+              <p class="text-sm text-slate-500">Existing customer? We're here to help you get the most from the platform.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Priority response</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Screen sharing</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Knowledge base</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Training resources</div>
+          </div>
+          <form class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Full Name *</label><input type="text" required placeholder="Your name"></div>
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Email *</label><input type="email" required placeholder="you@practice.com"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Practice Name *</label><input type="text" required placeholder="Your practice"></div>
+              <div>
+                <label class="block text-xs font-medium text-slate-500 mb-1.5">Support Type</label>
+                <select><option value="">Select type...</option><option>Technical Issue</option><option>Billing Question</option><option>Training Request</option><option>Feature Request</option><option>Other</option></select>
+              </div>
+            </div>
+            <div><label class="block text-xs font-medium text-slate-500 mb-1.5">Describe your issue or request</label><textarea rows="3" placeholder="Tell us what you need help with..."></textarea></div>
+            <button type="submit" class="btn-shimmer w-full py-3 bg-gradient-to-r from-[#00fdc6] to-[#00fdc6]/80 text-on-secondary font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(0,253,198,0.3)] transition-all">Submit Support Request</button>
+          </form>
+        </div>
+
+        <!-- Media & Press -->
+        <div class="tilt-card glass-card rounded-2xl border border-outline-variant/10 p-8 md:p-10 transition-all duration-300 reveal-item relative overflow-hidden">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#f59e0b]/20 to-[#f59e0b]/5 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#f59e0b] text-3xl">newsmode</span>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-xl text-white">Media & Press</h3>
+              <p class="text-sm text-slate-500">Journalist or analyst? Access press materials and schedule interviews.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Press releases</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Executive interviews</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Industry commentary</div>
+            <div class="flex items-start gap-2 text-sm text-slate-400"><span class="material-symbols-outlined text-[#00fdc6] text-lg mt-0.5">check_circle</span>Brand assets</div>
+          </div>
+          <div class="space-y-5">
+            <div class="glass-card rounded-xl p-5 border border-outline-variant/10">
+              <p class="text-sm text-slate-400 mb-1">Press inquiries</p>
+              <a href="mailto:press@elitedentalforce.com" class="text-[#00d4ff] font-mono text-sm hover:underline">press@elitedentalforce.com</a>
+            </div>
+            <div class="space-y-3">
+              <h4 class="font-headline font-bold text-white text-sm">Media Resources</h4>
+              <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-[#00d4ff] transition-colors group">
+                <span class="material-symbols-outlined text-lg text-slate-600 group-hover:text-[#00d4ff]">download</span>Brand Guidelines & Logos
+              </a>
+              <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-[#00d4ff] transition-colors group">
+                <span class="material-symbols-outlined text-lg text-slate-600 group-hover:text-[#00d4ff]">download</span>Press Kit
+              </a>
+              <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-[#00d4ff] transition-colors group">
+                <span class="material-symbols-outlined text-lg text-slate-600 group-hover:text-[#00d4ff]">article</span>Latest Press Releases
+              </a>
+              <a href="#" class="flex items-center gap-3 text-sm text-slate-400 hover:text-[#00d4ff] transition-colors group">
+                <span class="material-symbols-outlined text-lg text-slate-600 group-hover:text-[#00d4ff]">photo_library</span>Executive Photos & Bios
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK CONTACT INFO -->
+  <section class="py-20 relative">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="section-header-fade text-center mb-14">
+        <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mb-4">Quick Contact</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-6 text-center reveal-item">
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-3">mail</span>
+          <p class="text-xs text-slate-500 mb-1">Email</p>
+          <a href="mailto:info@elitedentalforce.com" class="text-sm text-white font-medium hover:text-[#00d4ff] transition-colors">info@elitedentalforce.com</a>
+        </div>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-6 text-center reveal-item">
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-3">phone</span>
+          <p class="text-xs text-slate-500 mb-1">Phone</p>
+          <a href="tel:+18005551234" class="text-sm text-white font-medium hover:text-[#00d4ff] transition-colors">(800) 555-1234</a>
+        </div>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-6 text-center reveal-item">
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-3">schedule</span>
+          <p class="text-xs text-slate-500 mb-1">Hours</p>
+          <p class="text-sm text-white font-medium">Mon-Fri 8am-6pm EST</p>
+        </div>
+        <div class="glass-card rounded-2xl border border-outline-variant/10 p-6 text-center reveal-item">
+          <span class="material-symbols-outlined text-[#00d4ff] text-3xl mb-3">location_on</span>
+          <p class="text-xs text-slate-500 mb-1">Headquarters</p>
+          <p class="text-sm text-white font-medium">United States</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#00d4ff]/10 via-[#7c3aed]/10 to-[#00fdc6]/10"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mb-4">Ready to Transform Your Revenue Cycle?</h2>
+      <p class="text-slate-400 mb-8 max-w-xl mx-auto">Join the dental practices that have already modernized their revenue operations with Elite Dental Force.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#sales" class="btn-shimmer px-8 py-3.5 bg-gradient-to-r from-[#00d4ff] to-[#00d4ff]/80 text-on-primary font-bold rounded-xl text-sm font-headline hover:shadow-[0_0_24px_rgba(0,212,255,0.3)] transition-all">Book a Demo</a>
+        <a href="tel:+18005551234" class="px-8 py-3.5 border border-[#00d4ff]/30 text-[#00d4ff] font-bold rounded-xl text-sm font-headline hover:bg-[#00d4ff]/10 transition-all">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../index-v3.html"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10 mb-4"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+      </div>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="../js/v3.js"></script>
 </body>
 </html>
