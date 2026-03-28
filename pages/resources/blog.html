@@ -1,299 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Elite Dental Force Blog - Insights, strategies, and best practices for dental revenue optimization, eligibility verification, and practice management.">
+  <meta name="description" content="Elite Dental Force Blog - Revenue intelligence insights, eligibility verification best practices, and dental industry trends.">
   <title>Blog - Elite Dental Force</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+  <link rel="stylesheet" href="../../css/v3.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../../index.html" class="logo">
-          <img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="../platform.html" class="nav-link">Platform</a>
-              <ul class="dropdown">
-                <li><a href="../platform.html">Platform Overview</a></li>
-                <li><a href="../ai-consultants.html">AI Consultants</a></li>
-                <li><a href="../edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="../services.html" class="nav-link">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="../services.html">Services</a></li>
-                <li><a href="../partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="../resources.html" class="nav-link active">Resources</a>
-              <ul class="dropdown">
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="webinars.html">Webinars</a></li>
-                <li><a href="news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="../company.html" class="nav-link">Company</a>
-              <ul class="dropdown">
-                <li><a href="../company.html">About Us</a></li>
-                <li><a href="../company/security.html">Security</a></li>
-                <li><a href="../company/faq.html">FAQ</a></li>
-                <li><a href="../investors.html">Investors</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="../contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content" style="max-width: 700px; margin: 0 auto; text-align: center;">
-          <span class="hero-badge">Blog</span>
-          <h1>Revenue Intelligence Insights</h1>
-          <p class="lead">Expert strategies, industry trends, and best practices for optimizing your dental practice revenue.</p>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../../index-v3.html" class="flex items-center gap-3"><img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="../platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="../platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="../ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="../edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
         </div>
       </div>
-    </section>
-
-    <!-- Featured Article -->
-    <section class="section">
-      <div class="container">
-        <div class="split-section" style="gap: var(--space-12);">
-          <div class="split-visual">
-            <div class="product-visual" style="aspect-ratio: 16/10;">
-              <img src="../../images/blog-featured.jpg" alt="Featured blog article">
-            </div>
-          </div>
-          <div class="split-content">
-            <span class="overline" style="color: var(--color-interactive);">Featured</span>
-            <h2>5 Strategies to Reduce Claim Denials in 2025</h2>
-            <p style="font-size: var(--text-lg); color: var(--color-text-light); margin-bottom: var(--space-4);">Learn how top-performing practices are minimizing denials and accelerating revenue collection with proactive verification and intelligent workflow optimization.</p>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-6);">January 15, 2025 • 8 min read</p>
-            <a href="#" class="btn btn-primary">Read Article</a>
-          </div>
+      <div class="relative has-dropdown">
+        <a href="../services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="../services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="../partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
         </div>
       </div>
-    </section>
-
-    <!-- Blog Categories -->
-    <section class="section bg-light">
-      <div class="container">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; margin-bottom: var(--space-12);">
-          <button class="btn btn-primary" style="font-size: var(--text-sm);">All Posts</button>
-          <button class="btn btn-secondary" style="font-size: var(--text-sm);">Eligibility</button>
-          <button class="btn btn-secondary" style="font-size: var(--text-sm);">Revenue Optimization</button>
-          <button class="btn btn-secondary" style="font-size: var(--text-sm);">Industry Trends</button>
-          <button class="btn btn-secondary" style="font-size: var(--text-sm);">Best Practices</button>
-          <button class="btn btn-secondary" style="font-size: var(--text-sm);">Product Updates</button>
-        </div>
-
-        <!-- Blog Grid -->
-        <div class="resource-grid">
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-1.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Eligibility</span>
-              <h4 class="resource-card-title">The True Cost of Eligibility Errors</h4>
-              <p class="resource-card-excerpt">Understanding how verification mistakes impact your bottom line and what you can do about it.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">January 10, 2025 • 5 min read</p>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-2.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Revenue Optimization</span>
-              <h4 class="resource-card-title">Maximizing First-Pass Acceptance Rates</h4>
-              <p class="resource-card-excerpt">Practical techniques to submit clean claims the first time and reduce rework.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">January 5, 2025 • 6 min read</p>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-3.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Industry Trends</span>
-              <h4 class="resource-card-title">2025 Dental Insurance Trends to Watch</h4>
-              <p class="resource-card-excerpt">Key changes in payer policies and what they mean for your practice revenue.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">December 28, 2024 • 7 min read</p>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-4.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Best Practices</span>
-              <h4 class="resource-card-title">Building a Revenue-First Front Office Culture</h4>
-              <p class="resource-card-excerpt">How to empower your team to catch revenue issues before they become problems.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">December 20, 2024 • 5 min read</p>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-5.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Product Updates</span>
-              <h4 class="resource-card-title">Introducing EDiFi Analytics Dashboard 2.0</h4>
-              <p class="resource-card-excerpt">New features and capabilities in our latest platform update.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">December 15, 2024 • 4 min read</p>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card">
-            <div class="resource-card-image">
-              <img src="../../images/blog-preview-6.jpg" alt="Blog article preview">
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-card-tag">Eligibility</span>
-              <h4 class="resource-card-title">Navigating Complex Benefit Structures</h4>
-              <p class="resource-card-excerpt">Tips for verifying coverage when plans have unusual limitations or exclusions.</p>
-              <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-3);">December 10, 2024 • 6 min read</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- Pagination -->
-        <div style="display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-12);">
-          <button class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">Previous</button>
-          <button class="btn btn-primary" style="padding: var(--space-2) var(--space-4);">1</button>
-          <button class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">2</button>
-          <button class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">3</button>
-          <button class="btn btn-secondary" style="padding: var(--space-2) var(--space-4);">Next</button>
+      <div class="relative has-dropdown">
+        <a href="../resources.html" class="nav-underline text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="blog.html" class="block px-5 py-2.5 text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
         </div>
       </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="section">
-      <div class="container">
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-          <span class="overline">Newsletter</span>
-          <h2>Stay Updated</h2>
-          <p style="color: var(--color-text-light); margin-bottom: var(--space-8);">Get the latest revenue intelligence insights delivered to your inbox. No spam, just valuable content for dental professionals.</p>
-
-          <!-- GoHighLevel Form Placeholder -->
-          <div class="form-container" data-form-tag="Newsletter">
-            <form class="newsletter-form" style="display: flex; gap: var(--space-3); max-width: 500px; margin: 0 auto;">
-              <input type="email" placeholder="Enter your email" required style="flex: 1; padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: var(--text-base);">
-              <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-4);">By subscribing, you agree to our Privacy Policy.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Ready to Transform Your Revenue Operations?</h2>
-        <p>See how Elite Dental Force can help your practice optimize revenue.</p>
-        <div class="cta-band-actions">
-          <a href="../contact.html#demo" class="btn btn-white btn-lg">Book a Demo</a>
-          <a href="../resources.html" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Explore Resources</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../../index.html" class="logo">
-            <img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="../platform.html">Overview</a></li>
-            <li><a href="../ai-consultants.html">AI Consultants</a></li>
-            <li><a href="../edifi.html">EDiFi Software</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="podcast.html">Podcast</a></li>
-            <li><a href="webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="../company.html">About Us</a></li>
-            <li><a href="../company/security.html">Security</a></li>
-            <li><a href="../company/faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="../contact.html#sales">Sales</a></li>
-            <li><a href="../contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../privacy.html">Privacy Policy</a>
+      <div class="relative has-dropdown">
+        <a href="../company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="../company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="../company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="../company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="../investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="../contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="flex items-center gap-4">
+      <a href="../contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="../platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="../services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="../resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="../company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="../contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
 
-  <script src="../../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../../enhancements/version-switcher.js"></script>
+<main class="pt-20">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-24 pb-16">
+  <div class="float-orb float-orb--cyan" style="width:350px;height:350px;top:10%;left:-8%"></div>
+  <div class="float-orb float-orb--purple" style="width:250px;height:250px;top:50%;right:-5%"></div>
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <div class="badge-glow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-6 font-mono">
+      <span class="material-symbols-outlined text-base">article</span>
+      Blog
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white leading-[1.08] tracking-tighter mb-6">Revenue Intelligence Insights</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">Expert analysis, best practices, and industry trends to help you optimize your dental practice revenue.</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <a href="#" class="block group">
+      <div class="glass-card rounded-2xl border border-outline-variant/15 p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center hover:border-primary-container/30 transition-all">
+        <div class="aspect-video rounded-xl bg-gradient-to-br from-surface-container-high to-surface-container flex items-center justify-center">
+          <span class="material-symbols-outlined text-7xl text-primary-container/30" style="font-variation-settings:'FILL' 1">article</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-primary-container/10 text-primary-container uppercase tracking-wider">Featured</span>
+            <span class="text-xs font-mono text-slate-500">Jan 15, 2025</span>
+            <span class="text-xs font-mono text-slate-500">8 min read</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-white mb-4 group-hover:text-primary transition-colors">5 Strategies to Reduce Claim Denials in 2025</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Learn the top evidence-based strategies dental practices are using to dramatically reduce claim denials and improve first-pass acceptance rates this year.</p>
+          <span class="inline-flex items-center gap-2 text-primary-container font-bold font-headline text-sm group-hover:gap-3 transition-all">Read Article <span class="material-symbols-outlined">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FILTER & GRID -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Filters -->
+    <div class="flex flex-wrap gap-3 mb-12">
+      <button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-bold text-sm font-headline transition-all">All Posts</button>
+      <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-slate-400 font-bold text-sm font-headline hover:bg-surface-container-highest hover:text-white transition-all">Eligibility</button>
+      <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-slate-400 font-bold text-sm font-headline hover:bg-surface-container-highest hover:text-white transition-all">Revenue Optimization</button>
+      <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-slate-400 font-bold text-sm font-headline hover:bg-surface-container-highest hover:text-white transition-all">Industry Trends</button>
+      <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-slate-400 font-bold text-sm font-headline hover:bg-surface-container-highest hover:text-white transition-all">Best Practices</button>
+      <button class="px-5 py-2.5 rounded-full bg-surface-container-high text-slate-400 font-bold text-sm font-headline hover:bg-surface-container-highest hover:text-white transition-all">Product Updates</button>
+    </div>
+
+    <!-- Blog Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-primary-container/20" style="font-variation-settings:'FILL' 1">verified</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container">Eligibility</span><span class="text-xs font-mono text-slate-500">Jan 8, 2025</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">Real-Time Eligibility: Why Batch Verification Is Dead</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">How real-time eligibility verification is replacing outdated batch processes and saving practices thousands in denied claims.</p>
+        </div>
+      </a>
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-secondary-container/20" style="font-variation-settings:'FILL' 1">trending_up</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-secondary-container/10 text-secondary-container">Revenue Optimization</span><span class="text-xs font-mono text-slate-500">Dec 28, 2024</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">The Hidden Revenue Leaks in Your Practice</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Identify the most common revenue leaks costing dental practices an average of $180K per year and how to fix them.</p>
+        </div>
+      </a>
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-tertiary-container/20" style="font-variation-settings:'FILL' 1">psychology</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container">Industry Trends</span><span class="text-xs font-mono text-slate-500">Dec 15, 2024</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">AI in Dental Billing: 2025 Outlook</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Expert predictions on how artificial intelligence will reshape dental revenue cycle management in the coming year.</p>
+        </div>
+      </a>
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-primary-container/20" style="font-variation-settings:'FILL' 1">checklist</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container">Best Practices</span><span class="text-xs font-mono text-slate-500">Dec 2, 2024</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">The Complete Guide to Dental Credentialing</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">A step-by-step guide to streamlining provider credentialing and avoiding costly delays in insurance reimbursement.</p>
+        </div>
+      </a>
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-secondary-container/20" style="font-variation-settings:'FILL' 1">new_releases</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-secondary-container/10 text-secondary-container">Product Updates</span><span class="text-xs font-mono text-slate-500">Nov 20, 2024</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">EDiFi 3.0: What's New in the Latest Release</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">Explore the new features in EDiFi 3.0 including enhanced analytics dashboards, automated appeals, and expanded PMS integrations.</p>
+        </div>
+      </a>
+      <a href="#" class="tilt-card group rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="aspect-video bg-gradient-to-br from-surface-container-high to-surface-container-lowest flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-tertiary-container/20" style="font-variation-settings:'FILL' 1">groups</span></div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3"><span class="text-xs font-mono px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container">Best Practices</span><span class="text-xs font-mono text-slate-500">Nov 5, 2024</span></div>
+          <h3 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-primary transition-colors">Building a Revenue-First Culture in Your Practice</h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">How leading DSOs are training front-desk staff, office managers, and providers to think revenue-first without sacrificing patient care.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex items-center justify-center gap-2 mt-12">
+      <button class="px-4 py-2 rounded-lg bg-surface-container text-slate-500 font-headline font-bold text-sm" disabled>Previous</button>
+      <button class="w-10 h-10 rounded-lg bg-primary-container text-on-primary font-headline font-bold text-sm">1</button>
+      <button class="w-10 h-10 rounded-lg bg-surface-container text-slate-400 font-headline font-bold text-sm hover:bg-surface-container-high transition-all">2</button>
+      <button class="w-10 h-10 rounded-lg bg-surface-container text-slate-400 font-headline font-bold text-sm hover:bg-surface-container-high transition-all">3</button>
+      <button class="px-4 py-2 rounded-lg bg-surface-container text-slate-400 font-headline font-bold text-sm hover:bg-surface-container-high transition-all">Next</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="py-20">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="glass-card rounded-2xl border border-outline-variant/15 p-10 md:p-14 text-center section-header-fade">
+      <span class="material-symbols-outlined text-5xl text-primary-container mb-4" style="font-variation-settings:'FILL' 1">mail</span>
+      <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-white mb-4">Subscribe to Our Newsletter</h2>
+      <p class="text-on-surface-variant leading-relaxed mb-8 max-w-xl mx-auto">Get the latest revenue intelligence insights delivered to your inbox every week. No spam, just actionable strategies.</p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-xl bg-surface-container-lowest border border-outline-variant/15 text-on-surface placeholder:text-slate-500 focus:border-primary-container/40 focus:outline-none font-body">
+        <button type="submit" class="btn-shimmer px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all font-headline whitespace-nowrap">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary-container/5"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="cta-glow relative bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 text-center border border-outline-variant/15">
+      <h2 class="text-shimmer text-4xl md:text-5xl font-headline font-extrabold mb-6">Ready to Transform Your Revenue Operations?</h2>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">Join leading dental practices that trust Elite Dental Force for intelligent revenue management.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="../contact.html#demo" class="btn-shimmer magnetic-btn px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-2xl text-lg shadow-[0_0_40px_rgba(0,212,255,.25)] hover:shadow-[0_0_60px_rgba(0,212,255,.4)] hover:scale-105 transition-all font-headline">Book a Demo</a>
+        <a href="../contact.html" class="px-10 py-5 bg-white/5 backdrop-blur-md text-white font-bold rounded-2xl text-lg border border-white/10 hover:bg-white/10 transition-all font-headline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../../index-v3.html"><img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10 mb-4"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+      </div>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="../platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="../ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="../edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="../services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="../company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="../company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="../company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="../partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="../investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="../contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="../terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="../privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="../../js/v3.js"></script>
 </body>
 </html>

@@ -1,365 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Elite Dental Force Security & Compliance - Learn about our HIPAA-aligned security practices, SOC 2 Type II certification, and commitment to protecting your practice data.">
+  <meta name="description" content="Elite Dental Force Security & Compliance - HIPAA-aligned architecture, SOC 2 Type II certification, AES-256 encryption, and comprehensive data protection for dental practices.">
   <title>Security & Compliance - Elite Dental Force</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+  <link rel="stylesheet" href="../../css/v3.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../../index.html" class="logo">
-          <img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="../platform.html" class="nav-link">Platform</a>
-              <ul class="dropdown">
-                <li><a href="../platform.html">Platform Overview</a></li>
-                <li><a href="../ai-consultants.html">AI Consultants</a></li>
-                <li><a href="../edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="../services.html" class="nav-link">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="../services.html">Services</a></li>
-                <li><a href="../partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li><a href="../resources.html" class="nav-link">Resources</a></li>
-            <li class="has-dropdown">
-              <a href="../company.html" class="nav-link active">Company</a>
-              <ul class="dropdown">
-                <li><a href="../company.html">About Us</a></li>
-                <li><a href="security.html">Security</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="../investors.html">Investors</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="../contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content" style="max-width: 700px; margin: 0 auto; text-align: center;">
-          <span class="hero-badge">Security & Compliance</span>
-          <h1>Your Data Security Is Our Priority</h1>
-          <p class="lead">Elite Dental Force maintains enterprise-grade security practices to protect your practice and patient data at every level.</p>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../../index-v3.html" class="flex items-center gap-3"><img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="../platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="../platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="../ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="../edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
         </div>
       </div>
-    </section>
-
-    <!-- Security Overview -->
-    <section class="section">
-      <div class="container">
-        <div class="split-section">
-          <div class="split-content">
-            <span class="overline" style="color: var(--color-interactive); font-size: var(--text-sm); font-weight: var(--font-semibold); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-4);">HIPAA Compliance</span>
-            <h2>HIPAA-Aligned Architecture</h2>
-            <p style="font-size: var(--text-lg); color: var(--color-text-light);">Elite Dental Force maintains rigorous security practices aligned with HIPAA requirements for protected health information. Our infrastructure is designed from the ground up to meet and exceed healthcare data protection standards.</p>
-            <ul style="margin: var(--space-6) 0;">
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                End-to-end encryption (AES-256)
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                SOC 2 Type II certified
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Role-based access controls
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Complete audit logging
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Regular third-party penetration testing
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                Business Associate Agreements available
-              </li>
-            </ul>
-          </div>
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../../images/security-certifications.png" alt="Security certifications and compliance badges">
-            </div>
-          </div>
+      <div class="relative has-dropdown">
+        <a href="../services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="../services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="../partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
         </div>
       </div>
-    </section>
-
-    <!-- Security Pillars -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Security Framework</span>
-          <h2>Enterprise-Grade Protection</h2>
-          <p>Our comprehensive security framework covers every aspect of data protection.</p>
-        </div>
-
-        <div class="grid grid-3" style="gap: var(--space-8);">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-            </div>
-            <h3>Data Encryption</h3>
-            <p>All data is encrypted both at rest and in transit using AES-256 encryption. TLS 1.3 protects all communications between systems.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Access Control</h3>
-            <p>Role-based access controls ensure users only access the data they need. Multi-factor authentication is available for all accounts.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-            </div>
-            <h3>Audit Logging</h3>
-            <p>Comprehensive audit trails track all system access and data modifications. Logs are retained according to healthcare compliance requirements.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3>Continuous Monitoring</h3>
-            <p>24/7 security monitoring detects and responds to potential threats in real-time. Automated alerts notify our security team of anomalies.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-            </div>
-            <h3>Infrastructure Security</h3>
-            <p>Our cloud infrastructure is hosted in SOC 2 certified data centers with physical security controls, redundant power, and disaster recovery.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <polyline points="9 12 11 14 15 10"></polyline>
-              </svg>
-            </div>
-            <h3>Vulnerability Management</h3>
-            <p>Regular penetration testing by third-party security firms. Continuous vulnerability scanning and rapid patch deployment.</p>
-          </div>
+      <div class="relative has-dropdown">
+        <a href="../resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="../resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="../resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="../resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="../resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
         </div>
       </div>
-    </section>
-
-    <!-- Certifications & Compliance -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Certifications</span>
-          <h2>Compliance & Standards</h2>
-          <p>We maintain industry-recognized certifications and adhere to healthcare compliance standards.</p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--space-8);">
-          <div style="background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
-            <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
-              <div style="width: 60px; height: 60px; background: var(--color-alt-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <div>
-                <h4 style="margin: 0;">HIPAA Compliance</h4>
-                <p style="margin: 0; font-size: var(--text-sm); color: var(--color-text-muted);">Healthcare Data Protection</p>
-              </div>
-            </div>
-            <p style="color: var(--color-text-light); margin: 0;">Our platform is designed to support HIPAA compliance requirements. We provide Business Associate Agreements (BAAs) and maintain technical, administrative, and physical safeguards for protected health information.</p>
-          </div>
-
-          <div style="background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid var(--color-border);">
-            <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
-              <div style="width: 60px; height: 60px; background: var(--color-alt-bg); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="9 12 11 14 15 10"></polyline>
-                </svg>
-              </div>
-              <div>
-                <h4 style="margin: 0;">SOC 2 Type II</h4>
-                <p style="margin: 0; font-size: var(--text-sm); color: var(--color-text-muted);">Service Organization Controls</p>
-              </div>
-            </div>
-            <p style="color: var(--color-text-light); margin: 0;">Annual SOC 2 Type II audits verify our security, availability, and confidentiality controls. Reports are available to customers under NDA upon request.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Business Associate Agreement -->
-    <section class="section bg-alt">
-      <div class="container">
-        <div class="grid grid-2" style="gap: var(--space-12); align-items: center;">
-          <div>
-            <span class="overline" style="color: var(--color-interactive); font-size: var(--text-sm); font-weight: var(--font-semibold); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-4);">Business Partners</span>
-            <h2>Business Associate Agreements</h2>
-            <p style="font-size: var(--text-lg); color: var(--color-text-light); margin-bottom: var(--space-6);">Elite Dental Force provides Business Associate Agreements (BAAs) to all customers as part of our standard service. Our BAA outlines our responsibilities for protecting PHI and demonstrates our commitment to HIPAA compliance.</p>
-            <a href="../contact.html#sales" class="btn btn-primary">Request BAA Information</a>
-          </div>
-          <div style="background: var(--color-white); padding: var(--space-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
-            <h4 style="margin-bottom: var(--space-4);">Our BAA Covers:</h4>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Permitted uses and disclosures of PHI
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Safeguards for protecting PHI
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Breach notification procedures
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Subcontractor requirements
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Audit and compliance verification
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Security Questions CTA -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Have Security Questions?</h2>
-        <p>Our security team is available to discuss our practices and answer your compliance questions.</p>
-        <div class="cta-band-actions">
-          <a href="../contact.html#sales" class="btn btn-white btn-lg">Contact Security Team</a>
-          <a href="faq.html" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">View FAQ</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../../index.html" class="logo">
-            <img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="../platform.html">Overview</a></li>
-            <li><a href="../ai-consultants.html">AI Consultants</a></li>
-            <li><a href="../edifi.html">EDiFi Software</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="../resources/blog.html">Blog</a></li>
-            <li><a href="../resources/podcast.html">Podcast</a></li>
-            <li><a href="../resources/webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="../company.html">About Us</a></li>
-            <li><a href="security.html">Security</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="../contact.html#sales">Sales</a></li>
-            <li><a href="../contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="../terms.html">Terms of Service</a>
-          <a href="../privacy.html">Privacy Policy</a>
+      <div class="relative has-dropdown">
+        <a href="../company.html" class="nav-underline text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="../company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="security.html" class="block px-5 py-2.5 text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="../investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="../contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="flex items-center gap-4">
+      <a href="../contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="../platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="../services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="../resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="../company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="../contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
 
-  <script src="../../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../../enhancements/version-switcher.js"></script>
+<main class="pt-20">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-24 pb-16">
+  <div class="float-orb float-orb--cyan" style="width:350px;height:350px;top:10%;left:-8%"></div>
+  <div class="float-orb float-orb--purple" style="width:250px;height:250px;top:50%;right:-5%"></div>
+  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <div class="badge-glow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-6 font-mono">
+      <span class="material-symbols-outlined text-base">shield</span>
+      Security & Compliance
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white leading-[1.08] tracking-tighter mb-6">Your Data Security Is Our Priority</h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">Enterprise-grade security infrastructure designed specifically for dental healthcare data, with HIPAA-aligned practices and SOC 2 Type II certification.</p>
+  </div>
+</section>
+
+<!-- HIPAA SECTION -->
+<section class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>HIPAA Compliance</p>
+        <h2 class="text-3xl md:text-4xl font-headline font-extrabold gradient-text mb-6">HIPAA-Aligned Architecture</h2>
+        <p class="text-on-surface-variant leading-relaxed mb-8">Our platform is built from the ground up with healthcare data protection as a core architectural principle. Every component, from data ingestion to storage to access, follows HIPAA security and privacy requirements.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">End-to-end encryption for all protected health information (PHI)</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Administrative, physical, and technical safeguards</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Regular risk assessments and security audits</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Incident response and breach notification procedures</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Workforce training and access management policies</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Business Associate Agreements for all subcontractors</span></li>
+        </ul>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-primary-container/5 blur-[80px] rounded-full"></div>
+        <div class="relative glass-card rounded-2xl border border-outline-variant/15 p-8">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,255,200,.05)] flex items-center justify-center">
+              <span class="material-symbols-outlined text-4xl text-primary-container" style="font-variation-settings:'FILL' 1">verified_user</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-headline font-bold text-white">Security First</h3>
+              <p class="text-sm text-slate-500 font-mono">Built for healthcare</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest/50">
+              <span class="text-sm text-slate-400">Encryption Standard</span>
+              <span class="text-sm font-mono font-medium text-[#00ffc8]">AES-256</span>
+            </div>
+            <div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest/50">
+              <span class="text-sm text-slate-400">Transport Layer</span>
+              <span class="text-sm font-mono font-medium text-[#00ffc8]">TLS 1.3</span>
+            </div>
+            <div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest/50">
+              <span class="text-sm text-slate-400">Uptime SLA</span>
+              <span class="text-sm font-mono font-medium text-[#00ffc8]">99.9%</span>
+            </div>
+            <div class="flex justify-between items-center p-3 rounded-lg bg-surface-container-lowest/50">
+              <span class="text-sm text-slate-400">Data Centers</span>
+              <span class="text-sm font-mono font-medium text-[#00ffc8]">US-Only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY FRAMEWORK -->
+<section class="py-20 relative overflow-hidden">
+  <div class="float-orb float-orb--green" style="width:300px;height:300px;top:30%;left:-8%"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>Security Framework<span class="overline-dash ml-2"></span></p>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold gradient-text mb-6">Comprehensive Protection</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Multi-layered security controls protecting your practice data at every level.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Data Encryption -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,212,255,.05)] flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">lock</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Data Encryption</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">AES-256 encryption at rest and TLS 1.3 for all data in transit. Your patient data is never exposed in plaintext.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container">AES-256</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container">TLS 1.3</span>
+        </div>
+      </div>
+      <!-- Access Control -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,255,200,.15)] to-[rgba(0,255,200,.05)] flex items-center justify-center text-secondary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">admin_panel_settings</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Access Control</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Role-based access control (RBAC) with multi-factor authentication (MFA) ensures only authorized personnel access sensitive data.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-secondary-container/10 text-secondary-container">RBAC</span>
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-secondary-container/10 text-secondary-container">MFA</span>
+        </div>
+      </div>
+      <!-- Audit Logging -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(207,183,255,.15)] to-[rgba(207,183,255,.05)] flex items-center justify-center text-tertiary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">receipt_long</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Audit Logging</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Comprehensive audit trails track every data access, modification, and system event. Logs are tamper-proof and retained for compliance review.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container">Immutable Logs</span>
+        </div>
+      </div>
+      <!-- Continuous Monitoring -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,212,255,.05)] flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">monitoring</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Continuous Monitoring</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">24/7 security monitoring with real-time threat detection, automated alerts, and rapid incident response capabilities.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-primary-container/10 text-primary-container">24/7 SOC</span>
+        </div>
+      </div>
+      <!-- Infrastructure Security -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,255,200,.15)] to-[rgba(0,255,200,.05)] flex items-center justify-center text-secondary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">cloud_done</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Infrastructure Security</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Hosted in SOC 2 Type II certified US data centers with redundant backups, DDoS protection, and network segmentation.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-secondary-container/10 text-secondary-container">SOC 2 DCs</span>
+        </div>
+      </div>
+      <!-- Vulnerability Management -->
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(207,183,255,.15)] to-[rgba(207,183,255,.05)] flex items-center justify-center text-tertiary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">bug_report</span></div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Vulnerability Management</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-4">Regular penetration testing, automated vulnerability scanning, and a responsible disclosure program to identify and remediate threats proactively.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary-container">Pen Testing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>Certifications<span class="overline-dash ml-2"></span></p>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold gradient-text mb-6">Industry-Recognized Standards</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="glass-card rounded-2xl border border-outline-variant/15 p-8 text-center reveal-item">
+        <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,255,200,.05)] flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-5xl text-primary-container" style="font-variation-settings:'FILL' 1">health_and_safety</span>
+        </div>
+        <h3 class="text-2xl font-headline font-bold text-white mb-3">HIPAA Compliance</h3>
+        <p class="text-on-surface-variant leading-relaxed">Full alignment with HIPAA Security Rule, Privacy Rule, and Breach Notification Rule requirements. Regular third-party assessments validate our compliance posture.</p>
+      </div>
+      <div class="glass-card rounded-2xl border border-outline-variant/15 p-8 text-center reveal-item">
+        <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[rgba(0,255,200,.15)] to-[rgba(0,212,255,.05)] flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-5xl text-secondary-container" style="font-variation-settings:'FILL' 1">workspace_premium</span>
+        </div>
+        <h3 class="text-2xl font-headline font-bold text-white mb-3">SOC 2 Type II</h3>
+        <p class="text-on-surface-variant leading-relaxed">Independent SOC 2 Type II audit confirms our controls for security, availability, processing integrity, confidentiality, and privacy are effectively designed and operating.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAA SECTION -->
+<section class="py-20 relative overflow-hidden">
+  <div class="float-orb float-orb--purple" style="width:300px;height:300px;top:20%;right:-10%"></div>
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="glass-card rounded-2xl border border-outline-variant/15 p-10 md:p-14 section-header-fade">
+      <div class="flex items-start gap-6 mb-8">
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,255,200,.05)] flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-4xl text-primary-container" style="font-variation-settings:'FILL' 1">description</span>
+        </div>
+        <div>
+          <h2 class="text-3xl font-headline font-extrabold text-white mb-3">Business Associate Agreement</h2>
+          <p class="text-on-surface-variant leading-relaxed">Our comprehensive BAA is provided as part of every client engagement, ensuring full HIPAA compliance for your practice.</p>
+        </div>
+      </div>
+      <div class="mb-8">
+        <h4 class="text-sm font-bold text-white uppercase tracking-widest mb-4 font-mono">BAA Coverage Includes</h4>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Permitted uses and disclosures of protected health information</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Safeguards to prevent unauthorized use or disclosure</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Breach notification procedures and timelines</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Subcontractor compliance and oversight obligations</span></li>
+          <li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#00ffc8] mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span><span class="text-on-surface-variant">Data return and destruction upon agreement termination</span></li>
+        </ul>
+      </div>
+      <a href="../contact.html" class="btn-shimmer inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all font-headline">Request BAA <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary-container/5"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="cta-glow relative bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 text-center border border-outline-variant/15">
+      <h2 class="text-shimmer text-4xl md:text-5xl font-headline font-extrabold mb-6">Have Security Questions?</h2>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">Our security team is available to discuss your compliance requirements and provide detailed documentation about our security practices.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="../contact.html" class="btn-shimmer magnetic-btn px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-2xl text-lg shadow-[0_0_40px_rgba(0,212,255,.25)] hover:shadow-[0_0_60px_rgba(0,212,255,.4)] hover:scale-105 transition-all font-headline">Contact Security Team</a>
+        <a href="faq.html" class="px-10 py-5 bg-white/5 backdrop-blur-md text-white font-bold rounded-2xl text-lg border border-white/10 hover:bg-white/10 transition-all font-headline">View FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../../index-v3.html"><img src="../../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10 mb-4"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+      </div>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="../platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="../ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="../edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="../services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="../resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="../resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="../resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="../resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="../company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="../partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="../investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="../contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="../terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="../privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="../../js/v3.js"></script>
 </body>
 </html>
