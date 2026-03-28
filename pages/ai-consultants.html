@@ -1,578 +1,425 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Elite Dental Force AI Consultants - AI-powered decision support and workflow standardization for dental practices. Role-based guidance for every team member.">
   <title>AI Consultants - Elite Dental Force</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <script>
+    tailwind.config = {darkMode:"class",theme:{extend:{colors:{"background":"#071325","surface":"#071325","surface-bright":"#2e394d","surface-container":"#142032","surface-container-high":"#1f2a3d","surface-container-highest":"#2a3548","surface-container-low":"#101c2e","surface-container-lowest":"#030e20","surface-dim":"#071325","primary":"#a8e8ff","primary-container":"#00d4ff","secondary":"#f4fff8","secondary-container":"#00fdc6","tertiary":"#e7d8ff","tertiary-container":"#cfb7ff","on-surface":"#d7e3fc","on-surface-variant":"#bbc9cf","on-primary":"#003642","outline":"#859398","outline-variant":"#3c494e"},fontFamily:{"headline":["Manrope","sans-serif"],"body":["Inter","sans-serif"],"mono":["JetBrains Mono","monospace"]}}}}
+  </script>
+  <link rel="stylesheet" href="../css/v3.css">
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../index.html" class="logo">
-          <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
-
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="platform.html" class="nav-link active">Platform</a>
-              <ul class="dropdown">
-                <li><a href="platform.html">Platform Overview</a></li>
-                <li><a href="ai-consultants.html">AI Consultants</a></li>
-                <li><a href="edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="services.html" class="nav-link">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="resources.html" class="nav-link">Resources</a>
-              <ul class="dropdown">
-                <li><a href="resources/blog.html">Blog</a></li>
-                <li><a href="resources/podcast.html">Podcast</a></li>
-                <li><a href="resources/webinars.html">Webinars</a></li>
-                <li><a href="resources/news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="company.html" class="nav-link">Company</a>
-              <ul class="dropdown">
-                <li><a href="company.html">About Us</a></li>
-                <li><a href="company/security.html">Security</a></li>
-                <li><a href="company/faq.html">FAQ</a></li>
-                <li><a href="investors.html">Investors</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../index-v3.html" class="flex items-center gap-3"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown"><a href="platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a><div class="nav-dropdown"><a href="platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a><a href="ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a><a href="edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a></div></div>
+      <div class="relative has-dropdown"><a href="services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a><div class="nav-dropdown"><a href="services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a><a href="partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a></div></div>
+      <div class="relative has-dropdown"><a href="resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a><div class="nav-dropdown"><a href="resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a><a href="resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a><a href="resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a><a href="resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a></div></div>
+      <div class="relative has-dropdown"><a href="company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a><div class="nav-dropdown"><a href="company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a><a href="company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a><a href="company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a><a href="investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a><a href="contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a></div></div>
     </div>
-  </header>
+    <div class="flex items-center gap-4">
+      <a href="contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
+<main class="pt-20">
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-split">
-          <div class="hero-content">
-            <span class="hero-badge">AI-Powered Intelligence</span>
-            <h1>Decision Support That Scales With Your Practice</h1>
-            <p class="lead">AI Consultants provide role-based guidance and workflow standardization, transforming how your team handles eligibility, coding, and revenue decisions.</p>
-            <div class="hero-actions">
-              <a href="contact.html#demo" class="btn btn-white btn-lg">Book a Demo</a>
-              <a href="#pricing" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">View Pricing</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="product-visual">
-              <img src="../images/ai-consultant-interface.png" alt="AI Consultant Interface showing real-time guidance and recommendations">
-            </div>
-          </div>
+  <!-- Hero -->
+  <section class="py-28 relative overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[600px] h-[600px] -top-40 -right-40"></div>
+    <div class="float-orb float-orb--purple w-[400px] h-[400px] bottom-0 left-10"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant/20 badge-glow mb-8">
+          <span class="material-symbols-outlined text-primary-container text-lg">psychology</span>
+          <span class="font-mono text-xs tracking-wider text-primary uppercase">AI-Powered Intelligence</span>
         </div>
-      </div>
-    </section>
-
-    <!-- What AI Consultants Are -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">What They Are</span>
-          <h2>Intelligent Partners for Your Team</h2>
-          <p>AI Consultants are specialized AI assistants trained to understand dental revenue workflows and provide contextual guidance to every team member.</p>
-        </div>
-
-        <div class="split-section">
-          <div class="split-content">
-            <h3>What AI Consultants Do</h3>
-            <p>Our AI Consultants serve as always-available experts that guide your team through complex decisions, ensuring consistent execution across your organization.</p>
-            <ul style="margin: var(--space-6) 0;">
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Provide <strong>real-time guidance</strong> on eligibility verification and coverage questions</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Suggest <strong>optimal coding</strong> and documentation for maximum reimbursement</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Standardize <strong>workflows</strong> so every team member follows best practices</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Accelerate <strong>onboarding</strong> with contextual training and support</span>
-              </li>
-            </ul>
-          </div>
-          <div class="split-content">
-            <h3>What They Are Not</h3>
-            <p>AI Consultants are decision support tools that enhance your team's capabilities. They do not replace human judgment or professional expertise.</p>
-            <ul style="margin: var(--space-6) 0;">
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                <span>They are <strong>not</strong> a replacement for licensed professionals or clinical judgment</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                <span>They do <strong>not</strong> make autonomous decisions without human oversight</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                <span>They are <strong>not</strong> medical or legal advisors</span>
-              </li>
-              <li style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                <span>They do <strong>not</strong> store or share patient data inappropriately</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Consultant Categories -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Consultant Types</span>
-          <h2>Specialized for Every Role</h2>
-          <p>Each AI Consultant is tailored to specific functions within your practice, ensuring relevant and actionable guidance.</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
-                <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
-                <line x1="19" y1="8" x2="19" y2="14"></line>
-                <line x1="22" y1="11" x2="16" y2="11"></line>
-              </svg>
-            </div>
-            <h3>Eligibility Consultant</h3>
-            <p>Real-time verification guidance, coverage interpretation, and benefit breakdown assistance.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <h3>Billing Consultant</h3>
-            <p>Coding optimization, claim preparation guidance, and denial prevention recommendations.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-            </div>
-            <h3>Scheduling Consultant</h3>
-            <p>Patient communication support, appointment optimization, and workflow coordination.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg>
-            </div>
-            <h3>Analytics Consultant</h3>
-            <p>Performance insights interpretation, trend analysis, and strategic recommendations.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-              </svg>
-            </div>
-            <h3>Compliance Consultant</h3>
-            <p>Documentation guidance, regulatory awareness, and audit preparation support.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-            </div>
-            <h3>Training Consultant</h3>
-            <p>New hire onboarding, skill development, and ongoing education support.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Role-Based Use Cases -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Use Cases</span>
-          <h2>How Different Roles Benefit</h2>
-          <p>See how AI Consultants support every member of your practice team.</p>
-        </div>
-
-        <!-- Office Manager -->
-        <div class="split-section" style="margin-bottom: var(--space-20);">
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../images/use-case-office-manager.webp" alt="AI Consultant interface for office managers">
-              <div class="product-visual-caption">Office Manager Dashboard with AI Consultant guidance</div>
-            </div>
-          </div>
-          <div class="split-content">
-            <h3>Office Managers</h3>
-            <p>Get high-level visibility into practice performance with actionable insights to drive improvements.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Daily revenue health summaries</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Team performance tracking</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Exception alerts and resolution guidance</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Strategic recommendations for optimization</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Billing Team -->
-        <div class="split-section reverse" style="margin-bottom: var(--space-20);">
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../images/use-case-billing.png" alt="AI Consultant interface for billing teams">
-              <div class="product-visual-caption">Billing Team Interface with coding recommendations</div>
-            </div>
-          </div>
-          <div class="split-content">
-            <h3>Billing Teams</h3>
-            <p>Maximize reimbursement with intelligent coding suggestions and denial prevention.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Optimal code selection guidance</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Documentation requirements checklists</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Pre-submission claim validation</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Denial appeal support</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Front Desk -->
-        <div class="split-section" style="margin-bottom: var(--space-20);">
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../images/use-case-front-desk.webp" alt="AI Consultant interface for front desk staff">
-              <div class="product-visual-caption">Front Desk View with eligibility verification support</div>
-            </div>
-          </div>
-          <div class="split-content">
-            <h3>Front Desk Staff</h3>
-            <p>Verify eligibility confidently and communicate coverage clearly to patients.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">One-click eligibility verification</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Patient-friendly benefit explanations</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Cost estimate generation</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Insurance card validation</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Doctor -->
-        <div class="split-section reverse" style="margin-bottom: var(--space-20);">
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../images/use-case-doctor.webp" alt="AI Consultant interface for doctors">
-              <div class="product-visual-caption">Doctor Interface with treatment planning support</div>
-            </div>
-          </div>
-          <div class="split-content">
-            <h3>Doctors</h3>
-            <p>Focus on patient care while AI handles the administrative complexity of insurance and coding.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Treatment plan coverage verification</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Procedure code recommendations</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Documentation requirements guidance</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Pre-authorization status tracking</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Ops Leader -->
-        <div class="split-section">
-          <div class="split-visual">
-            <div class="product-visual">
-              <img src="../images/use-case-ops-leader.png" alt="AI Consultant interface for operations leaders">
-              <div class="product-visual-caption">Operations Dashboard with multi-location insights</div>
-            </div>
-          </div>
-          <div class="split-content">
-            <h3>Operations Leaders</h3>
-            <p>Gain enterprise-wide visibility and standardize processes across all locations.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Multi-location performance comparison</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Workflow standardization tools</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Revenue trend analysis and forecasting</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light);">Team productivity metrics</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Subscription Overview -->
-    <section class="section bg-alt" id="pricing">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Pricing</span>
-          <h2>AI Operational Intelligence Packages</h2>
-          <p>Choose the package that matches your practice's operational maturity and goals.</p>
-        </div>
-
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <div class="pricing-card-name">EDF Core</div>
-              <div class="pricing-card-subtitle">Operational Clarity Foundation</div>
-              <div class="pricing-card-price">$1,500–$1,800<span>/month</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li>Eligibility & Benefits Intelligence</li>
-              <li>Insurance & Payer Rules Intelligence</li>
-              <li>Office Operations Guidance</li>
-              <li>Reduced claim errors</li>
-              <li>Front-desk confidence & consistency</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">Ideal for single-location practices</p>
-            <a href="contact.html#demo" class="btn btn-secondary">Get Started</a>
-          </div>
-
-          <div class="pricing-card featured">
-            <div class="pricing-card-header">
-              <div class="pricing-card-name">EDF Performance</div>
-              <div class="pricing-card-subtitle">Revenue & Workflow Optimization</div>
-              <div class="pricing-card-price">$2,500–$3,000<span>/month</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li>Everything in EDF Core, plus:</li>
-              <li>RCM & AR Performance Intelligence</li>
-              <li>Case Acceptance & Treatment Planning</li>
-              <li>Clean-claim optimization</li>
-              <li>AR prioritization & follow-up guidance</li>
-              <li>Weekly performance guidance</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">Ideal for multi-provider practices</p>
-            <a href="contact.html#demo" class="btn btn-primary">Get Started</a>
-          </div>
-
-          <div class="pricing-card">
-            <div class="pricing-card-header">
-              <div class="pricing-card-name">EDF Full Intelligence</div>
-              <div class="pricing-card-subtitle">Complete Operational Control</div>
-              <div class="pricing-card-price">$4,500<span>/month</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li>Everything in EDF Performance, plus:</li>
-              <li>Office Operations & SOP Intelligence</li>
-              <li>Executive-level summaries</li>
-              <li>Standardized workflows</li>
-              <li>Staff training & knowledge retention</li>
-              <li>Annual option: $45,000 (save $9,000)</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);">Ideal for high-revenue & multi-location practices</p>
-            <a href="contact.html#sales" class="btn btn-secondary">Contact Sales</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">FAQ</span>
-          <h2>Frequently Asked Questions</h2>
-          <p>Get answers to common questions about AI Consultants.</p>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question">
-              How quickly can we get started with AI Consultants?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Most practices are fully operational with AI Consultants within 2-3 weeks. Our onboarding process includes configuration, team training, and workflow integration to ensure a smooth transition.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Do AI Consultants replace my existing staff?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                No. AI Consultants are designed to augment and support your team, not replace them. They handle routine inquiries and provide guidance, freeing your staff to focus on patient care and complex decisions.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              How is patient data protected?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Elite Dental Force maintains strict HIPAA-aligned security practices. All data is encrypted in transit and at rest, access is strictly controlled, and we undergo regular third-party security audits.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              Can AI Consultants integrate with our practice management system?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Yes. We integrate with leading practice management systems including Dentrix, Eaglesoft, Open Dental, and many others. Our team handles the integration process during onboarding.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              What kind of support is included?
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                All plans include email support. Professional plans add priority support with faster response times. Enterprise customers receive a dedicated success manager for ongoing support and strategic guidance.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Ready to Empower Your Team?</h2>
-        <p>See how AI Consultants can transform your practice's revenue operations.</p>
-        <div class="cta-band-actions">
-          <a href="contact.html#demo" class="btn btn-white btn-lg">Book a Demo</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Contact Sales</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="logo">
-            <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="platform.html">Overview</a></li>
-            <li><a href="ai-consultants.html">AI Consultants</a></li>
-            <li><a href="edifi.html">EDiFi Software</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources/blog.html">Blog</a></li>
-            <li><a href="resources/podcast.html">Podcast</a></li>
-            <li><a href="resources/webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="company.html">About Us</a></li>
-            <li><a href="company/security.html">Security</a></li>
-            <li><a href="company/faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="contact.html#sales">Sales</a></li>
-            <li><a href="contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-headline font-extrabold gradient-text leading-tight mb-8">Decision Support That Scales With Your Practice</h1>
+        <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">Role-based AI consultants that provide real-time guidance, standardize workflows, and empower every team member to make confident revenue decisions.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html#sales" class="btn-shimmer px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)] text-base font-headline">Book a Demo</a>
+          <a href="#pricing" class="px-8 py-3.5 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-container-high/50 transition-all duration-200 text-base font-headline">View Pricing</a>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../enhancements/version-switcher.js"></script>
+  <!-- What They Are -->
+  <section class="py-28 bg-surface-container-low relative overflow-hidden">
+    <div class="float-orb float-orb--green w-[350px] h-[350px] top-10 -right-20"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>What They Are<span class="overline-dash ml-2"></span></p>
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Intelligent Partners for Your Team</h2>
+        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">AI Consultants augment your team's capabilities without replacing the human element.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- What they do -->
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-[#00ffc8]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00ffc8]">check_circle</span>
+            </div>
+            <h3 class="font-headline font-bold text-xl text-white">What They Do</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-lg flex-shrink-0 mt-0.5">arrow_forward</span>Provide real-time, role-specific guidance for every team member</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-lg flex-shrink-0 mt-0.5">arrow_forward</span>Standardize decision-making across locations and shifts</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-lg flex-shrink-0 mt-0.5">arrow_forward</span>Surface actionable insights from complex insurance data</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-lg flex-shrink-0 mt-0.5">arrow_forward</span>Accelerate training and reduce time-to-competency</li>
+          </ul>
+        </div>
+        <!-- What they are NOT -->
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-red-400">block</span>
+            </div>
+            <h3 class="font-headline font-bold text-xl text-white">What They Are NOT</h3>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-red-400 text-lg flex-shrink-0 mt-0.5">close</span>Not a replacement for your experienced team members</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-red-400 text-lg flex-shrink-0 mt-0.5">close</span>Not a chatbot or generic AI assistant</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-red-400 text-lg flex-shrink-0 mt-0.5">close</span>Not an autonomous system that makes decisions without you</li>
+            <li class="flex items-start gap-3 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-red-400 text-lg flex-shrink-0 mt-0.5">close</span>Not a one-size-fits-all solution that ignores your workflows</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultant Types -->
+  <section class="py-28 relative overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[500px] h-[500px] -bottom-40 -left-40"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>Consultant Types<span class="overline-dash ml-2"></span></p>
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Specialized Intelligence for Every Role</h2>
+        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Six purpose-built AI consultants, each trained on domain-specific dental revenue knowledge.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#00d4ff]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#00d4ff] text-2xl">verified_user</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Eligibility Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Real-time eligibility verification guidance with predictive coverage analysis and patient communication support.</p>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#00ffc8]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#00ffc8] text-2xl">receipt_long</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Billing Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Intelligent coding recommendations, claim optimization, and denial prevention strategies for maximum reimbursement.</p>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#cfb7ff]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#cfb7ff] text-2xl">calendar_month</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Scheduling Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Optimize appointment scheduling for revenue impact, balancing patient needs with practice profitability.</p>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#00d4ff]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#00d4ff] text-2xl">analytics</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Analytics Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Transform raw data into actionable insights with trend analysis, benchmarking, and performance recommendations.</p>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#00ffc8]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#00ffc8] text-2xl">gavel</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Compliance Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Stay ahead of regulatory requirements with proactive compliance monitoring and documentation guidance.</p>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="w-14 h-14 rounded-2xl bg-[#cfb7ff]/10 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#cfb7ff] text-2xl">school</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl text-white mb-3">Training Consultant</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Accelerate onboarding and continuous education with personalized learning paths and skill assessments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-28 bg-surface-container-low relative overflow-hidden">
+    <div class="float-orb float-orb--purple w-[400px] h-[400px] -top-20 right-20"></div>
+    <div class="float-orb float-orb--green w-[300px] h-[300px] bottom-20 -left-20"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>Use Cases<span class="overline-dash ml-2"></span></p>
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Built for Every Role</h2>
+        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">See how AI Consultants empower different team members across your practice.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00d4ff] text-2xl">manage_accounts</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-white">Office Managers</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Real-time revenue performance dashboards</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Team productivity and workflow insights</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Automated compliance monitoring</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Staff training progress tracking</li>
+          </ul>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[#00ffc8]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00ffc8] text-2xl">payments</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-white">Billing Teams</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Intelligent coding recommendations</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Pre-submission claim validation</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Denial pattern analysis and prevention</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Fee schedule optimization alerts</li>
+          </ul>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[#cfb7ff]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#cfb7ff] text-2xl">support_agent</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-white">Front Desk</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check</span>Instant eligibility verification guidance</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check</span>Patient cost estimate generation</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check</span>Scheduling optimization recommendations</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check</span>Coverage explanation scripts</li>
+          </ul>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[#00d4ff]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00d4ff] text-2xl">stethoscope</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-white">Doctors</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Treatment plan revenue impact analysis</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Coverage-aware treatment recommendations</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Practice performance summaries</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check</span>Procedure profitability insights</li>
+          </ul>
+        </div>
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-[#00ffc8]/10 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[#00ffc8] text-2xl">domain</span>
+            </div>
+            <h3 class="font-headline font-bold text-lg text-white">Operations Leaders</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Multi-location performance comparison</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Strategic revenue forecasting</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Workflow standardization across sites</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check</span>Executive reporting and KPI tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-28 relative overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[500px] h-[500px] top-20 -right-40"></div>
+    <div class="float-orb float-orb--green w-[300px] h-[300px] -bottom-20 left-20"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>Pricing<span class="overline-dash ml-2"></span></p>
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Plans That Scale With You</h2>
+        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Choose the tier that matches your practice's needs and growth trajectory.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 items-start">
+        <!-- EDF Core -->
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">EDF Core</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-headline font-extrabold text-white">$1,500</span>
+            <span class="text-on-surface-variant text-sm">- $1,800/mo</span>
+          </div>
+          <p class="text-on-surface-variant text-xs mb-6">Best for single-location practices</p>
+          <div class="w-full h-px bg-outline-variant/20 mb-6"></div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Eligibility verification guidance</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Basic billing consultant</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Standard reporting dashboards</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Email support</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00d4ff] text-base flex-shrink-0 mt-0.5">check_circle</span>PMS integration (1 system)</li>
+          </ul>
+          <a href="contact.html#sales" class="block text-center px-6 py-3 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-container-high/50 transition-all duration-200 text-sm font-headline">Get Started</a>
+        </div>
+        <!-- EDF Performance -->
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden ring-2 ring-[#00d4ff]/40" style="box-shadow:0 4px 32px rgba(0,212,255,.15),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <div class="absolute top-0 right-6 px-4 py-1 bg-gradient-to-r from-[#00d4ff] to-[#00ffc8] text-[#071325] font-mono text-xs font-bold rounded-b-lg tracking-wider uppercase">Most Popular</div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2 mt-2">EDF Performance</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-headline font-extrabold text-white">$2,500</span>
+            <span class="text-on-surface-variant text-sm">- $3,000/mo</span>
+          </div>
+          <p class="text-on-surface-variant text-xs mb-6">Best for multi-provider practices</p>
+          <div class="w-full h-px bg-outline-variant/20 mb-6"></div>
+          <p class="text-[#00d4ff] text-xs font-medium mb-3">Everything in Core, plus:</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check_circle</span>All 6 AI Consultant types</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check_circle</span>Advanced analytics & benchmarking</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check_circle</span>Claims optimization engine</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check_circle</span>Priority phone & chat support</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#00ffc8] text-base flex-shrink-0 mt-0.5">check_circle</span>Multi-PMS integration</li>
+          </ul>
+          <a href="contact.html#sales" class="btn-shimmer block text-center px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Get Started</a>
+        </div>
+        <!-- EDF Full Intelligence -->
+        <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <div class="card-spotlight"></div>
+          <h3 class="font-headline font-bold text-xl text-white mb-2">EDF Full Intelligence</h3>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span class="text-3xl font-headline font-extrabold text-white">$4,500</span>
+            <span class="text-on-surface-variant text-sm">/mo</span>
+          </div>
+          <p class="text-on-surface-variant text-xs mb-1">Best for high-revenue practices</p>
+          <p class="text-[#00ffc8] text-xs font-mono mb-6">Annual: $45,000 (save $9,000)</p>
+          <div class="w-full h-px bg-outline-variant/20 mb-6"></div>
+          <p class="text-[#cfb7ff] text-xs font-medium mb-3">Everything in Performance, plus:</p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Custom AI model training</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Dedicated success manager</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check_circle</span>Revenue forecasting & modeling</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check_circle</span>API access & custom integrations</li>
+            <li class="flex items-start gap-2.5 text-on-surface-variant text-sm"><span class="material-symbols-outlined text-[#cfb7ff] text-base flex-shrink-0 mt-0.5">check_circle</span>White-glove onboarding & training</li>
+          </ul>
+          <a href="contact.html#sales" class="block text-center px-6 py-3 border border-[#cfb7ff]/30 text-[#cfb7ff] font-bold rounded-xl hover:bg-[#7c3aed]/10 transition-all duration-200 text-sm font-headline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-28 bg-surface-container-low relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 section-header-fade">
+        <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="overline-dash mr-2"></span>FAQ<span class="overline-dash ml-2"></span></p>
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Frequently Asked Questions</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        <div class="accordion-item rounded-2xl bg-surface-container overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <button class="accordion-trigger w-full flex justify-between items-center p-6 text-left">
+            <span class="font-headline font-bold text-white text-lg pr-4">How quickly can we get started with AI Consultants?</span>
+            <span class="material-symbols-outlined text-on-surface-variant accordion-chevron flex-shrink-0">expand_more</span>
+          </button>
+          <div class="accordion-content px-6 pb-6">
+            <p class="text-on-surface-variant text-sm leading-relaxed">Most practices are fully onboarded within 2-4 weeks. Our implementation team handles PMS integration, team training, and workflow configuration to ensure a smooth transition with minimal disruption to your operations.</p>
+          </div>
+        </div>
+        <div class="accordion-item rounded-2xl bg-surface-container overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <button class="accordion-trigger w-full flex justify-between items-center p-6 text-left">
+            <span class="font-headline font-bold text-white text-lg pr-4">Do AI Consultants replace my existing team?</span>
+            <span class="material-symbols-outlined text-on-surface-variant accordion-chevron flex-shrink-0">expand_more</span>
+          </button>
+          <div class="accordion-content px-6 pb-6">
+            <p class="text-on-surface-variant text-sm leading-relaxed">Absolutely not. AI Consultants are designed to augment your team, not replace them. They provide decision support, surface insights, and standardize workflows so your team can work more efficiently and confidently.</p>
+          </div>
+        </div>
+        <div class="accordion-item rounded-2xl bg-surface-container overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <button class="accordion-trigger w-full flex justify-between items-center p-6 text-left">
+            <span class="font-headline font-bold text-white text-lg pr-4">What PMS systems do you integrate with?</span>
+            <span class="material-symbols-outlined text-on-surface-variant accordion-chevron flex-shrink-0">expand_more</span>
+          </button>
+          <div class="accordion-content px-6 pb-6">
+            <p class="text-on-surface-variant text-sm leading-relaxed">We integrate with all major practice management systems including Dentrix, Dentrix Ascend, Open Dental, Curve Dental, and Eaglesoft. Custom integrations are available on the Full Intelligence tier.</p>
+          </div>
+        </div>
+        <div class="accordion-item rounded-2xl bg-surface-container overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <button class="accordion-trigger w-full flex justify-between items-center p-6 text-left">
+            <span class="font-headline font-bold text-white text-lg pr-4">Is my patient data secure?</span>
+            <span class="material-symbols-outlined text-on-surface-variant accordion-chevron flex-shrink-0">expand_more</span>
+          </button>
+          <div class="accordion-content px-6 pb-6">
+            <p class="text-on-surface-variant text-sm leading-relaxed">Yes. We maintain HIPAA-aligned data handling, end-to-end encryption, SOC 2 Type II compliance, and undergo regular third-party security audits. Your patient data is protected at every layer.</p>
+          </div>
+        </div>
+        <div class="accordion-item rounded-2xl bg-surface-container overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+          <button class="accordion-trigger w-full flex justify-between items-center p-6 text-left">
+            <span class="font-headline font-bold text-white text-lg pr-4">Can I switch plans as my practice grows?</span>
+            <span class="material-symbols-outlined text-on-surface-variant accordion-chevron flex-shrink-0">expand_more</span>
+          </button>
+          <div class="accordion-content px-6 pb-6">
+            <p class="text-on-surface-variant text-sm leading-relaxed">Yes, you can upgrade your plan at any time. Our team will help you transition seamlessly, ensuring all your data and configurations carry forward. Downgrades are handled at the end of your billing cycle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 relative overflow-hidden">
+    <div class="float-orb float-orb--cyan w-[500px] h-[500px] top-0 left-1/2 -translate-x-1/2"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-2xl mx-auto cta-glow p-16 rounded-3xl bg-surface-container" style="box-shadow:0 4px 32px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.03)">
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Ready to Empower Your Team?</h2>
+        <p class="text-on-surface-variant text-lg mb-10">See how AI Consultants can transform decision-making across your practice.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html#sales" class="btn-shimmer px-8 py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_30px_rgba(0,212,255,0.3)] text-base font-headline">Book a Demo</a>
+          <a href="contact.html" class="px-8 py-3.5 border border-outline-variant/30 text-on-surface font-bold rounded-xl hover:bg-surface-container-high/50 transition-all duration-200 text-base font-headline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2"><a href="../index-v3.html"><img src="../images/Grayscale Transparent.png" alt="Elite Dental Force" class="h-10 mb-4"></a><p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+<script src="../js/v3.js"></script>
 </body>
 </html>
