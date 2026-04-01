@@ -224,6 +224,12 @@ button {
   transition: opacity 0.2s ease;
 }
 
+/* Hero logo override - 4x bigger */
+.hero-logo img {
+  height: 144px;
+  width: auto;
+}
+
 .logo:hover img {
   opacity: 0.8;
 }
