@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Dashboard - Elite Dental Force</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <style>
+    :root {
+      --color-brand: #0f1d35;
+      --color-brand-light: #162644;
+      --color-surface: #12203a;
+      --color-surface-raised: rgba(255, 255, 255, 0.05);
+      --color-cyan: #00d4ff;
+      --color-cyan-dim: rgba(0, 212, 255, 0.15);
+      --color-purple: #7c3aed;
+      --color-purple-dim: rgba(124, 58, 237, 0.15);
+      --color-green: #00ffc8;
+      --color-green-dim: rgba(0, 255, 200, 0.15);
+      --color-gold: #f59e0b;
+      --color-text: #e8f0f8;
+      --color-text-secondary: #94a3b8;
+      --color-text-muted: #475569;
+      --color-white: #ffffff;
+      --border-subtle: rgba(255, 255, 255, 0.09);
+      --border-medium: rgba(255, 255, 255, 0.14);
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-brand);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+    }
+    a { color: var(--color-cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .dash-header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .dash-header h1 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-white);
+    }
+    .dash-back {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dash-container { max-width: 1200px; margin: 0 auto; padding: 28px 24px; }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-card .stat-number {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-white);
+    }
+    .stat-card .stat-label {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-top: 4px;
+    }
+    .stat-card.cyan .stat-number { color: var(--color-cyan); }
+    .stat-card.gold .stat-number { color: var(--color-gold); }
+    .stat-card.purple .stat-number { color: var(--color-purple); }
+    .stat-card.green .stat-number { color: var(--color-green); }
+
+    /* Filters */
+    .filters-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .filters-row select {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+    .filters-row select:focus { border-color: var(--color-cyan); }
+
+    /* Feedback cards */
+    .fb-list { display: flex; flex-direction: column; gap: 16px; }
+    .fb-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      transition: border-color 0.2s;
+    }
+    .fb-card:hover { border-color: var(--border-medium); }
+    .fb-card.no-screenshot { grid-template-columns: 1fr; }
+
+    .fb-thumb {
+      width: 140px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .fb-thumb:hover { opacity: 0.8; }
+
+    .fb-body { min-width: 0; }
+    .fb-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .badge-pending { background: rgba(245, 158, 11, 0.15); color: var(--color-gold); }
+    .badge-in-progress { background: var(--color-purple-dim); color: var(--color-purple); }
+    .badge-completed { background: var(--color-green-dim); color: var(--color-green); }
+    .badge-category {
+      background: var(--color-cyan-dim);
+      color: var(--color-cyan);
+    }
+
+    .fb-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+    .fb-details {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Status change & notes */
+    .fb-actions {
+      margin-top: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .fb-actions select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 13px;
+      outline: none;
+    }
+    .fb-notes {
+      flex: 1;
+      min-width: 200px;
+    }
+    .fb-notes textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 13px;
+      outline: none;
+      resize: vertical;
+      min-height: 34px;
+      transition: border-color 0.2s;
+    }
+    .fb-notes textarea:focus { border-color: var(--color-cyan); }
+    .fb-notes .notes-save {
+      margin-top: 4px;
+      padding: 4px 12px;
+      border: none;
+      border-radius: 5px;
+      background: var(--color-cyan);
+      color: var(--color-brand);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: none;
+    }
+    .fb-notes .notes-save.show { display: inline-block; }
+
+    /* Screenshot modal */
+    .ss-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .ss-modal-backdrop img {
+      max-width: 92vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--color-text-muted);
+      font-size: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .fb-card { grid-template-columns: 1fr; }
+      .fb-thumb { width: 100%; height: auto; }
+      .dash-header { padding: 16px; }
+      .dash-container { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="dash-header">
+    <h1>Feedback Dashboard</h1>
+    <a href="index.html" class="dash-back">&larr; Back to site</a>
+  </header>
+
+  <div class="dash-container">
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card cyan"><div class="stat-number" id="statTotal">-</div><div class="stat-label">Total</div></div>
+      <div class="stat-card gold"><div class="stat-number" id="statPending">-</div><div class="stat-label">Pending</div></div>
+      <div class="stat-card purple"><div class="stat-number" id="statProgress">-</div><div class="stat-label">In Progress</div></div>
+      <div class="stat-card green"><div class="stat-number" id="statCompleted">-</div><div class="stat-label">Completed</div></div>
+    </div>
+
+    <div class="filters-row">
+      <select id="filterStatus">
+        <option value="">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <select id="filterCategory">
+        <option value="">All Categories</option>
+        <option value="Design">Design</option>
+        <option value="Content">Content</option>
+        <option value="Navigation">Navigation</option>
+        <option value="Bug">Bug</option>
+        <option value="Suggestion">Suggestion</option>
+        <option value="General">General</option>
+      </select>
+    </div>
+
+    <div class="fb-list" id="fbList"></div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var SUPABASE_URL = 'https://zdejveikmcmtkdvgpbzi.supabase.co';
+      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkZWp2ZWlrbWNtdGtkdmdwYnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2ODQ1NDYsImV4cCI6MjA1MzI2MDU0Nn0.gVLMSQkjGbFjAWFHCMrFRPbhSFQe2sIP7kJmnFMy0e4';
+
+      var allItems = [];
+      var fbList = document.getElementById('fbList');
+      var filterStatus = document.getElementById('filterStatus');
+      var filterCategory = document.getElementById('filterCategory');
+
+      function headers(extra) {
+        var h = {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'Content-Type': 'application/json',
+        };
+        if (extra) Object.keys(extra).forEach(function (k) { h[k] = extra[k]; });
+        return h;
+      }
+
+      function fetchItems() {
+        fetch(SUPABASE_URL + '/rest/v1/edf_feedback?select=*&order=created_at.desc', {
+          headers: headers(),
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            allItems = data || [];
+            updateStats();
+            renderList();
+          })
+          .catch(function (err) {
+            console.error('Failed to fetch feedback:', err);
+            fbList.textContent = 'Failed to load feedback.';
+          });
+      }
+
+      function updateStats() {
+        document.getElementById('statTotal').textContent = allItems.length;
+        document.getElementById('statPending').textContent = allItems.filter(function (i) { return i.status === 'pending'; }).length;
+        document.getElementById('statProgress').textContent = allItems.filter(function (i) { return i.status === 'in-progress'; }).length;
+        document.getElementById('statCompleted').textContent = allItems.filter(function (i) { return i.status === 'completed'; }).length;
+      }
+
+      function renderList() {
+        var statusVal = filterStatus.value;
+        var catVal = filterCategory.value;
+        var filtered = allItems.filter(function (item) {
+          if (statusVal && item.status !== statusVal) return false;
+          if (catVal && item.category !== catVal) return false;
+          return true;
+        });
+
+        while (fbList.firstChild) fbList.removeChild(fbList.firstChild);
+
+        if (filtered.length === 0) {
+          var empty = document.createElement('div');
+          empty.className = 'empty-state';
+          empty.textContent = allItems.length === 0 ? 'No feedback submitted yet.' : 'No items match current filters.';
+          fbList.appendChild(empty);
+          return;
+        }
+
+        filtered.forEach(function (item) {
+          var card = document.createElement('div');
+          card.className = 'fb-card' + (item.screenshot ? '' : ' no-screenshot');
+
+          // Screenshot thumbnail
+          if (item.screenshot) {
+            var thumb = document.createElement('img');
+            thumb.className = 'fb-thumb';
+            thumb.src = item.screenshot;
+            thumb.alt = 'Screenshot';
+            thumb.addEventListener('click', function () { openScreenshotModal(item.screenshot); });
+            card.appendChild(thumb);
+          }
+
+          var body = document.createElement('div');
+          body.className = 'fb-body';
+
+          // Meta badges
+          var meta = document.createElement('div');
+          meta.className = 'fb-meta';
+
+          var statusBadge = document.createElement('span');
+          statusBadge.className = 'badge badge-' + (item.status || 'pending');
+          statusBadge.textContent = item.status || 'pending';
+          meta.appendChild(statusBadge);
+
+          if (item.category) {
+            var catBadge = document.createElement('span');
+            catBadge.className = 'badge badge-category';
+            catBadge.textContent = item.category;
+            meta.appendChild(catBadge);
+          }
+
+          body.appendChild(meta);
+
+          // Feedback text
+          var text = document.createElement('div');
+          text.className = 'fb-text';
+          text.textContent = item.feedback;
+          body.appendChild(text);
+
+          // Details
+          var details = document.createElement('div');
+          details.className = 'fb-details';
+
+          if (item.name) {
+            var nameSpan = document.createElement('span');
+            nameSpan.textContent = 'By: ' + item.name;
+            details.appendChild(nameSpan);
+          }
+
+          var dateSpan = document.createElement('span');
+          dateSpan.textContent = item.created_at ? new Date(item.created_at).toLocaleString() : '';
+          details.appendChild(dateSpan);
+
+          if (item.page) {
+            var pageSpan = document.createElement('span');
+            pageSpan.textContent = item.page;
+            details.appendChild(pageSpan);
+          }
+
+          body.appendChild(details);
+
+          // Actions row
+          var actions = document.createElement('div');
+          actions.className = 'fb-actions';
+
+          // Status selector
+          var statusSelect = document.createElement('select');
+          ['pending', 'in-progress', 'completed'].forEach(function (s) {
+            var opt = document.createElement('option');
+            opt.value = s;
+            opt.textContent = s.charAt(0).toUpperCase() + s.slice(1);
+            if (s === (item.status || 'pending')) opt.selected = true;
+            statusSelect.appendChild(opt);
+          });
+          statusSelect.addEventListener('change', function () {
+            updateField(item.id, 'status', statusSelect.value);
+          });
+          actions.appendChild(statusSelect);
+
+          // Dev notes
+          var notesWrap = document.createElement('div');
+          notesWrap.className = 'fb-notes';
+          var notesArea = document.createElement('textarea');
+          notesArea.placeholder = 'Developer notes...';
+          notesArea.value = item.dev_notes || '';
+          notesArea.rows = 1;
+          notesWrap.appendChild(notesArea);
+
+          var saveBtn = document.createElement('button');
+          saveBtn.className = 'notes-save';
+          saveBtn.textContent = 'Save';
+          notesWrap.appendChild(saveBtn);
+
+          notesArea.addEventListener('input', function () {
+            saveBtn.classList.add('show');
+          });
+          saveBtn.addEventListener('click', function () {
+            updateField(item.id, 'dev_notes', notesArea.value);
+            saveBtn.classList.remove('show');
+          });
+
+          actions.appendChild(notesWrap);
+          body.appendChild(actions);
+
+          card.appendChild(body);
+          fbList.appendChild(card);
+        });
+      }
+
+      function updateField(id, field, value) {
+        var payload = {};
+        payload[field] = value;
+        fetch(SUPABASE_URL + '/rest/v1/edf_feedback?id=eq.' + id, {
+          method: 'PATCH',
+          headers: headers({ 'Prefer': 'return=minimal' }),
+          body: JSON.stringify(payload),
+        }).then(function (res) {
+          if (!res.ok) throw new Error('Update failed');
+          // Re-fetch for accurate stats
+          fetchItems();
+        }).catch(function (err) {
+          console.error('Update failed:', err);
+        });
+      }
+
+      function openScreenshotModal(src) {
+        var backdrop = document.createElement('div');
+        backdrop.className = 'ss-modal-backdrop';
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Screenshot full size';
+        backdrop.appendChild(img);
+        backdrop.addEventListener('click', function () { backdrop.remove(); });
+        document.body.appendChild(backdrop);
+      }
+
+      filterStatus.addEventListener('change', renderList);
+      filterCategory.addEventListener('change', renderList);
+
+      fetchItems();
+    })();
+  </script>
+</body>
+</html>
