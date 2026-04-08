@@ -1,0 +1,23 @@
+{
+  "name": "edf-product-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elite Dental Force product video - Remotion",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render EdfProductVideo out/edf-product-video.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.409",
+    "@remotion/google-fonts": "^4.0.409",
+    "@remotion/transitions": "^4.0.409",
+    "@remotion/shapes": "^4.0.409",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.409"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "5.9.3"
+  }
+}
