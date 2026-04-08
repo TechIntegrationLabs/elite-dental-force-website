@@ -1961,3 +1961,126 @@ body:has(.hero) .header .logo img {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+
+/* ══════════════════════════════════════
+   AI-GENERATED IMAGE TREATMENTS
+   ══════════════════════════════════════ */
+
+/* Bento card with hero image */
+.bento-card.has-image .bento-card-inner {
+  padding-top: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-image {
+  position: relative;
+  width: calc(100% + var(--space-2xl) * 2);
+  height: 220px;
+  margin: calc(var(--space-2xl) * -1) calc(var(--space-2xl) * -1) var(--space-xl);
+  overflow: hidden;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.bento-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.bento-card.has-image:hover .bento-image img {
+  transform: scale(1.05);
+}
+
+.bento-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(15, 29, 53, 0.1) 0%,
+    rgba(15, 29, 53, 0.4) 60%,
+    rgba(15, 29, 53, 0.95) 100%);
+  pointer-events: none;
+}
+
+.bento-card.has-image .bento-icon {
+  position: relative;
+  z-index: 2;
+  margin-top: calc(var(--space-md) * -1);
+  background: rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Audience card with hero image */
+.audience-card.has-image .audience-card-inner {
+  padding-top: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.audience-image {
+  position: relative;
+  width: calc(100% + var(--space-2xl) * 2);
+  height: 220px;
+  margin: calc(var(--space-2xl) * -1) calc(var(--space-2xl) * -1) var(--space-xl);
+  overflow: hidden;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.audience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out-expo);
+}
+
+.audience-card.has-image:hover .audience-image img {
+  transform: scale(1.06);
+}
+
+.audience-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(15, 29, 53, 0.1) 0%,
+    rgba(15, 29, 53, 0.5) 60%,
+    rgba(15, 29, 53, 0.95) 100%);
+  pointer-events: none;
+}
+
+.audience-card.has-image .audience-icon {
+  position: relative;
+  z-index: 2;
+  margin-top: calc(var(--space-md) * -1);
+  background: rgba(0, 212, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Resource card image polish */
+.resource-img-wrap img {
+  transition: transform 0.6s var(--ease-out-expo);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resource-card:hover .resource-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Hero ambient background overlay (subtle) */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/ai/hero-ambient-bg.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
