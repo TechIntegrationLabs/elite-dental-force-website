@@ -1,0 +1,118 @@
+# Elite Dental Force — Google Stitch Redesign Guide
+> **Site:** EliteDentalForce.com
+> **Tool:** [Google Stitch](https://stitch.withgoogle.com/) (free, sign in with Google)
+> **Goal:** Clean, professional, AI-powered dental revenue intelligence platform
+---
+## How Stitch Works (Quick Summary)
+- Go to **stitch.withgoogle.com**, sign in with Google (free, no credit card)
+- Type a prompt describing what you want → get polished UI designs
+- Upload images/screenshots as references
+- Iterate with follow-up prompts (ONE change at a time)
+- Export as HTML/CSS code, paste to Figma, or export DESIGN.md
+- **350 generations/month** on Standard, **50/month** on Experimental (higher quality)
+- Use **Experimental mode** for the best output quality
+---
+## Strategy: 3-Phase Approach
+### Phase 1: Extract Current Site DNA
+1. Open Stitch
+2. Paste the URL `https://elitedentalforce.com` — Stitch will extract the current design system
+3. This gives you a starting point with EDF's existing colors, layout patterns, etc.
+### Phase 2: Generate New Design (use the mega-prompt below)
+1. Switch to **Experimental mode** (Gemini 2.5 Pro) for maximum quality
+2. Paste the main prompt below
+3. Let it generate the homepage first
+4. Then use follow-up prompts for each additional page
+### Phase 3: Iterate & Export
+1. Refine ONE element at a time (don't combine changes — Stitch resets layouts)
+2. Once satisfied, export as HTML/CSS or DESIGN.md
+3. Bring the code/design into the actual repo for implementation
+---
+## MAIN PROMPT — Homepage
+```
+Design a premium, modern homepage for "Elite Dental Force" — the infrastructure leader in dental revenue intelligence. This is an enterprise B2B SaaS platform that uses AI to help dental practices optimize revenue, eliminate claim denials, and automate eligibility verification.
+TARGET AUDIENCE: Dental practice owners, office managers, DSO executives. They are busy, skeptical of tech promises, and need to see credibility fast.
+BRAND VIBE: Premium healthcare technology. Think Stripe meets healthcare — clean, confident, trustworthy. Dark theme with deep navy (#0a1628) as primary background, bright cyan (#00d4ff) as accent, teal/mint (#00ffc8) as secondary accent, and subtle purple (#7c3aed) for highlights. White/light text on dark backgrounds.
+TYPOGRAPHY: Clean sans-serif (Inter or similar), generous spacing, enterprise-grade readability.
+LAYOUT — Full scrolling homepage with these sections:
+1. HERO SECTION
+   - Bold headline: "Transform Uncertainty Into Revenue Confidence"
+   - Subtext: "AI-powered dental revenue intelligence that eliminates guesswork, prevents claim denials, and scales with your practice."
+   - Two CTAs: "Book a Demo" (primary, cyan) and "See the Platform" (secondary, outlined)
+   - Right side: A polished product dashboard mockup showing a dental practice analytics view with charts, metrics cards, and a clean data table. Should look like real software, not a generic placeholder.
+   - Subtle animated gradient or particle effect in the background (suggest with a soft glow)
+2. SOCIAL PROOF BAR
+   - Key stats in a horizontal row: "500+ Practices Served" • "35% Fewer Denials" • "50% Faster Eligibility" • "99.9% Uptime"
+   - Clean, minimal, with subtle icons
+3. AI CONSULTANTS SHOWCASE
+   - Header: "Six AI Consultants. One Unified Intelligence."
+   - Six cards in a 3x2 grid, each representing an AI consultant type:
+     • Eligibility Consultant — instant verification
+     • Billing Consultant — clean-claim automation
+     • Scheduling Consultant — optimized patient flow
+     • Analytics Consultant — revenue insights
+     • Compliance Consultant — regulatory adherence
+     • Training Consultant — team development
+   - Each card: icon, title, one-line description, subtle hover glow effect
+   - The cards should feel like AI agents — futuristic but professional
+4. PLATFORM PREVIEW
+   - Header: "EDiFi: The Engine Behind Every Decision"
+   - Show 3-4 product screenshot panels with brief descriptions:
+     • Real-time eligibility checking
+     • Claims tracking dashboard
+     • Revenue analytics with charts
+     • Workflow automation view
+   - Tabbed or carousel-style layout
+5. INTEGRATION STRIP
+   - "Connects to the tools you already use"
+   - Logo row: Dentrix, Dentrix Ascend, Open Dental, Curve Dental, Eaglesoft
+   - Clean, grayscale logos with hover color effect
+6. TESTIMONIAL / TRUST SECTION
+   - One or two featured quotes from dental practice owners
+   - Photo circles, name, title, practice name
+   - Keep it minimal and credible
+7. PRICING PREVIEW
+   - Header: "Plans That Scale With Your Practice"
+   - Three tier cards:
+     • EDF Core ($1,500-$1,800/mo) — single location essentials
+     • EDF Performance ($2,500-$3,000/mo) — multi-location growth
+     • EDF Full Intelligence ($4,500/mo) — complete operational control
+   - Feature bullets under each, "Book a Demo" CTA on each card
+   - Highlight the middle tier as "Most Popular"
+8. CTA SECTION
+   - "Ready to Transform Your Practice Revenue?"
+   - Large "Book a Demo" button
+   - Secondary: "Talk to Our Team"
+9. FOOTER
+   - Logo, navigation links, contact info, social media icons
+   - "HIPAA Compliant • SOC 2 Type II • 256-bit AES Encryption" trust badges
+   - Copyright: "© 2026 Elite Dental Force. All rights reserved."
+DESIGN PRINCIPLES:
+- Every element should feel premium and trustworthy — this is healthcare
+- Generous whitespace, no clutter
+- Dark backgrounds with glowing cyan accents create an "AI-powered" feel
+- Data visualizations and dashboards should look real and impressive
+- Mobile-responsive layout
+- The overall impression should be: "This company is serious, technical, and ahead of the curve"
+```
+---
+## FOLLOW-UP PROMPTS (One at a time, after homepage is generated)
+### Refine the Hero
+```
+Make the hero section more dramatic — add a subtle radial glow behind the dashboard mockup in cyan/teal. Make the headline larger and bolder. The dashboard should show specific dental metrics: "Today's Revenue: $12,847", "Claims Pending: 23", "Eligibility Checks: 156", "Denial Rate: 2.3%"
+```
+### Generate AI Consultants Page
+```
+Design the "AI Consultants" detail page. Same brand style. Hero with headline "Meet Your AI-Powered Team." Below, six detailed sections — one per consultant type (Eligibility, Billing, Scheduling, Analytics, Compliance, Training). Each section has: icon, name, description paragraph, 3-4 bullet point capabilities, and a product screenshot showing that consultant's interface. Include role-based use cases section at bottom: "Built for Office Managers", "Built for Billing Teams", "Built for Doctors". End with pricing tiers and CTA.
+```
+### Generate Platform/EDiFi Page
+```
+Design the "EDiFi Platform" page. Same dark premium brand style. Hero: "The Intelligence Engine Behind Every Decision." Feature a large interactive-looking dashboard screenshot. Below, six module cards: Eligibility Intelligence, Claims Manager, Revenue Analytics, Payment Processing, Workflow Automation, Performance Monitoring. Each card shows a mini product screenshot and key capability bullets. Include a "How It Works" 4-step flow diagram. Integration logos section. Security badges section (HIPAA, SOC 2, encryption). End with CTA.
+```
+### Generate About/Company Page
+```
+Design the "About Us" page. Same brand style. Hero: "From Chaos to Clarity." Mission statement section. Leadership team: Alvin T. Uta'i (Founder & CEO), Alex Furer (CTO), Seti Matua (COO) — each with photo placeholder circle, name, title, and brief bio. Advisory board section with 5 advisors. Company stats (500+ practices, 15+ events, 50+ podcast episodes, 20+ partners). Partner logo grid. Company values section. End with "Join Our Mission" CTA.
+```
+### Generate Contact/Demo Page
+```
+Design a "Book a Demo" page. Same brand style. Split layout: left side has headline "See Elite Dental Force in Action", description of what happens in the demo, and trust indicators. Right side has a clean form: Name, Email, Phone, Practice Name, Practice Size (dropdown: 1 location, 2-5, 6-10, 10+), Role (dropdown: Owner, Office Manager, Billing Manager, Other), Message (optional). Submit button in cyan. Below: "Or reach us directly" with email, phone, and office location.
+```

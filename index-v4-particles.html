@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Dental Force - The infrastructure leader in dental revenue intelligence. AI-powered consultants and EDiFi software platform for eligibility verification and revenue optimization.">
+  <meta name="keywords" content="dental revenue intelligence, dental billing, eligibility verification, dental software, AI consultants, EDiFi">
+  <meta name="author" content="Elite Dental Force Inc.">
+  <meta property="og:title" content="Elite Dental Force - Dental Revenue Intelligence Platform">
+  <meta property="og:description" content="Transform your dental practice revenue with AI-powered consultants and the EDiFi software platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.elitedentalforce.com">
+  <title>Elite Dental Force - Dental Revenue Intelligence Platform</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Elite Dental Force","alternateName":"EDF","url":"https://www.elitedentalforce.com","logo":"https://www.elitedentalforce.com/images/logo.png","description":"The infrastructure leader in dental revenue intelligence.","sameAs":["https://www.linkedin.com/company/elitedentalforce","https://twitter.com/elitedentalforce"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","areaServed":"US","availableLanguage":"English"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"EDiFi","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Contact for pricing"},"description":"Dental revenue intelligence platform for eligibility verification, claims optimization, and practice analytics.","provider":{"@type":"Organization","name":"Elite Dental Force"}}</script>
+
+  <style>
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:1}
+    body>*{position:relative;z-index:2}
+    html{scroll-behavior:smooth}
+    @media(min-width:768px){html{scroll-snap-type:y proximity}main>section{scroll-snap-align:start}}
+    .logo-white{filter:brightness(0) invert(1);transition:filter .3s,opacity .3s,transform .3s}.logo-white:hover{filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(0,212,255,.4));transform:scale(1.03)}
+    .glass-card{background:rgba(20,32,50,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+    #scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00d4ff,#00ffc8,#7c3aed);box-shadow:0 0 12px rgba(0,212,255,0.4);z-index:100;width:0%;transition:width .05s linear;border-radius:0 2px 2px 0}
+    .typing-cursor{display:inline-block;width:3px;height:.85em;background:#00d4ff;margin-left:4px;vertical-align:baseline;animation:cblink .8s step-end infinite;box-shadow:0 0 8px rgba(0,212,255,0.6);border-radius:1px}
+    @keyframes cblink{0%,100%{opacity:1}50%{opacity:0}}
+    .gradient-text{background:linear-gradient(135deg,#fff 0%,#e8f4f8 40%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .card-spotlight{position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none;border-radius:inherit;z-index:0}
+    .tilt-card:hover .card-spotlight{opacity:1}
+    .tilt-card>*:not(.card-spotlight){position:relative;z-index:1}
+    .reveal-item{opacity:0;transform:translateY(40px)}
+    .reveal-item.visible{animation:wavein .8s cubic-bezier(.16,1,.3,1) forwards}
+    @keyframes wavein{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .section-header-fade{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .section-header-fade.visible{opacity:1;transform:translateY(0)}
+    .btn-shimmer{position:relative;overflow:hidden}
+    .btn-shimmer::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:left .6s;pointer-events:none}
+    .btn-shimmer:hover::after{left:100%}
+    .btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.25);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+    @keyframes ripple{to{transform:scale(4);opacity:0}}
+    .float-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.06;pointer-events:none;z-index:0;animation:orbf 20s ease-in-out infinite alternate}
+    .float-orb--cyan{background:radial-gradient(circle,#00d4ff,transparent 70%)}
+    .float-orb--purple{background:radial-gradient(circle,#7c3aed,transparent 70%);animation-delay:-7s;animation-duration:25s}
+    .float-orb--green{background:radial-gradient(circle,#00ffc8,transparent 70%);animation-delay:-13s;animation-duration:22s}
+    @keyframes orbf{0%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.1)}66%{transform:translate(-20px,15px) scale(.95)}100%{transform:translate(10px,-10px) scale(1.05)}}
+    .nav-underline{position:relative}
+    .nav-underline::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:2px;background:linear-gradient(90deg,#00d4ff,#00ffc8);transition:width .3s cubic-bezier(.16,1,.3,1),left .3s cubic-bezier(.16,1,.3,1);border-radius:2px}
+    .nav-underline:hover::after{width:100%;left:0}
+    .text-shimmer{background:linear-gradient(90deg,#fff 0%,#fff 40%,#00d4ff 50%,#fff 60%,#fff 100%);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:tshim 4s ease-in-out infinite}
+    @keyframes tshim{0%{background-position:100% 0}100%{background-position:-100% 0}}
+    .badge-glow{animation:bglow 3s ease-in-out infinite alternate}
+    @keyframes bglow{0%{box-shadow:0 0 0 rgba(0,212,255,0)}100%{box-shadow:0 0 20px rgba(0,212,255,.15)}}
+    .cta-glow::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.05));animation:cpulse 4s ease-in-out infinite alternate;pointer-events:none}
+    @keyframes cpulse{0%{opacity:.5}100%{opacity:1}}
+    .scroll-hint-arrow{width:18px;height:18px;border-right:2px solid #64748b;border-bottom:2px solid #64748b;transform:rotate(45deg);animation:sbounce 2s ease-in-out infinite}
+    @keyframes sbounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.5}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}
+    .trust-scroll{display:flex;gap:3rem;animation:tslide 25s linear infinite;width:max-content}
+    @keyframes tslide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .nav-dropdown{position:absolute;top:100%;left:0;min-width:200px;padding:.5rem 0;background:rgba(20,32,50,0.95);backdrop-filter:blur(20px);border-radius:.75rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s cubic-bezier(.16,1,.3,1);z-index:50}
+    .has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(7,19,37,0.95);backdrop-filter:blur(20px);z-index:90;display:none;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+    .mobile-overlay.open{display:flex}
+    .claim-entering{opacity:0;transform:translateY(-10px);height:0;padding-top:0;padding-bottom:0}
+    .status-pending{color:#f59e0b;background:rgba(245,158,11,.1)}
+    .status-checking{color:#00d4ff;background:rgba(0,212,255,.1)}
+    .status-approved{color:#00ffc8;background:rgba(0,255,200,.1)}
+    .status-flagged{color:#f87171;background:rgba(248,113,113,.1)}
+    .feed-dot{animation:dpulse 2s ease-in-out infinite}
+    @keyframes dpulse{0%,100%{opacity:1}50%{opacity:.4}}
+    .elig-spinner{width:16px;height:16px;border:2px solid rgba(0,212,255,.2);border-top-color:#00d4ff;border-radius:50%;animation:espin .6s linear infinite;flex-shrink:0}
+    @keyframes espin{to{transform:rotate(360deg)}}
+    .elig-check{color:#00ffc8;font-size:14px;font-weight:bold;flex-shrink:0;width:16px;text-align:center}
+    input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.06);outline:none;cursor:pointer}
+    input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#00d4ff;cursor:pointer;box-shadow:0 0 12px rgba(0,212,255,.4);transition:transform .2s,box-shadow .2s}
+    input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.2);box-shadow:0 0 20px rgba(0,212,255,.6)}
+    input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#00d4ff;border:none;box-shadow:0 0 12px rgba(0,212,255,.4)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.trust-scroll{animation:none}.reveal-item{opacity:1;transform:none}.section-header-fade{opacity:1;transform:none}}
+    /* ── Particle: transparent section backgrounds so particles show through ── */
+    main > section { background: transparent !important; }
+  </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
+
+<!-- DMAIC Particle Background -->
+<canvas id="edf-particles" style="position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.75"></canvas>
+<script src="js/particles.js"></script>
+
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="/" class="flex items-center gap-3"><img src="images/Transparent Logo.png" alt="Elite Dental Force" class="h-32 logo-white"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="pages/platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="pages/platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="pages/ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="pages/edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="pages/services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="pages/services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="pages/partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="pages/resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="pages/resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="pages/resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="pages/resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="pages/resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
+        </div>
+      </div>
+      <div class="relative has-dropdown">
+        <a href="pages/company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="pages/company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="pages/company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="pages/company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="pages/investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="pages/contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="pages/contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="pages/platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="pages/services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="pages/resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="pages/company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="pages/contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
+
+<main class="pt-20">
+
+<!-- HERO — particles spell "ELITE DENTAL FORCE" on right -->
+<section class="relative overflow-hidden pt-24 pb-32 ">
+  <div class="float-orb float-orb--cyan" style="width:400px;height:400px;top:10%;left:-10%"></div>
+  <div class="float-orb float-orb--purple" style="width:300px;height:300px;top:60%;right:-5%"></div>
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+    <div>
+      <div class="badge-glow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-6 font-mono">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        Dental Revenue Intelligence
+      </div>
+      <h1 id="hero-heading" class="text-5xl md:text-6xl lg:text-7xl font-headline font-extrabold text-white leading-[1.06] tracking-tighter mb-8">Transform Uncertainty Into Revenue Confidence</h1>
+      <p class="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-xl">Elite Dental Force combines AI-powered consultants with the EDiFi software platform to eliminate eligibility guesswork and optimize your dental practice revenue.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="pages/contact.html#demo" class="btn-shimmer magnetic-btn px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all flex items-center gap-2 font-headline">Book a Demo <span class="material-symbols-outlined">arrow_forward</span></a>
+        <a href="pages/platform.html" class="px-8 py-4 bg-surface-container-high border border-outline-variant/15 text-white font-bold rounded-xl hover:bg-surface-container-highest transition-all font-headline">Learn More</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -inset-4 bg-primary-container/10 blur-[100px] rounded-full"></div>
+      <div class="relative glass-card rounded-2xl border border-outline-variant/15 p-4 shadow-2xl">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQCxC5s9s8laLNQXbEQuFK0Fd0oiFBOvUVF4H2m6lmpka_-xBBwKxrLBHr3lt5-l1MJjmeI-46mHbFjgoG7Mb36ta-01BKZHqex_Xvh0-yFQ1v206Hku2wTPuv8eeW1knYtfkWi7pXJxXHBbROh4ZoCedszoeiSY46YHPTr6t6NkBJRywwsAldHE-URrD3agtJAZt8k-GkhTYE-M4E4YV95I_JHJjawmiLq2RQtCh4p7Ual0oJNDhG89mPRPzgkGvXTcUknt8dz_xL" alt="EDiFi Platform Dashboard showing real-time eligibility verification and revenue analytics" class="rounded-xl shadow-lg border border-outline-variant/5">
+        <div class="absolute -top-6 -left-6 bg-surface-container-high p-4 rounded-xl border border-outline-variant/20 shadow-xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center text-secondary-container"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">payments</span></div>
+          <div><p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Revenue Recovery</p><p class="text-xl font-headline font-bold text-white">+$42,400</p></div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-surface-container-high p-4 rounded-xl border border-outline-variant/20 shadow-xl flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">verified</span></div>
+          <div><p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">First-Pass Acceptance</p><p class="text-xl font-headline font-bold text-white">90%</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="scroll-hint" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-500 text-xs font-mono tracking-widest z-10"><div class="scroll-hint-arrow"></div><span>scroll</span></div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="py-10 bg-surface-container-lowest/50 border-y border-outline-variant/5">
+  <div class="max-w-7xl mx-auto px-6"><p class="text-center text-xs font-bold tracking-[.15em] text-slate-500 uppercase mb-6 font-mono">Integrates With Leading Dental Practice Management Systems</p></div>
+  <div class="overflow-hidden">
+    <div class="trust-scroll">
+      <img src="images/logos/dentrix.png" alt="Dentrix" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/dentrix-ascend.png" alt="Dentrix Ascend" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/open-dental.png" alt="Open Dental Software" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/curve-dental.webp" alt="Curve Dental" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/eaglesoft.png" alt="Eaglesoft" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/dentrix.png" alt="Dentrix" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/dentrix-ascend.png" alt="Dentrix Ascend" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/open-dental.png" alt="Open Dental Software" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/curve-dental.webp" alt="Curve Dental" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+      <img src="images/logos/eaglesoft.png" alt="Eaglesoft" class="h-10 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+    </div>
+  </div>
+</section>
+
+<!-- TWO-PATH SPLIT — particles spell "AI + EDiFi" on left -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="float-orb float-orb--green" style="width:250px;height:250px;top:20%;right:5%"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>Our Platform<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Two Layers of Revenue Intelligence</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">A comprehensive approach combining human-guided AI expertise with powerful software infrastructure.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,212,255,.05)] flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,212,255,.06)]"><span class="material-symbols-outlined text-3xl">person</span></div>
+        <h3 class="text-2xl font-headline font-bold text-white mb-4">AI Consultants</h3>
+        <p class="text-slate-400 leading-relaxed mb-6">Decision support intelligence that standardizes workflows across your entire organization. Our AI consultants work alongside your team to provide real-time guidance on eligibility, coding, and revenue optimization.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00d4ff] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,212,255,.3))">check_circle</span>Role-based guidance for every team member</li>
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00d4ff] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,212,255,.3))">check_circle</span>Real-time decision support</li>
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00d4ff] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,212,255,.3))">check_circle</span>Workflow standardization at scale</li>
+        </ul>
+        <a href="pages/ai-consultants.html" class="inline-flex items-center gap-2 px-6 py-3 border border-outline-variant/15 text-[#00d4ff] font-bold rounded-xl hover:bg-surface-container-highest transition-all text-sm font-headline">Explore AI Consultants <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+      <div class="tilt-card group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden reveal-item" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)">
+        <div class="card-spotlight"></div>
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,253,198,.15)] to-[rgba(0,253,198,.05)] flex items-center justify-center text-secondary-container mb-6 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,253,198,.06)]"><span class="material-symbols-outlined text-3xl">monitor</span></div>
+        <h3 class="text-2xl font-headline font-bold text-white mb-4">EDiFi Software Platform</h3>
+        <p class="text-slate-400 leading-relaxed mb-6">Revenue infrastructure that powers intelligent eligibility verification, claims optimization, and comprehensive reporting. EDiFi is the foundation that drives measurable financial outcomes.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00ffc8] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,255,200,.3))">check_circle</span>Eligibility Intelligence MVP</li>
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00ffc8] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,255,200,.3))">check_circle</span>Real-time analytics dashboard</li>
+          <li class="flex items-center gap-3 text-sm text-slate-300"><span class="material-symbols-outlined text-[#00ffc8] text-lg" style="filter:drop-shadow(0 0 4px rgba(0,255,200,.3))">check_circle</span>Seamless PMS integrations</li>
+        </ul>
+        <a href="pages/edifi.html" class="inline-flex items-center gap-2 px-6 py-3 border border-outline-variant/15 text-[#00ffc8] font-bold rounded-xl hover:bg-surface-container-highest transition-all text-sm font-headline">Explore EDiFi Platform <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES — particles spell "97%" on right -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="float-orb float-orb--cyan" style="width:300px;height:300px;top:50%;left:-8%"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>Proven Results<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Outcomes That Drive Your Bottom Line</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Practices using Elite Dental Force see measurable improvements across key revenue metrics.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div class="tilt-card reveal-item text-center p-8 rounded-2xl bg-surface-container relative overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><p class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="35">35</p><p class="text-sm text-slate-400">% Reduction in Claim Denials</p></div>
+      <div class="tilt-card reveal-item text-center p-8 rounded-2xl bg-surface-container relative overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><p class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="50">50</p><p class="text-sm text-slate-400">% Faster Eligibility Verification</p></div>
+      <div class="tilt-card reveal-item text-center p-8 rounded-2xl bg-surface-container relative overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><p class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="25">25</p><p class="text-sm text-slate-400">% Increase in Collections</p></div>
+      <div class="tilt-card reveal-item text-center p-8 rounded-2xl bg-surface-container relative overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><p class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="90">90</p><p class="text-sm text-slate-400">% First-Pass Claim Acceptance</p></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h3 class="text-3xl font-headline font-extrabold text-white mb-6">See the Platform in Action</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-8">The EDiFi dashboard provides real-time visibility into your practice's revenue health, from eligibility status to claim tracking and financial analytics.</p>
+        <a href="pages/contact.html#demo" class="btn-shimmer magnetic-btn inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all font-headline">Request a Live Demo <span class="material-symbols-outlined">arrow_forward</span></a>
+      </div>
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary-container/15 blur-3xl rounded-full"></div>
+        <div class="relative rounded-2xl overflow-hidden border border-outline-variant/15 shadow-2xl shadow-primary-container/10">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKtkP5R_DUdIPnAqPmcTJZ3_NFldn1sVm9FNz1VObs4Ycc4DZPiH2NtIJXOaeE2NzKqCngyW0aJJmnpijbPpFre4LY4jq8PH4vkai78uCygq-dEW8GRxJb86UWCDTsNBdGy6YnrT0qbESGTOixQkXuv74FNQQNwAJcs8DSmmr7ISAL0MY-WCEiXSUNMbS8mnhgQE33s4aG1uOk59kX0RZz8haZqKc_EagR61ju7Qt5pf42dL4WI8YUd2IXTmgaqHAQ1OOx6q9a8xL7" alt="EDiFi Analytics Dashboard showing revenue metrics and trends" class="w-full">
+        </div>
+        <p class="text-center text-xs text-slate-500 mt-4 font-mono">EDiFi Revenue Analytics — Real-time financial performance tracking</p>
+      </div>
+    </div>
+    <!-- Live Claim Feed -->
+    <div class="mt-16 rounded-2xl bg-surface-container/50 border border-outline-variant/10 overflow-hidden max-w-2xl mx-auto">
+      <div class="flex items-center gap-2 px-5 py-3 border-b border-outline-variant/5 text-xs font-bold text-slate-400 uppercase tracking-widest font-mono"><span class="feed-dot w-2 h-2 rounded-full bg-[#00ffc8] shadow-[0_0_8px_rgba(0,255,200,.5)]"></span>Live Processing</div>
+      <div id="claim-feed-body" class="max-h-[260px] overflow-hidden"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS — particles spell "DMAIC" on left -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>How It Works<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">From Discovery to Optimization</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">A streamlined implementation process designed for minimal disruption and maximum impact.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="reveal-item p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-l-2 border-[#00d4ff]">
+        <div class="w-10 h-10 rounded-lg bg-[#00d4ff]/10 flex items-center justify-center text-[#00d4ff] mb-4 font-headline font-extrabold text-lg">1</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-3">Discover</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">We analyze your current workflows, identify revenue leakage points, and map your practice needs.</p>
+      </div>
+      <div class="reveal-item p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-l-2 border-[#00ffc8]">
+        <div class="w-10 h-10 rounded-lg bg-[#00ffc8]/10 flex items-center justify-center text-[#00ffc8] mb-4 font-headline font-extrabold text-lg">2</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-3">Configure</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">Customize the EDiFi platform and AI consultants to match your practice's specific requirements.</p>
+      </div>
+      <div class="reveal-item p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-l-2 border-[#cfb7ff]">
+        <div class="w-10 h-10 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center text-[#cfb7ff] mb-4 font-headline font-extrabold text-lg">3</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-3">Deploy</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">Launch with comprehensive training for your team and seamless integration with your existing systems.</p>
+      </div>
+      <div class="reveal-item p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 border-l-2 border-primary">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 font-headline font-extrabold text-lg">4</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-3">Optimize</h4>
+        <p class="text-slate-400 text-sm leading-relaxed">Continuous improvement through analytics insights, performance reviews, and platform updates.</p>
+      </div>
+    </div>
+    <!-- Eligibility Demo -->
+    <div class="mt-16 rounded-2xl bg-surface-container/50 border border-outline-variant/10 p-8 max-w-xl mx-auto">
+      <div class="text-center mb-6"><h4 class="text-lg font-headline font-bold text-white mb-1">Try It: Eligibility Check</h4><p class="text-xs text-slate-500">See how fast EDiFi verifies coverage</p></div>
+      <div class="flex flex-wrap gap-3">
+        <div class="flex-1 min-w-[140px]"><select id="elig-insurer" class="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-outline-variant/15 text-on-surface text-sm focus:outline-none focus:border-[#00d4ff]/40"><option value="" disabled selected>Select Insurance</option><option>Delta Dental</option><option>MetLife</option><option>Cigna</option><option>Aetna</option><option>Guardian</option></select></div>
+        <div class="flex-1 min-w-[140px]"><select id="elig-procedure" class="w-full px-4 py-3 rounded-xl bg-surface-container-low border border-outline-variant/15 text-on-surface text-sm focus:outline-none focus:border-[#00d4ff]/40"><option value="" disabled selected>Select Procedure</option><option>D0120 — Periodic Eval</option><option>D2740 — Crown Porcelain</option><option>D4341 — Scaling/Root</option><option>D1110 — Prophylaxis</option></select></div>
+        <div class="flex-1 min-w-[140px]"><button onclick="runEligCheck()" class="btn-shimmer w-full px-4 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl text-sm hover:shadow-[0_0_20px_rgba(0,212,255,.3)] transition-all">Verify Eligibility</button></div>
+      </div>
+      <div id="elig-result" class="mt-5 hidden"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE — particles spell "ZERO DENIALS" on right -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="float-orb float-orb--purple" style="width:280px;height:280px;top:30%;right:-5%"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>Who We Serve<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Solutions for Every Practice Size</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Whether you're a single-location practice or a multi-state DSO, Elite Dental Force scales with your needs.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,212,255,.15)] to-[rgba(0,212,255,.05)] flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">home</span></div><h3 class="text-xl font-headline font-bold text-white mb-3">Private Practices</h3><p class="text-slate-400 leading-relaxed">Maximize revenue without adding administrative burden. Our AI consultants provide expert-level guidance accessible to practices of any size.</p></div>
+      <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(0,253,198,.15)] to-[rgba(0,253,198,.05)] flex items-center justify-center text-secondary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">groups</span></div><h3 class="text-xl font-headline font-bold text-white mb-3">Multi-Location Groups</h3><p class="text-slate-400 leading-relaxed">Standardize workflows across all locations while maintaining visibility into performance. Centralized reporting with location-level insights.</p></div>
+      <div class="tilt-card reveal-item group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden" style="box-shadow:0 4px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.03)"><div class="card-spotlight"></div><div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[rgba(207,183,255,.15)] to-[rgba(207,183,255,.05)] flex items-center justify-center text-tertiary-container mb-6 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-3xl">corporate_fare</span></div><h3 class="text-xl font-headline font-bold text-white mb-3">DSOs & Enterprises</h3><p class="text-slate-400 leading-relaxed">Enterprise-grade infrastructure for dental support organizations. Portfolio-wide analytics, compliance controls, and scalable deployment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR — particles spell "$171K+" on right -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>ROI Calculator<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">See Your Revenue Impact</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Estimate how much Elite Dental Force can save your practice annually.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+      <div class="space-y-8">
+        <div><div class="flex justify-between mb-3"><label class="text-sm text-slate-400">Number of Providers</label><span id="roi-val-providers" class="font-mono text-sm font-semibold text-[#00d4ff]">5</span></div><input type="range" id="roi-providers" min="1" max="50" value="5" oninput="updateROI()"></div>
+        <div><div class="flex justify-between mb-3"><label class="text-sm text-slate-400">Monthly Claims</label><span id="roi-val-claims" class="font-mono text-sm font-semibold text-[#00d4ff]">800</span></div><input type="range" id="roi-claims" min="100" max="10000" value="800" step="50" oninput="updateROI()"></div>
+        <div><div class="flex justify-between mb-3"><label class="text-sm text-slate-400">Current Denial Rate</label><span id="roi-val-denial" class="font-mono text-sm font-semibold text-[#00d4ff]">18%</span></div><input type="range" id="roi-denial" min="5" max="40" value="18" oninput="updateROI()"></div>
+      </div>
+      <div class="space-y-5">
+        <div class="text-center p-6 rounded-2xl bg-surface-container/60 border border-outline-variant/10"><p id="roi-result-saved" class="text-3xl font-headline font-extrabold text-[#00ffc8] tracking-tight transition-all duration-300">50/mo</p><p class="text-xs text-slate-500 mt-2">Claims Saved from Denial</p></div>
+        <div class="text-center p-6 rounded-2xl bg-surface-container/60 border border-outline-variant/10"><p id="roi-result-revenue" class="text-3xl font-headline font-extrabold text-[#00ffc8] tracking-tight transition-all duration-300">$171,000</p><p class="text-xs text-slate-500 mt-2">Additional Annual Revenue</p></div>
+        <div class="text-center p-6 rounded-2xl bg-surface-container/60 border border-outline-variant/10"><p id="roi-result-hours" class="text-3xl font-headline font-extrabold text-[#00ffc8] tracking-tight transition-all duration-300">300 hrs</p><p class="text-xs text-slate-500 mt-2">Staff Hours Saved Yearly</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES — particles spell "TRANSFORM" on left -->
+<section class="py-28 relative overflow-hidden ">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 section-header-fade">
+      <p class="font-mono text-xs tracking-[.15em] uppercase text-[#00d4ff] font-medium mb-4"><span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded mr-2 align-middle"></span>Resources<span class="inline-block w-6 h-0.5 bg-[#00d4ff] rounded ml-2 align-middle"></span></p>
+      <h2 class="text-4xl md:text-5xl font-headline font-extrabold gradient-text mb-6">Insights for Revenue Excellence</h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Stay informed with the latest strategies, industry trends, and platform updates.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="pages/resources.html#blog" class="tilt-card reveal-item group block rounded-2xl bg-surface-container overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,.5),0_0_40px_rgba(0,212,255,.08)] transition-all duration-300 relative"><div class="card-spotlight"></div><div class="h-48 bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-6xl text-[#00d4ff]/20">article</span></div><div class="p-6"><span class="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#00d4ff]/10 text-[#00d4ff] rounded-full mb-3">Blog</span><h4 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-[#00d4ff] transition-colors">5 Strategies to Reduce Claim Denials in 2025</h4><p class="text-sm text-slate-400">Learn how top-performing practices are minimizing denials and accelerating revenue collection.</p></div></a>
+      <a href="pages/resources.html#podcast" class="tilt-card reveal-item group block rounded-2xl bg-surface-container overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,.5),0_0_40px_rgba(0,212,255,.08)] transition-all duration-300 relative"><div class="card-spotlight"></div><div class="h-48 bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-6xl text-[#00ffc8]/20">podcasts</span></div><div class="p-6"><span class="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#00ffc8]/10 text-[#00ffc8] rounded-full mb-3">Podcast</span><h4 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-[#00ffc8] transition-colors">Revenue Intelligence: The Future of Dental Billing</h4><p class="text-sm text-slate-400">Industry experts discuss how AI is transforming dental practice revenue management.</p></div></a>
+      <a href="pages/resources.html#webinars" class="tilt-card reveal-item group block rounded-2xl bg-surface-container overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,.5),0_0_40px_rgba(0,212,255,.08)] transition-all duration-300 relative"><div class="card-spotlight"></div><div class="h-48 bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-6xl text-[#cfb7ff]/20">videocam</span></div><div class="p-6"><span class="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-[#7c3aed]/10 text-[#cfb7ff] rounded-full mb-3">Webinar</span><h4 class="text-lg font-headline font-bold text-white mb-2 group-hover:text-[#cfb7ff] transition-colors">Mastering Eligibility Verification</h4><p class="text-sm text-slate-400">Join our live session to learn best practices for streamlining your verification process.</p></div></a>
+    </div>
+    <div class="text-center mt-12"><a href="pages/resources.html" class="inline-flex items-center gap-2 px-6 py-3 border border-outline-variant/15 text-[#00d4ff] font-bold rounded-xl hover:bg-surface-container-highest transition-all text-sm font-headline">View All Resources <span class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="py-28 relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary-container/5"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="cta-glow relative bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 text-center border border-outline-variant/15">
+      <h2 class="text-shimmer text-4xl md:text-5xl font-headline font-extrabold mb-6">Ready to Transform Your Revenue Operations?</h2>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">Join leading dental practices that trust Elite Dental Force for intelligent revenue management.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="pages/contact.html#demo" class="btn-shimmer magnetic-btn px-10 py-5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-2xl text-lg shadow-[0_0_40px_rgba(0,212,255,.25)] hover:shadow-[0_0_60px_rgba(0,212,255,.4)] hover:scale-105 transition-all font-headline">Book a Demo</a>
+        <a href="pages/contact.html" class="px-10 py-5 bg-white/5 backdrop-blur-md text-white font-bold rounded-2xl text-lg border border-white/10 hover:bg-white/10 transition-all font-headline">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="/"><img src="images/Transparent Logo.png" alt="Elite Dental Force" class="h-24 mb-4 logo-white"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-[#00d4ff] hover:bg-primary-container hover:text-on-primary transition-all" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+      </div>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="pages/platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="pages/ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="pages/edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="pages/services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="pages/resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="pages/resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="pages/resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="pages/resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="pages/company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="pages/company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="pages/company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="pages/partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="pages/investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="pages/contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="pages/terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="pages/privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var pb=document.getElementById('scroll-progress');
+  window.addEventListener('scroll',function(){var st=window.pageYOffset||document.documentElement.scrollTop;var dh=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(dh>0?(st/dh)*100:0)+'%';},{passive:true});
+  var hdr=document.getElementById('main-header');
+  window.addEventListener('scroll',function(){if(window.pageYOffset>50){hdr.style.boxShadow='0 1px 20px rgba(0,0,0,.3),0 0 0 1px rgba(0,212,255,.04)';hdr.style.borderBottom='1px solid rgba(0,212,255,.06)';}else{hdr.style.boxShadow='';hdr.style.borderBottom='';}},{passive:true});
+  document.getElementById('mobile-toggle').addEventListener('click',function(){document.getElementById('mobile-menu').classList.toggle('open');});
+  var sh=document.getElementById('scroll-hint');
+  window.addEventListener('scroll',function(){if(!sh)return;sh.style.opacity=Math.max(0,1-window.pageYOffset/200);if(window.pageYOffset>300&&sh.parentNode)sh.remove();},{passive:true});
+  var h1=document.getElementById('hero-heading');
+  if(h1){var ot=h1.textContent.trim();h1.textContent='';h1.style.minHeight='1.2em';var cur=document.createElement('span');cur.className='typing-cursor';h1.appendChild(cur);var ci=0;function tc(){if(ci<ot.length){h1.insertBefore(document.createTextNode(ot.charAt(ci)),cur);ci++;setTimeout(tc,30+Math.random()*20);}else{setTimeout(function(){cur.style.animation='cblink .8s step-end 3';cur.addEventListener('animationend',function(){if(cur.parentNode)cur.remove();});},1500);}}setTimeout(tc,600);}
+  document.querySelectorAll('.tilt-card').forEach(function(c){var s=c.querySelector('.card-spotlight');c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5;var y=(e.clientY-r.top)/r.height-.5;c.style.transform='translateY(-6px) perspective(800px) rotateX('+(-y*5)+'deg) rotateY('+(x*5)+'deg)';if(s)s.style.background='radial-gradient(600px circle at '+(e.clientX-r.left)+'px '+(e.clientY-r.top)+'px,rgba(0,212,255,.06),transparent 40%)';});c.addEventListener('mouseleave',function(){c.style.transform='';});});
+  var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.reveal-item').forEach(function(i,n){i.style.animationDelay=(n*.1)+'s';i.classList.add('visible');});ro.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.grid').forEach(function(g){if(g.querySelector('.reveal-item'))ro.observe(g);});
+  var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ho.unobserve(e.target);}});},{threshold:.2,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.section-header-fade').forEach(function(h){ho.observe(h);});
+  function eoc(t){return 1-Math.pow(1-t,3);}
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;var tg=parseInt(el.dataset.counter);var st=performance.now();var dur=2500;function up(now){var p=Math.min((now-st)/dur,1);el.textContent=Math.floor(eoc(p)*tg);if(p<1)requestAnimationFrame(up);else el.textContent=tg;}el.textContent='0';requestAnimationFrame(up);co.unobserve(el);}});},{threshold:.5});
+  document.querySelectorAll('[data-counter]').forEach(function(c){co.observe(c);});
+  document.querySelectorAll('.magnetic-btn').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+(e.clientX-r.left-r.width/2)*.12+'px,'+(e.clientY-r.top-r.height/2)*.12+'px)';});b.addEventListener('mouseleave',function(){b.style.transform='';});});
+  document.querySelectorAll('.btn-shimmer').forEach(function(b){b.style.position='relative';b.style.overflow='hidden';b.addEventListener('click',function(e){var r=b.getBoundingClientRect();var rp=document.createElement('span');rp.className='btn-ripple';var sz=Math.max(r.width,r.height);rp.style.width=rp.style.height=sz+'px';rp.style.left=(e.clientX-r.left-sz/2)+'px';rp.style.top=(e.clientY-r.top-sz/2)+'px';b.appendChild(rp);rp.addEventListener('animationend',function(){rp.remove();});});});
+  var cn=['Smith','Johnson','Williams','Brown','Davis','Garcia','Miller','Wilson','Moore','Taylor','Anderson','Thomas','Jackson','White','Harris'];
+  var ct=['D0120 Periodic Eval','D0274 Bitewing X-rays','D1110 Prophylaxis','D2391 Composite Fill','D2740 Crown','D4341 Scaling/Root','D0150 Comprehensive Eval','D2750 Crown Porcelain'];
+  var ci2=['Delta Dental','MetLife','Cigna','Aetna','United Health','Guardian','Humana'];
+  function gc(){var bd=document.getElementById('claim-feed-body');if(!bd)return;var nm=cn[Math.floor(Math.random()*cn.length)];var tp=ct[Math.floor(Math.random()*ct.length)];var ins=ci2[Math.floor(Math.random()*ci2.length)];var am='$'+(Math.floor(Math.random()*800)+85);var ok=Math.random()>.12;var rw=document.createElement('div');rw.className='claim-entering flex justify-between items-center px-5 py-3 border-b border-outline-variant/5 transition-all duration-[400ms]';rw.innerHTML='<div class="flex flex-col gap-0.5"><span class="text-[13px] font-medium text-on-surface">Patient '+nm+'</span><span class="text-[11px] text-slate-500 font-mono">'+tp+'</span></div><div class="flex items-center gap-3"><span class="text-[13px] font-semibold text-slate-400 font-mono">'+am+'</span><span class="status-pending text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Verifying...</span></div>';bd.insertBefore(rw,bd.firstChild);requestAnimationFrame(function(){rw.classList.remove('claim-entering');rw.style.opacity='1';rw.style.transform='none';rw.style.height='';rw.style.paddingTop='';rw.style.paddingBottom='';});var se=rw.querySelector('span:last-child');setTimeout(function(){se.textContent='Checking '+ins;se.className='status-checking text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider';},800);setTimeout(function(){if(ok){se.textContent='Approved';se.className='status-approved text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider';}else{se.textContent='Flagged';se.className='status-flagged text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider';}},2200);var rs=bd.querySelectorAll('div');if(rs.length>5){var la=rs[rs.length-1];la.style.opacity='0';la.style.height='0';la.style.padding='0';la.style.margin='0';setTimeout(function(){la.remove();},400);}}
+  gc();setInterval(gc,3000);
+  window.updateROI=function(){var p=parseInt(document.getElementById('roi-providers').value);var c=parseInt(document.getElementById('roi-claims').value);var d=parseInt(document.getElementById('roi-denial').value);document.getElementById('roi-val-providers').textContent=p;document.getElementById('roi-val-claims').textContent=c.toLocaleString();document.getElementById('roi-val-denial').textContent=d+'%';var md=c*(d/100);var sv=Math.round(md*.35);var rv=sv*285*12;var hr=Math.round(sv*.5*12);var se=document.getElementById('roi-result-saved');var re=document.getElementById('roi-result-revenue');var he=document.getElementById('roi-result-hours');[se,re,he].forEach(function(e){e.style.transform='scale(1.06)';e.style.color='#00ffc8';});se.textContent=sv.toLocaleString()+'/mo';re.textContent='$'+rv.toLocaleString();he.textContent=hr.toLocaleString()+' hrs';setTimeout(function(){[se,re,he].forEach(function(e){e.style.transform='';});},300);};
+  window.runEligCheck=function(){var ins=document.getElementById('elig-insurer').value;var proc=document.getElementById('elig-procedure').value;var res=document.getElementById('elig-result');if(!ins||!proc)return;res.innerHTML='';res.className='mt-5 block';var steps=[{text:'Connecting to '+ins+'...',delay:0},{text:'Verifying member coverage...',delay:600},{text:'Checking '+proc.split(' — ')[0]+' benefits...',delay:1200},{text:'Calculating patient responsibility...',delay:1800}];steps.forEach(function(s){setTimeout(function(){var ln=document.createElement('div');ln.className='flex items-center gap-3 py-1.5 text-sm text-slate-400';ln.style.animation='wavein .3s ease forwards';ln.innerHTML='<span class="elig-spinner"></span><span>'+s.text+'</span>';res.appendChild(ln);var all=res.querySelectorAll('div:not(.elig-card)');if(all.length>1){var pv=all[all.length-2].querySelector('.elig-spinner');if(pv){pv.className='elig-check';pv.textContent='\u2713';}}},s.delay);});setTimeout(function(){var all=res.querySelectorAll('div:not(.elig-card)');var ls=all[all.length-1].querySelector('.elig-spinner');if(ls){ls.className='elig-check';ls.textContent='\u2713';}var cov=Math.floor(Math.random()*30)+70;var cop=Math.floor(Math.random()*40)+15;var dm=Math.random()>.4;var cd=document.createElement('div');cd.className='elig-card mt-4 rounded-xl p-5';cd.style.background='rgba(0,255,200,.04)';cd.style.border='1px solid rgba(0,255,200,.15)';cd.style.animation='wavein .4s cubic-bezier(.16,1,.3,1)';cd.innerHTML='<div class="text-sm font-bold text-[#00ffc8] mb-3">Eligible — Coverage Verified</div><div class="flex justify-between py-1 text-sm"><span class="text-slate-500">Coverage</span><span class="text-on-surface font-mono text-xs font-medium">'+cov+'%</span></div><div class="flex justify-between py-1 text-sm"><span class="text-slate-500">Est. Copay</span><span class="text-on-surface font-mono text-xs font-medium">$'+cop+'</span></div><div class="flex justify-between py-1 text-sm"><span class="text-slate-500">Deductible</span><span class="text-on-surface font-mono text-xs font-medium">'+(dm?'Met':'$'+(Math.floor(Math.random()*100)+50)+' remaining')+'</span></div><div class="flex justify-between py-1 text-sm"><span class="text-slate-500">Verified</span><span class="text-on-surface font-mono text-xs font-medium">Real-time via EDiFi</span></div><div class="mt-3 pt-3 border-t border-white/5 text-xs text-[#00d4ff] font-mono">Verified in 2.4s — 50% faster than manual</div>';res.appendChild(cd);},2600);};
+})();
+</script>
+</body>
+</html>

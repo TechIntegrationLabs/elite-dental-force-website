@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EDiFi Platform | Elite Dental Force</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#e7d8ff",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#00513e",
+              "surface-container-lowest": "#030e20",
+              "on-secondary": "#00382a",
+              "surface-bright": "#2e394d",
+              "secondary": "#f4fff8",
+              "tertiary-container": "#cfb7ff",
+              "surface-dim": "#071325",
+              "surface": "#071325",
+              "on-tertiary-fixed": "#25005a",
+              "on-primary-fixed-variant": "#004e5f",
+              "inverse-primary": "#00677e",
+              "on-background": "#d7e3fc",
+              "background": "#071325",
+              "surface-tint": "#3cd7ff",
+              "surface-container-highest": "#2a3548",
+              "secondary-fixed-dim": "#00e0b0",
+              "on-surface-variant": "#bbc9cf",
+              "outline": "#859398",
+              "on-secondary-fixed": "#002117",
+              "primary-fixed-dim": "#3cd7ff",
+              "outline-variant": "#3c494e",
+              "surface-variant": "#2a3548",
+              "surface-container-low": "#101c2e",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#d7e3fc",
+              "inverse-on-surface": "#253144",
+              "primary-container": "#00d4ff",
+              "on-primary": "#003642",
+              "surface-container": "#142032",
+              "on-primary-fixed": "#001f27",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-tertiary": "#3f008e",
+              "on-tertiary-container": "#6412d5",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#eaddff",
+              "secondary-container": "#00fdc6",
+              "primary": "#a8e8ff",
+              "on-primary-container": "#00586b",
+              "tertiary-fixed-dim": "#d2bbff",
+              "on-secondary-container": "#007056",
+              "error": "#ffb4ab",
+              "primary-fixed": "#b4ebff",
+              "inverse-surface": "#d7e3fc",
+              "surface-container-high": "#1f2a3d",
+              "secondary-fixed": "#2cffca"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(42, 53, 72, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        .ambient-glow {
+            box-shadow: 0px 16px 48px rgba(0, 212, 255, 0.08);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #a8e8ff 0%, #00d4ff 100%);
+        }
+        .hero-pattern {
+            background-image: radial-gradient(circle at 50% 50%, #101c2e 0%, #071325 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-2xl">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-white">
+                Elite Dental Force
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 font-label uppercase text-[11px] tracking-[0.05em]" href="#">Platform</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em]" href="#">Solutions</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em]" href="#">About</a>
+</div>
+<button class="primary-gradient text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm tracking-tight scale-95 active:scale-90 transition-transform hover:shadow-[0_0_20px_rgba(0,212,255,0.3)]">
+                Book a Demo
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="hero-pattern pt-40 pb-20 px-8 overflow-hidden">
+<div class="max-w-screen-xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high mb-8">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary-container">Now Powering 1,200+ Practices</span>
+</div>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tighter mb-8 max-w-4xl mx-auto leading-[1.1]">
+                    The Intelligence Engine <br/>
+<span class="text-primary-container text-glow">Behind Every Decision.</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-16 leading-relaxed">
+                    EDiFi is the clinical-grade automation layer that transforms dental RCM from a manual burden into a high-velocity revenue engine.
+                </p>
+<!-- Interactive Dashboard Mockup -->
+<div class="relative max-w-6xl mx-auto group">
+<div class="absolute -inset-4 bg-primary-container/10 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity"></div>
+<div class="relative glass-panel rounded-2xl border border-outline-variant/15 overflow-hidden ambient-glow p-4">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-[16/9] relative">
+<img class="w-full h-full object-cover opacity-90" data-alt="Modern software dashboard showing dark blue interface with neon cyan data visualizations, graphs, and patient claim tracking metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlGDPD0UAykbtgSZqY9p80H05svXHB_ytRAx0qUfSdtuz5Xwn89b5p-pZ7iAyDWAveM8bS5MKyaF5xnVrxNJ5a4BrgAC97L_gg0VU0RHVaUOEIs5HpLHvIGf5bY1gdbNXLlYJazDadROqc7XUNTZkg_ukTt8wGqvSaNsmfA_bbisUeJ9KjT2HNHgQTj4BkgaDL3WknKmzzeBN0B5fCsPER0kSnN0pDn-9wto-5HJsacsGZ93-HMtc14MipdjqbWqN9CuednPFOPJNQ"/>
+<!-- Overlay UI elements -->
+<div class="absolute top-8 left-8 flex flex-col gap-4">
+<div class="glass-panel p-4 rounded-xl border-l-2 border-secondary-container w-64 shadow-2xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Live Eligibility</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-white">98.4%</span>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl border-l-2 border-tertiary-container w-64 shadow-2xl">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Claim Approval</p>
+<div class="flex items-end justify-between">
+<span class="text-2xl font-bold text-white">$142k</span>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modules Bento Grid -->
+<section class="py-24 px-8 bg-surface-dim">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline font-bold text-4xl tracking-tight text-white mb-4">Core Intelligence Modules</h2>
+<p class="text-on-surface-variant max-w-xl">Each module is designed to plug directly into your existing workflow, automating the most friction-heavy parts of dental practice management.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-3 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="p-3 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Eligibility Intelligence -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Close-up of high-resolution digital interface showing medical data processing with clean blue and white aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwXv4kM_7VK4tqljiF2uCPSzS2m4IGvSkBXIwWSxk2Njm5M2YIrsuMdXc8A4qvOVjRcKrGwyuo9UEXP_sdKxeJT2B97Kmul_svRkBXo3tUjrl60la_RX6Nn5J491GCADlG0H3mhNzi5Hd1_LIflAaSzcgZYSG3OudAuyQT6zhuI0GNnOeZtJNfJkQsMdx6ShPuuhPz_opTl7AWVEuiehN6n0QcUxy5sqGHMPFMLIGedj5vxit3hJPoaFn7EydYfLKJqcDW2T1QDYvc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Eligibility Intelligence</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Real-time benefit verification
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Automated breakdown retrieval
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Copay &amp; remaining balance calculation
+                            </li>
+</ul>
+</div>
+<!-- Claims Manager -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Dynamic data visualization showing flow of information and documents across a dark glass interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ_9qyjqN7pbsQSmAXelah9sBn3nY09S77CWO6a9Lk_ULzGkueX6a2XJNQA2K-zdkDakyUKMD4hkWH8x7GTpFOOHlDUsUROVjtyYFO02K8akJ6AG_S-GgWW81cdQmrcKW5tykKxFBrTlGk3XxXPbihNFkbKUNwlgTp5FJIBeNLriN4XpssrRFbdXHVgs2t80ho9IgSHQwSUH2Y7JHuG_NWnPqC4PL-CBRFvHIYeLv20829L-a7qY68-JDfUzLoWtPptQJEOlTnwbVd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Claims Manager</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Smart claim scrubbing engine
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Automated attachment matching
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Real-time status tracking
+                            </li>
+</ul>
+</div>
+<!-- Revenue Analytics -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Abstract financial charts and graphs with luminous lines on a deep navy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3zrb_Zkq1HPYoPcFfRcEb70Bdya2XOtR6zxaTlwT0HrGOoRnNHVED-QpPLY1IqGNOeg_1wdCuG1C5a5Z5SGvDt6m8lCNBuoVKNs5hOsu-cUq8iGwT_nbvffKNavhzgJlbpmZY3pQ2VjvpD3P8TjOqwNXW4WchdAJI7cb1mqwf3nVKzGRc2mIzRtZFF-XrbbH4YNfj3c9H9-3qm_zVYIXIR4AR16Cm9a4liZhwfg1qlL9O1oMNk6NYAEMkxbEHjdXMuRqxgeOx9Yez"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Revenue Analytics</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Denials root-cause analysis
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Payer performance benchmarking
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Cash flow forecasting
+                            </li>
+</ul>
+</div>
+<!-- Payment Processing -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Close-up of a high-tech payment terminal with sleek glass surface and glowing biometric sensors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmeZCsavfzyhzb-2hiIR3dFYFZ8f_eichO9YVewnVr5aBnEAAcAMrD3vlaYNHArMxhcsvL5O_Wy69U4aYvjHqsWXL7fl7Hf0UhyTPYgyKPx_ufhI6bm2R2F7oZmGaJtD5jHIF155BV1qIy1kCyaGrrfZb-ATn3jUfS0HBFZLLnWLALwJN3ZXONaYp9jlY7rwMsLHMn6JyBUw1Ogs_EO9mfW51Ak3tQj9Y8WhTY24K7zj2axqpBYFGIgccC9SehEOPaVUTsqGs4IFEQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Payment Processing</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Automated patient statements
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Integrated text-to-pay
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Multi-payer ERA posting
+                            </li>
+</ul>
+</div>
+<!-- Workflow Automation -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Global network nodes connecting across a dark sphere with glowing points of light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi0GwHmpRoVC2CisDbXi2whPJNaHA3Tz5NYkzOBmlpCsY-YcpUcwbiOhhS0IMPdKIAd2Ej2eHVDqHS1cm5MH2NJWtMbjPn_T5DsRKHQSV_NDZKIXip8M6EgLqgq0dd3hoZmHffgsQ_g4CI9n82Z2KEY9oYLrecXjJfbZ360OjCAvoOwGuqnVtSdxGcB_Wgkh3dl74f43lCRkW6XfgzZl23p6hIeTdgTRqkIfVcTrZl-hyvo8at9QKQYkr1_n7res_8aEeqzERRrCSX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Workflow Automation</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Task routing based on priority
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                AI-driven follow-up alerts
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Custom trigger-based actions
+                            </li>
+</ul>
+</div>
+<!-- Performance Monitoring -->
+<div class="bg-surface-container rounded-xl p-8 hover:bg-surface-container-high transition-all duration-300 group relative">
+<div class="h-40 mb-8 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Dashboard interface with deep shadows and highlighted KPI metrics for revenue management" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxBRKOWJVennHzK9LFfBWFYFOdcAUVQJKjRzKPRV47iOBi3YpmGEi2W-8xSdKPMMbdqbD_VrA5HKdIDl_J3fsPpn5YiGRZisclthquHcTJP8n3zK4EtXa-WeiPGwcg5OE0NXZMFO4aSHG6Qa4X_u-m0OPSG7l2nlSfCz_acwZHX9hKD7ZETlF191k7QLnG75_rwuIqPLKM2PW_rtQIRJaH62_xZanYARUtYcergJqzySDfHqzW0UwGLnxLqieXdGChuWF6qknB9sFx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+</div>
+<h3 class="font-headline text-xl font-bold text-white mb-4">Performance Monitoring</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Collector productivity KPIs
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Practice health scoring
+                            </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-container text-lg">check_circle</span>
+                                Real-time executive reports
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Flow -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline font-bold text-4xl tracking-tight text-white mb-4">Seamless Intelligence Flow</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">From patient check-in to final payment, EDiFi orchestrates every movement of data across your practice ecosystem.</p>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Connector line (Desktop only) -->
+<div class="hidden md:block absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-container/30 to-transparent -z-10"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 border border-outline-variant/20 shadow-xl group-hover:border-primary-container/50 transition-all duration-500">
+<span class="material-symbols-outlined text-primary-container text-3xl">input</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-white">Ingest</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-3">Phase 01</p>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Automatic data extraction from PMS and insurance portals.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 border border-outline-variant/20 shadow-xl group-hover:border-primary-container/50 transition-all duration-500">
+<span class="material-symbols-outlined text-primary-container text-3xl">psychology</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-white">Process</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-3">Phase 02</p>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">AI validation engine checks for errors and missing documentation.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 border border-outline-variant/20 shadow-xl group-hover:border-primary-container/50 transition-all duration-500">
+<span class="material-symbols-outlined text-primary-container text-3xl">bolt</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-white">Execute</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-3">Phase 03</p>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Real-time claim submission and automated follow-ups.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-highest flex items-center justify-center mb-6 border border-outline-variant/20 shadow-xl group-hover:border-primary-container/50 transition-all duration-500">
+<span class="material-symbols-outlined text-primary-container text-3xl">insights</span>
+</div>
+<h4 class="font-headline font-bold text-lg mb-2 text-white">Optimize</h4>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-3">Phase 04</p>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Data-driven insights to prevent future revenue leakage.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrations -->
+<section class="py-20 bg-surface-dim">
+<div class="max-w-screen-xl mx-auto px-8">
+<p class="text-center text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-12">Universal Compatibility with Major PMS</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<span class="text-2xl font-bold tracking-tighter text-white">Dentrix</span>
+<span class="text-2xl font-bold tracking-tighter text-white">Eaglesoft</span>
+<span class="text-2xl font-bold tracking-tighter text-white">OpenDental</span>
+<span class="text-2xl font-bold tracking-tighter text-white">CurveDental</span>
+<span class="text-2xl font-bold tracking-tighter text-white">Denticon</span>
+</div>
+</div>
+</section>
+<!-- Security & Compliance -->
+<section class="py-24 bg-surface-container-lowest border-y border-outline-variant/10">
+<div class="max-w-screen-xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<h2 class="font-headline font-bold text-3xl tracking-tight text-white mb-4">Enterprise-Grade Security</h2>
+<p class="text-on-surface-variant">Your practice data is protected by the highest standards of clinical cybersecurity and encryption protocols.</p>
+</div>
+<div class="grid grid-cols-3 gap-8">
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-xl bg-surface-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-tertiary-container text-4xl">verified_user</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">HIPAA COMPLIANT</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-xl bg-surface-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-tertiary-container text-4xl">security</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">SOC 2 TYPE II</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-xl bg-surface-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-tertiary-container text-4xl">encrypted</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">256-BIT AES</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 bg-surface-dim relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#00d4ff1a_0%,_transparent_70%)]"></div>
+<div class="max-w-screen-md mx-auto text-center relative z-10">
+<h2 class="font-headline font-extrabold text-5xl md:text-6xl tracking-tighter text-white mb-8">Ready to Scale?</h2>
+<p class="text-on-surface-variant text-lg mb-12">Join the elite practices using EDiFi to eliminate operational friction and maximize collections.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="primary-gradient text-on-primary px-10 py-4 rounded-xl font-bold text-lg tracking-tight scale-95 active:scale-90 transition-transform">
+                        Request Access
+                    </button>
+<button class="bg-surface-container-high text-white border border-outline-variant/30 px-10 py-4 rounded-xl font-bold text-lg tracking-tight hover:bg-surface-container-highest transition-colors">
+                        View Pricing
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-16 px-12 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-screen-2xl mx-auto">
+<div class="text-lg font-bold text-slate-200">
+                Elite Dental Force
+            </div>
+<div class="flex gap-8 flex-wrap justify-center">
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Trust Center</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Contact Support</a>
+</div>
+<div class="text-slate-500 font-label text-xs font-medium uppercase tracking-widest opacity-80">
+                © 2024 Elite Dental Force. HIPAA Compliant &amp; SOC 2 Type II Certified.
+            </div>
+</div>
+</footer>
+</body></html>

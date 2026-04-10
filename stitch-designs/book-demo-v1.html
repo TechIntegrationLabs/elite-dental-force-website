@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book a Demo | Elite Dental Force</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#e7d8ff",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#00513e",
+              "surface-container-lowest": "#030e20",
+              "on-secondary": "#00382a",
+              "surface-bright": "#2e394d",
+              "secondary": "#f4fff8",
+              "tertiary-container": "#cfb7ff",
+              "surface-dim": "#071325",
+              "surface": "#071325",
+              "on-tertiary-fixed": "#25005a",
+              "on-primary-fixed-variant": "#004e5f",
+              "inverse-primary": "#00677e",
+              "on-background": "#d7e3fc",
+              "background": "#071325",
+              "surface-tint": "#3cd7ff",
+              "surface-container-highest": "#2a3548",
+              "secondary-fixed-dim": "#00e0b0",
+              "on-surface-variant": "#bbc9cf",
+              "outline": "#859398",
+              "on-secondary-fixed": "#002117",
+              "primary-fixed-dim": "#3cd7ff",
+              "outline-variant": "#3c494e",
+              "surface-variant": "#2a3548",
+              "surface-container-low": "#101c2e",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#d7e3fc",
+              "inverse-on-surface": "#253144",
+              "primary-container": "#00d4ff",
+              "on-primary": "#003642",
+              "surface-container": "#142032",
+              "on-primary-fixed": "#001f27",
+              "on-tertiary-fixed-variant": "#5a00c6",
+              "on-tertiary": "#3f008e",
+              "on-tertiary-container": "#6412d5",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#eaddff",
+              "secondary-container": "#00fdc6",
+              "primary": "#a8e8ff",
+              "on-primary-container": "#00586b",
+              "tertiary-fixed-dim": "#d2bbff",
+              "on-secondary-container": "#007056",
+              "error": "#ffb4ab",
+              "primary-fixed": "#b4ebff",
+              "inverse-surface": "#d7e3fc",
+              "surface-container-high": "#1f2a3d",
+              "secondary-fixed": "#2cffca"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(20, 32, 50, 0.6);
+        backdrop-filter: blur(20px);
+      }
+      .hero-gradient {
+        background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+      }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-2xl shadow-[0px_16px_48px_rgba(0,212,255,0.08)]">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-white font-headline">Elite Dental Force</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em] hover:bg-white/5 rounded-lg px-3 py-2" href="#">Platform</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em] hover:bg-white/5 rounded-lg px-3 py-2" href="#">Solutions</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em] hover:bg-white/5 rounded-lg px-3 py-2" href="#">About</a>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2.5 rounded-lg scale-95 active:scale-90 transition-all hover:shadow-[0_0_20px_rgba(0,212,255,0.3)]">
+                    Book a Demo
+                </button>
+</div>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow pt-32 pb-20 px-6 md:px-12 hero-gradient">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+<!-- Left Side: Content -->
+<div class="flex flex-col space-y-12">
+<div class="space-y-6">
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tight text-white leading-[1.1]">
+                        See Elite Dental Force <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-container">in Action</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
+                        Discover how our clinical intelligence platform transforms practice performance with real-time ROI analysis and automated workflows.
+                    </p>
+</div>
+<!-- Demo Process -->
+<div class="grid gap-6">
+<div class="flex items-start gap-5 p-6 rounded-xl bg-surface-container-low/50 border-l-2 border-secondary-container">
+<span class="material-symbols-outlined text-primary-container text-3xl">discover_tune</span>
+<div>
+<h3 class="font-headline font-bold text-lg text-white">30-Min Discovery</h3>
+<p class="text-on-surface-variant text-sm mt-1">A tailored deep dive into your practice's specific pain points and growth objectives.</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-6 rounded-xl bg-surface-container-low/50 border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl">token</span>
+<div>
+<h3 class="font-headline font-bold text-lg text-white">Live Platform Tour</h3>
+<p class="text-on-surface-variant text-sm mt-1">Explore the dashboard, clinical modules, and automated billing engine in real-time.</p>
+</div>
+</div>
+<div class="flex items-start gap-5 p-6 rounded-xl bg-surface-container-low/50 border-l-2 border-tertiary-container">
+<span class="material-symbols-outlined text-tertiary-container text-3xl">monitoring</span>
+<div>
+<h3 class="font-headline font-bold text-lg text-white">ROI Analysis</h3>
+<p class="text-on-surface-variant text-sm mt-1">Get a custom projection of potential revenue recovery and operational savings.</p>
+</div>
+</div>
+</div>
+<!-- Trust Indicators -->
+<div class="space-y-8 pt-6">
+<div class="flex flex-wrap gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label uppercase text-[10px] tracking-widest text-white">HIPAA COMPLIANT</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-label uppercase text-[10px] tracking-widest text-white">SOC 2 TYPE II</span>
+</div>
+</div>
+<div class="relative p-8 rounded-2xl bg-surface-container overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">format_quote</span>
+</div>
+<p class="text-white italic text-lg relative z-10 leading-relaxed">
+                            "Elite Dental Force didn't just give us data; they gave us a roadmap to 22% growth in our first quarter alone. It's the standard for modern practices."
+                        </p>
+<div class="mt-4 flex items-center gap-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a confident female dentist in a modern clinical setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEQBJ-wra71ikf_INQLFhMBp_jpom4l1JMSEJpvYSSYY5NiIoQySqwaOJx5Cj0jmMyXy1uN-v8kVrxRroiCbctoIUXcW9grOcOQqg_vi5jyvK0LctDfTIyG6zLSIhnAHG67dr97UNYHO2nDzAZf91fPeKDYO4i3qUt7y8YOJuqlxKghtQhSHDDg1JFMJ1BAdfTMCE9C53jwEhI6SvX_FuoNpQ7SoUQpSiFr3n1022OlHp6hp2h-2okSTEr3nzcraTaHjbeEq2-fg44"/>
+</div>
+<div>
+<p class="font-headline font-bold text-sm text-white">Dr. Sarah Chen</p>
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Clinical Director, BrightSmile Group</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Lead Form -->
+<div class="lg:sticky lg:top-32">
+<div class="glass-panel p-8 md:p-10 rounded-3xl shadow-[0px_16px_48px_rgba(0,212,255,0.08)] border border-white/5">
+<div class="mb-8">
+<h2 class="text-2xl font-headline font-bold text-white mb-2">Schedule Your Strategy Session</h2>
+<p class="text-on-surface-variant text-sm">Fill out the form below and a clinical advisor will contact you within 2 hours.</p>
+</div>
+<form action="#" class="space-y-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all placeholder:text-slate-600" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Work Email</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all placeholder:text-slate-600" placeholder="john@practice.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Phone Number</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all placeholder:text-slate-600" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Practice Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all placeholder:text-slate-600" placeholder="Elite Dental Clinic" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Practice Size</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all appearance-none cursor-pointer">
+<option>1 location</option>
+<option>2-5 locations</option>
+<option>6-10 locations</option>
+<option>10+ locations</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Your Role</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all appearance-none cursor-pointer">
+<option>Owner / Dentist</option>
+<option>Office Manager</option>
+<option>Billing Manager</option>
+<option>Other</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label uppercase text-[10px] tracking-widest text-on-surface-variant ml-1">Message (Optional)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 text-white focus:ring-1 focus:ring-primary-container/40 transition-all placeholder:text-slate-600 resize-none" placeholder="Tell us about your primary goals..." rows="3"></textarea>
+</div>
+<button class="w-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-extrabold py-4 rounded-xl shadow-[0_8px_30px_rgb(0,212,255,0.2)] hover:shadow-[0_8px_40px_rgb(0,212,255,0.4)] transition-all scale-[1.01] active:scale-[0.98] uppercase tracking-widest text-sm mt-4" type="submit">
+                            Reserve My Demo Slot
+                        </button>
+<p class="text-center text-[10px] text-on-surface-variant mt-6 leading-relaxed">
+                            By clicking the button above, you agree to our <a class="underline hover:text-primary" href="#">Terms of Service</a> and acknowledge our <a class="underline hover:text-primary" href="#">Privacy Policy</a>. We respect your clinical data privacy.
+                        </p>
+</form>
+</div>
+<!-- Direct Reach Section -->
+<div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+<a class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white/5 transition-all" href="mailto:hello@elitedental.force">
+<span class="material-symbols-outlined text-primary-container mb-2 group-hover:scale-110 transition-transform">mail</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Email Us</span>
+<span class="text-xs font-bold text-white mt-1">hello@elitedental.force</span>
+</a>
+<a class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white/5 transition-all" href="tel:+18005550192">
+<span class="material-symbols-outlined text-secondary-container mb-2 group-hover:scale-110 transition-transform">call</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Call Directly</span>
+<span class="text-xs font-bold text-white mt-1">+1 (800) 555-0192</span>
+</a>
+<a class="group flex flex-col items-center p-4 rounded-2xl hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined text-tertiary-container mb-2 group-hover:scale-110 transition-transform">location_on</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Visit HQ</span>
+<span class="text-xs font-bold text-white mt-1">Austin, TX</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-16 px-12 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-screen-2xl mx-auto">
+<div class="text-lg font-bold text-slate-200 font-headline">Elite Dental Force</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Trust Center</a>
+<a class="text-slate-500 hover:text-cyan-300 transition-all duration-200 font-label text-xs font-medium uppercase tracking-widest" href="#">Contact Support</a>
+</div>
+<div class="text-slate-500 font-label text-xs font-medium uppercase tracking-widest opacity-80">
+                © 2024 Elite Dental Force. HIPAA Compliant &amp; SOC 2 Type II Certified.
+            </div>
+</div>
+</footer>
+</body></html>

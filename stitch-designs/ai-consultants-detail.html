@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Consultants | Elite Dental Force</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#e7d8ff",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#00513e",
+                        "surface-container-lowest": "#030e20",
+                        "on-secondary": "#00382a",
+                        "surface-bright": "#2e394d",
+                        "secondary": "#f4fff8",
+                        "tertiary-container": "#cfb7ff",
+                        "surface-dim": "#071325",
+                        "surface": "#071325",
+                        "on-tertiary-fixed": "#25005a",
+                        "on-primary-fixed-variant": "#004e5f",
+                        "inverse-primary": "#00677e",
+                        "on-background": "#d7e3fc",
+                        "background": "#071325",
+                        "surface-tint": "#3cd7ff",
+                        "surface-container-highest": "#2a3548",
+                        "secondary-fixed-dim": "#00e0b0",
+                        "on-surface-variant": "#bbc9cf",
+                        "outline": "#859398",
+                        "on-secondary-fixed": "#002117",
+                        "primary-fixed-dim": "#3cd7ff",
+                        "outline-variant": "#3c494e",
+                        "surface-variant": "#2a3548",
+                        "surface-container-low": "#101c2e",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#d7e3fc",
+                        "inverse-on-surface": "#253144",
+                        "primary-container": "#00d4ff",
+                        "on-primary": "#003642",
+                        "surface-container": "#142032",
+                        "on-primary-fixed": "#001f27",
+                        "on-tertiary-fixed-variant": "#5a00c6",
+                        "on-tertiary": "#3f008e",
+                        "on-tertiary-container": "#6412d5",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#eaddff",
+                        "secondary-container": "#00fdc6",
+                        "primary": "#a8e8ff",
+                        "on-primary-container": "#00586b",
+                        "tertiary-fixed-dim": "#d2bbff",
+                        "on-secondary-container": "#007056",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#b4ebff",
+                        "inverse-surface": "#d7e3fc",
+                        "surface-container-high": "#1f2a3d",
+                        "secondary-fixed": "#2cffca"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(42, 53, 72, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #a8e8ff 0%, #00d4ff 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="bg-slate-950/60 backdrop-blur-2xl fixed top-0 w-full z-50 no-border tonal-shift-via-blur shadow-[0px_16px_48px_rgba(0,212,255,0.08)]">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-white font-headline">Elite Dental Force</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em] hover:bg-white/5 rounded-lg p-2 transition-all duration-300" href="#">Platform</a>
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 font-label uppercase text-[11px] tracking-[0.05em] transition-all duration-300" href="#">Solutions</a>
+<a class="text-slate-400 font-medium hover:text-white transition-colors font-label uppercase text-[11px] tracking-[0.05em] hover:bg-white/5 rounded-lg p-2 transition-all duration-300" href="#">About</a>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm scale-95 active:scale-90 transition-transform shadow-[0_0_20px_rgba(0,212,255,0.3)]">
+                    Book a Demo
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,212,255,0.1),transparent_70%)]"></div>
+<div class="relative z-10 max-w-4xl mx-auto mb-16">
+<span class="font-label text-cyan-400 uppercase tracking-widest text-xs font-bold mb-4 block">Meet Your Digital Workforce</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+                    Meet Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-container">AI-Powered</span> Team
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-2xl mx-auto font-medium">
+                    Automate the administrative backbone of your practice with specialized AI agents designed for clinical precision and financial growth.
+                </p>
+</div>
+<div class="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4 px-4">
+<!-- 6 Agent Visualization Icons -->
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Eligibility</span>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center group-hover:bg-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Billing</span>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center group-hover:bg-tertiary-container/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Scheduling</span>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Analytics</span>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-on-secondary-container/10 flex items-center justify-center group-hover:bg-on-secondary-container/20 transition-colors">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Compliance</span>
+</div>
+<div class="glass-panel p-6 rounded-2xl flex flex-col items-center gap-3 border border-outline-variant/20 hover:border-primary-container/50 transition-all group">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<span class="text-xs font-bold font-label uppercase text-on-surface">Training</span>
+</div>
+</div>
+</section>
+<!-- Consultant Sections - Alternating Bento Style -->
+<div class="max-w-7xl mx-auto px-6 space-y-32 py-24">
+<!-- 1. Eligibility Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">verified_user</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Eligibility Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        Say goodbye to morning-of verification stress. Our Eligibility AI proactively scans schedules 72 hours in advance, verifying benefits directly with 400+ carriers.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+                            Real-time breakdown of patient copays and deductibles.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+                            Automated flag for missing insurance documentation.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+                            Deep-link integration into PMS patient profiles.
+                        </li>
+</ul>
+</div>
+<div class="order-1 md:order-2 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Eligibility verification dashboard" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="Modern UI dashboard showing a table of patient insurance eligibility statuses with green and blue progress indicators and clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0bvXqfXjNE6gDoi5pJqlteeF_uqUIpio04V26Owk6Ya3AHSXTvXS7ELUwWYxrj3g_95FKp1r3SYCnOhPNlNLmmSnl5M8mb8RpuORsjbSddHjNBWrds5vOJEAkQNLE_pyDoxeihmgeIWTqdQhbfdnaFs4unoiTwJmWRShXJE5hFXqC1w2qSBrXsyEnGNp9Fq8iHFDkzyouCSNZ8t_rXcXCU-bcH45FtKMN9ObIhtTLjWwVwJxbjAWLiJ9UgyjMRNWzevpU99asU7Fl"/>
+</div>
+</section>
+<!-- 2. Billing Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-1 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Billing scrubbing interface" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="Digital interface showing medical claim scrubbing results with detailed line items and highlighted billing errors in a futuristic dark theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5dzliOnGTNzAUYyH3TGpgV4vrb5by7e7Zxs-3LMqkuSR34CTTGqd0cfeldqXcZydZARyOOdk5PhKmsJZPIgkMxR34YWbDeDsmZhHivn8TkaBp_-NvllGmqrcCYLoTfZWuZqLxaAogJVc-9srGn_EtaZKPUnUbdPxzEcNMboRsj3in9Pw78PXeClMTnRU76oLBOlqv3_4OTY82gtwfgeQLd3bJtCZWWWQ166MciddHpHSrI_h9g0_8c3Jyyho_dAvxu2Lbj4o9-ds2"/>
+</div>
+<div class="order-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container">payments</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Billing Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        Maximized revenue through predictive scrubbing. Our Billing AI identifies coding errors before submission, reducing rejection rates to under 2%.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-container text-sm">check_circle</span>
+                            AI-driven claim scrubbing and e-attachment verification.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-container text-sm">check_circle</span>
+                            Automated patient statement generation and SMS follow-ups.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-container text-sm">check_circle</span>
+                            ERA reconciliation and automated ledger posting.
+                        </li>
+</ul>
+</div>
+</section>
+<!-- 3. Scheduling Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container">calendar_month</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Scheduling Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        The AI that fills your gaps. It predicts cancellations before they happen and automatically reaches out to high-value patients on the waitlist.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary-container text-sm">check_circle</span>
+                            Optimized chair-time utilization with smart block-out logic.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary-container text-sm">check_circle</span>
+                            NLP-powered patient messaging for appointment confirmations.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary-container text-sm">check_circle</span>
+                            Recall automation for hygiene and unscheduled treatment.
+                        </li>
+</ul>
+</div>
+<div class="order-1 md:order-2 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Scheduling flow calendar" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="Complex dental schedule calendar view on a dark tablet UI with multi-colored blocks representing different procedures and practitioners" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw15c7xer5H9uGbqc342sH8H9k0Y-qGkWg1lQSv_vaeWJfWGXRbnf9onXWQGm11WV6kWh6pouu7H_eAw_lqmpFJU1VF6MkaQhn55Tktv4JA7AwZ3oYrwRWXMDf_qm2ReIY8IrbVLWMAH9ADH7HiIkQ-_g-CNj1VKnTEt6EtTG3AYaG0fZmIbuCKb7xLW7BrK25vvLI79y7uMPpZgOBvt10oYcgbb3Q2ZrWZcOXee0pbiYJC40mHSronhxgFje11kmFXL8hPmA_db-a"/>
+</div>
+</section>
+<!-- 4. Analytics Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-1 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Analytics dashboard visualization" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="High-tech data visualization with glowing line charts and radial progress meters showing practice growth and performance metrics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa1e1C1KKy27F6YKkDnSFHdF-3R5eQgYdMzxwinoWlRNxSMgw8BpvE2r3dMmHCFv1BusbfOkMu8n905MoSa8F0ZM6CY7_o_TCrX3rLkthxGpqw9FCmZCtwHFuibvb2AiXI5IjHqCY0vn5p_jlNj_IeDsHR-5FBw7KIm9E2ekGVTAevIoMNy-_LQsXSasUzyUiwHrz0laLw2Mu_WqGx8PxgSHR8wATuYeO-pafP14kZdx9napDM7EGqJ4A5rlulAHOBa3zJ8h3iztpM"/>
+</div>
+<div class="order-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">insights</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Analytics Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        Data is the new diagnosis. Our Analytics AI provides deep insights into production metrics, case acceptance rates, and overhead ratios in real-time.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Predictive forecasting for monthly revenue and EBITDA.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Individual provider performance and efficiency tracking.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                            Market demographic analysis for targeted patient acquisition.
+                        </li>
+</ul>
+</div>
+</section>
+<!-- 5. Compliance Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed">gavel</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Compliance Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        Sleep soundly knowing you're audit-ready. This agent monitors clinical notes for HIPAA compliance and ensures all OSHA documentation is current.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+                            Automated clinical note auditing for missing components.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+                            HIPAA-compliant document storage and audit logs.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary-fixed text-sm">check_circle</span>
+                            State-specific regulatory updates and alert system.
+                        </li>
+</ul>
+</div>
+<div class="order-1 md:order-2 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Compliance audit interface" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="Digital compliance checklist on a dark interface with circular progress indicators and secure padlock icons for HIPAA data protection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlaBN94Da1aPOiUNIdr2nM7ju0NJv1NyNRcYlbPd0ys6HI7M4amuDuLgZrpVr5srHclc-VidKST9DSBqjIjnC-EWoCABO88LBvE_87NeCN1Wf54Jw-h80Nc1nbV5kWxGTEc8Ti2yY_K5YASt5fRzUPVk1fBQHOUuup0c4HjqzRNo1iVPiUPjztjmdXrBQPV82DgB0_zSZEXABvffTFkVK2ynIVA3Sme68RYKJqdA9HuaoW7sN7Vw2IXzKGeztyeHqAE3SgUFr4PWXe"/>
+</div>
+</section>
+<!-- 6. Training Consultant -->
+<section class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-1 glass-panel rounded-3xl p-4 shadow-2xl border border-outline-variant/10">
+<img alt="Training portal interface" class="rounded-2xl w-full h-auto object-cover border border-outline-variant/20" data-alt="Interactive online learning dashboard with course progress cards, video previews, and skill badge notifications for dental staff training" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGDow8D44yaj6JB7CqY7_OViQTH4CZqNGdV5YD79X0dTzKaedWb0X2pPta3xw_LRviF34IyjJAK7XjBFhxfXmeKchkWVOp1rDCfJ4C7JWIYIQBIIqI7Qa2l3xRcwCBOG2mDvTt3e_cgBSqyYkv5-sNIe6KZSujmA8wtgBbQQ-AUhjyk5KqfXug1rPwD_sbvMUQ8Nsv13EAtlDAr2HkGSjCv8i8aOXS0946eB1tpJic30k-NYO1o63bcvJlREF96wpmMH7LH5W28Maf"/>
+</div>
+<div class="order-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">school</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-white">Training Consultant</h2>
+</div>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">
+                        Onboard staff in days, not weeks. Our AI identifies skill gaps in your team and provides personalized micro-learning modules to fix them.
+                    </p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Interactive role-play AI for front-desk phone training.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Automated standard operating procedure (SOP) generation.
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span>
+                            Real-time feedback on insurance handling and verbal skills.
+                        </li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Role-Based Use Cases -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-extrabold text-white mb-4">Built for Your Whole Team</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Specialized AI intelligence mapped to the specific daily workflows of every role in your practice.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Office Managers -->
+<div class="bg-surface-container p-8 rounded-2xl border-l-4 border-primary-container shadow-xl">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary-container">groups</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white mb-4">Built for Office Managers</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Reduce overhead by automating repetitive clerical work. Oversee all 6 AI consultants from a single command center to ensure peak practice efficiency.
+                        </p>
+</div>
+<!-- Billing Teams -->
+<div class="bg-surface-container p-8 rounded-2xl border-l-4 border-secondary-container shadow-xl">
+<div class="w-12 h-12 rounded-full bg-secondary-container/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary-container">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white mb-4">Built for Billing Teams</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Eliminate the manual grind of calling insurance companies. Let AI handle the verifications and claim status updates so you can focus on complex appeals.
+                        </p>
+</div>
+<!-- Doctors -->
+<div class="bg-surface-container p-8 rounded-2xl border-l-4 border-tertiary-container shadow-xl">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary-container">medical_services</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-white mb-4">Built for Doctors</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            Focus 100% on clinical excellence. The AI ensures your chair is full, your notes are compliant, and your production is accurately captured and billed.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-extrabold text-white mb-4">Scalable Intelligence</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Choose the tier that fits your practice volume and clinical complexity.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-end">
+<!-- Standard -->
+<div class="glass-panel p-8 rounded-3xl border border-outline-variant/20 hover:border-primary/40 transition-all">
+<div class="mb-8">
+<h3 class="text-lg font-bold text-white font-headline">Essential</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-3xl font-extrabold text-white">$499</span>
+<span class="text-on-surface-variant text-sm">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                Eligibility &amp; Scheduling AI
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                Single Location Support
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                Email Support
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-xl border border-primary/30 text-primary font-bold hover:bg-primary/10 transition-colors">Start Free Trial</button>
+</div>
+<!-- Professional (Featured) -->
+<div class="bg-surface-container-high p-10 rounded-3xl border-2 border-primary-container relative shadow-[0_0_50px_rgba(0,212,255,0.1)] scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-white font-headline">Professional</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-4xl font-extrabold text-white">$999</span>
+<span class="text-on-surface-variant text-sm">/month</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">verified</span>
+<strong>All 6 AI Consultants</strong>
+</li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">verified</span>
+                                Multi-location Sync
+                            </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">verified</span>
+                                Priority 24/7 Support
+                            </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-sm">verified</span>
+                                HIPAA Audit Guarantee
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-xl accent-gradient text-on-primary font-bold shadow-lg shadow-primary-container/20">Get Started Now</button>
+</div>
+<!-- Enterprise -->
+<div class="glass-panel p-8 rounded-3xl border border-outline-variant/20 hover:border-primary/40 transition-all">
+<div class="mb-8">
+<h3 class="text-lg font-bold text-white font-headline">Enterprise</h3>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="text-2xl font-extrabold text-white">Custom</span>
+</div>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                Custom Agent Training
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                Dedicated Success Manager
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+                                On-site Implementation
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-xl border border-primary/30 text-primary font-bold hover:bg-primary/10 transition-colors">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 px-6">
+<div class="max-w-5xl mx-auto glass-panel p-16 rounded-[2.5rem] text-center border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary-container/5 rounded-full blur-[100px] -ml-32 -mb-32"></div>
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-6 relative z-10">Ready to Amplify Your Practice?</h2>
+<p class="text-on-surface-variant text-lg mb-10 max-w-2xl mx-auto relative z-10">Join 1,200+ high-performance clinics that have transformed their operations with Elite Dental Force.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all">Schedule My Consultation</button>
+<button class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all">View Case Studies</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-16 px-12 mt-auto tonal-layering-via-bg-shift border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="text-lg font-bold text-slate-200 font-headline">Elite Dental Force</div>
+<div class="text-slate-500 font-body text-xs font-medium uppercase tracking-widest">© 2024 Elite Dental Force. HIPAA Compliant &amp; SOC 2 Type II Certified.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 font-body text-xs font-medium uppercase tracking-widest hover:text-cyan-300 transition-all duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 font-body text-xs font-medium uppercase tracking-widest hover:text-cyan-300 transition-all duration-200 opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-slate-500 font-body text-xs font-medium uppercase tracking-widest hover:text-cyan-300 transition-all duration-200 opacity-80 hover:opacity-100" href="#">Trust Center</a>
+<a class="text-slate-500 font-body text-xs font-medium uppercase tracking-widest hover:text-cyan-300 transition-all duration-200 opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

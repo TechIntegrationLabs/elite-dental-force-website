@@ -1,0 +1,288 @@
+/* Elite Dental Force V3 — Clinical Luminary Design System
+   Shared styles for all pages
+   Enhanced with trending animations + AOS integration */
+
+/* Material Symbols */
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+
+/* ============================================
+   WHITE LOGO ON DARK BG
+   ============================================ */
+.logo-white{filter:brightness(0) invert(1);transition:filter .3s,opacity .3s,transform .3s}
+.logo-white:hover{filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(0,212,255,.4));transform:scale(1.03)}
+
+/* ============================================
+   NOISE TEXTURE
+   ============================================ */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:1}
+body>*{position:relative;z-index:2}
+html{scroll-behavior:smooth}
+
+/* ============================================
+   CURSOR GLOW (follows mouse globally)
+   ============================================ */
+#cursor-glow{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.04),transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:opacity .3s;opacity:0}
+body:hover #cursor-glow{opacity:1}
+
+/* ============================================
+   GLASS CARD
+   ============================================ */
+.glass-card{background:rgba(20,32,50,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+
+/* ============================================
+   SCROLL PROGRESS
+   ============================================ */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00d4ff,#00ffc8,#7c3aed);box-shadow:0 0 12px rgba(0,212,255,0.4);z-index:100;width:0%;transition:width .05s linear;border-radius:0 2px 2px 0}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+.gradient-text{background:linear-gradient(135deg,#fff 0%,#e8f4f8 40%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text-hero{background:linear-gradient(135deg,#00d4ff,#00fdc6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ============================================
+   CARD SPOTLIGHT + GRADIENT BORDER
+   ============================================ */
+.card-spotlight{position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none;border-radius:inherit;z-index:0}
+.tilt-card:hover .card-spotlight{opacity:1}
+.tilt-card>*:not(.card-spotlight){position:relative;z-index:1}
+.tilt-card{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1)}
+
+/* Animated gradient border on hover */
+.gradient-border{position:relative}
+.gradient-border::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:conic-gradient(from var(--border-angle,0deg),transparent 60%,#00d4ff 80%,#00ffc8 90%,transparent 100%);opacity:0;transition:opacity .4s;z-index:-1;animation:border-rotate 4s linear infinite}
+.gradient-border:hover::before{opacity:1}
+@keyframes border-rotate{to{--border-angle:360deg}}
+@property --border-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+
+/* ============================================
+   REVEAL ANIMATIONS (enhanced)
+   ============================================ */
+.reveal-item{opacity:0;transform:translateY(40px)}
+.reveal-item.visible{animation:wavein .8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes wavein{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+/* Slide from left */
+.reveal-left{opacity:0;transform:translateX(-60px)}
+.reveal-left.visible{animation:slideinleft .8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes slideinleft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
+
+/* Slide from right */
+.reveal-right{opacity:0;transform:translateX(60px)}
+.reveal-right.visible{animation:slideinright .8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes slideinright{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
+
+/* Scale up */
+.reveal-scale{opacity:0;transform:scale(.85)}
+.reveal-scale.visible{animation:scalein .8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes scalein{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+/* Blur in */
+.reveal-blur{opacity:0;filter:blur(12px)}
+.reveal-blur.visible{animation:blurin .8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes blurin{from{opacity:0;filter:blur(12px)}to{opacity:1;filter:blur(0)}}
+
+.section-header-fade{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.section-header-fade.visible{opacity:1;transform:translateY(0)}
+
+/* ============================================
+   BUTTON EFFECTS (enhanced)
+   ============================================ */
+.btn-shimmer{position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.btn-shimmer:hover{transform:translateY(-2px)}
+.btn-shimmer::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:left .6s;pointer-events:none}
+.btn-shimmer:hover::after{left:100%}
+
+/* Primary button breathing glow */
+.btn-breathe{animation:btnbreathe 3s ease-in-out infinite}
+@keyframes btnbreathe{0%,100%{box-shadow:0 4px 16px rgba(0,212,255,.25)}50%{box-shadow:0 4px 24px rgba(0,212,255,.4),0 0 40px rgba(0,212,255,.12)}}
+
+.btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.25);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* ============================================
+   FLOATING ORBS (enhanced with morphing)
+   ============================================ */
+.float-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.06;pointer-events:none;z-index:0;animation:orbf 20s ease-in-out infinite alternate}
+.float-orb--cyan{background:radial-gradient(circle,#00d4ff,transparent 70%)}
+.float-orb--purple{background:radial-gradient(circle,#7c3aed,transparent 70%);animation-delay:-7s;animation-duration:25s}
+.float-orb--green{background:radial-gradient(circle,#00ffc8,transparent 70%);animation-delay:-13s;animation-duration:22s}
+@keyframes orbf{0%{transform:translate(0,0) scale(1);border-radius:50%}25%{transform:translate(30px,-20px) scale(1.1);border-radius:40% 60% 60% 40%}50%{transform:translate(-10px,25px) scale(.95);border-radius:60% 40% 50% 50%}75%{transform:translate(-20px,15px) scale(1.08);border-radius:45% 55% 45% 55%}100%{transform:translate(10px,-10px) scale(1.05);border-radius:50%}}
+
+/* ============================================
+   NAV EFFECTS
+   ============================================ */
+.nav-underline{position:relative}
+.nav-underline::after{content:'';position:absolute;bottom:-4px;left:50%;width:0;height:2px;background:linear-gradient(90deg,#00d4ff,#00ffc8);transition:width .3s cubic-bezier(.16,1,.3,1),left .3s cubic-bezier(.16,1,.3,1);border-radius:2px;box-shadow:0 0 8px rgba(0,212,255,.3)}
+.nav-underline:hover::after{width:100%;left:0}
+
+/* ============================================
+   TEXT SHIMMER
+   ============================================ */
+.text-shimmer{background:linear-gradient(90deg,#fff 0%,#fff 40%,#00d4ff 50%,#fff 60%,#fff 100%);background-size:200% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:tshim 4s ease-in-out infinite}
+@keyframes tshim{0%{background-position:100% 0}100%{background-position:-100% 0}}
+
+/* ============================================
+   BADGE GLOW
+   ============================================ */
+.badge-glow{animation:bglow 3s ease-in-out infinite alternate}
+@keyframes bglow{0%{box-shadow:0 0 0 rgba(0,212,255,0)}100%{box-shadow:0 0 20px rgba(0,212,255,.15)}}
+
+/* ============================================
+   CTA GLOW
+   ============================================ */
+.cta-glow{position:relative}
+.cta-glow::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(124,58,237,.05));animation:cpulse 4s ease-in-out infinite alternate;pointer-events:none}
+@keyframes cpulse{0%{opacity:.5}100%{opacity:1}}
+
+/* ============================================
+   SECTION DIVIDER GLOW
+   ============================================ */
+.section-glow{position:relative}
+.section-glow::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.12),transparent);pointer-events:none}
+
+/* ============================================
+   ICON FLOAT ANIMATION
+   ============================================ */
+.icon-float{animation:iconfloat 3s ease-in-out infinite}
+@keyframes iconfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* Icon pulse on hover */
+.icon-pulse:hover{animation:iconpulse .5s cubic-bezier(.16,1,.3,1)}
+@keyframes iconpulse{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+
+/* ============================================
+   CARD HOVER GLOW LINE (top accent)
+   ============================================ */
+.card-glow-top{position:relative;overflow:hidden}
+.card-glow-top::after{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;background:linear-gradient(90deg,transparent,#00d4ff,transparent);border-radius:0 0 2px 2px;opacity:0;transition:opacity .4s,left .4s,right .4s}
+.card-glow-top:hover::after{opacity:1;left:5%;right:5%}
+
+/* ============================================
+   PARALLAX LAYER
+   ============================================ */
+.parallax-slow{transition:transform .1s linear}
+
+/* ============================================
+   IMAGE REVEAL
+   ============================================ */
+.img-reveal{clip-path:inset(8% 4% 8% 4% round 8px);transition:clip-path 1s cubic-bezier(.16,1,.3,1)}
+.img-reveal.revealed{clip-path:inset(0% 0% 0% 0% round 8px)}
+
+/* Image hover zoom */
+.img-zoom{overflow:hidden;border-radius:inherit}
+.img-zoom img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.img-zoom:hover img{transform:scale(1.04)}
+
+/* ============================================
+   DROPDOWN
+   ============================================ */
+.nav-dropdown{position:absolute;top:100%;left:0;min-width:200px;padding:.5rem 0;background:rgba(20,32,50,0.95);backdrop-filter:blur(20px);border-radius:.75rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .3s cubic-bezier(.16,1,.3,1);z-index:50}
+.has-dropdown:hover .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.mobile-overlay{position:fixed;inset:0;background:rgba(7,19,37,0.95);backdrop-filter:blur(20px);z-index:90;display:none;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.mobile-overlay.open{display:flex}
+
+/* ============================================
+   OVERLINE DASH
+   ============================================ */
+.overline-dash{display:inline-block;width:24px;height:2px;background:#00d4ff;border-radius:2px;vertical-align:middle;box-shadow:0 0 6px rgba(0,212,255,.3)}
+
+/* ============================================
+   ACCORDION
+   ============================================ */
+.accordion-content{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+.accordion-item.open .accordion-content{max-height:500px}
+.accordion-chevron{transition:transform .3s}
+.accordion-item.open .accordion-chevron{transform:rotate(180deg)}
+
+/* ============================================
+   FORM STYLES (enhanced)
+   ============================================ */
+input[type="text"],input[type="email"],input[type="tel"],input[type="url"],textarea,select{
+  width:100%;padding:.75rem 1rem;border-radius:.75rem;
+  background:rgba(16,28,46,1);border:1px solid rgba(60,73,78,.15);
+  color:#d7e3fc;font-size:.875rem;font-family:inherit;
+  transition:border-color .3s,box-shadow .3s
+}
+input:focus,textarea:focus,select:focus{outline:none;border-color:rgba(0,212,255,.4);box-shadow:0 0 0 3px rgba(0,212,255,.08)}
+select option{background:#0d1a2d;color:#d7e3fc}
+
+/* ============================================
+   SCROLL HINT
+   ============================================ */
+.scroll-hint-arrow{width:18px;height:18px;border-right:2px solid #64748b;border-bottom:2px solid #64748b;transform:rotate(45deg);animation:sbounce 2s ease-in-out infinite}
+@keyframes sbounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.5}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}
+
+/* ============================================
+   TRUST BAR SCROLL
+   ============================================ */
+.trust-scroll{display:flex;gap:3rem;animation:tslide 25s linear infinite;width:max-content}
+@keyframes tslide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ============================================
+   TYPING CURSOR
+   ============================================ */
+.typing-cursor{display:inline-block;width:3px;height:.85em;background:#00d4ff;margin-left:4px;vertical-align:baseline;animation:cblink .8s step-end infinite;box-shadow:0 0 8px rgba(0,212,255,0.6);border-radius:1px}
+@keyframes cblink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ============================================
+   CLAIM FEED
+   ============================================ */
+.claim-entering{opacity:0;transform:translateY(-10px);height:0;padding-top:0;padding-bottom:0}
+.status-pending{color:#f59e0b;background:rgba(245,158,11,.1)}
+.status-checking{color:#00d4ff;background:rgba(0,212,255,.1)}
+.status-approved{color:#00ffc8;background:rgba(0,255,200,.1)}
+.status-flagged{color:#f87171;background:rgba(248,113,113,.1)}
+.feed-dot{animation:dpulse 2s ease-in-out infinite}
+@keyframes dpulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ============================================
+   ELIGIBILITY DEMO
+   ============================================ */
+.elig-spinner{width:16px;height:16px;border:2px solid rgba(0,212,255,.2);border-top-color:#00d4ff;border-radius:50%;animation:espin .6s linear infinite;flex-shrink:0}
+@keyframes espin{to{transform:rotate(360deg)}}
+.elig-check{color:#00ffc8;font-size:14px;font-weight:bold;flex-shrink:0;width:16px;text-align:center}
+
+/* ============================================
+   SLIDERS
+   ============================================ */
+input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.06);outline:none;cursor:pointer;border:none;padding:0;box-shadow:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#00d4ff;cursor:pointer;box-shadow:0 0 12px rgba(0,212,255,.4);transition:transform .2s,box-shadow .2s}
+input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.2);box-shadow:0 0 20px rgba(0,212,255,.6)}
+input[type="range"]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#00d4ff;border:none;box-shadow:0 0 12px rgba(0,212,255,.4)}
+
+/* ============================================
+   FOOTER LINK HOVER
+   ============================================ */
+.footer-link{transition:color .2s,transform .2s;display:inline-block}
+.footer-link:hover{color:#00d4ff;transform:translateX(4px)}
+
+/* ============================================
+   COUNTER SUFFIX (% sign etc)
+   ============================================ */
+.counter-suffix{font-size:.6em;opacity:.6;margin-left:2px}
+
+/* ============================================
+   STAGGER CHILDREN (utility)
+   ============================================ */
+.stagger-children>*:nth-child(1){animation-delay:0s}
+.stagger-children>*:nth-child(2){animation-delay:.08s}
+.stagger-children>*:nth-child(3){animation-delay:.16s}
+.stagger-children>*:nth-child(4){animation-delay:.24s}
+.stagger-children>*:nth-child(5){animation-delay:.32s}
+.stagger-children>*:nth-child(6){animation-delay:.4s}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal-item,.reveal-left,.reveal-right,.reveal-scale,.reveal-blur{opacity:1;transform:none;filter:none}
+  .section-header-fade{opacity:1;transform:none}
+  .trust-scroll{animation:none}
+  #cursor-glow{display:none}
+}

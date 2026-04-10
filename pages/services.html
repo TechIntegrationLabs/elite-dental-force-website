@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,329 +8,354 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="../css/v3.css">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../index.html" class="logo">
-          <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="platform.html" class="nav-link">Platform</a>
-              <ul class="dropdown">
-                <li><a href="platform.html">Platform Overview</a></li>
-                <li><a href="ai-consultants.html">AI Consultants</a></li>
-                <li><a href="edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="services.html" class="nav-link active">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="resources.html" class="nav-link">Resources</a>
-              <ul class="dropdown">
-                <li><a href="resources/blog.html">Blog</a></li>
-                <li><a href="resources/podcast.html">Podcast</a></li>
-                <li><a href="resources/webinars.html">Webinars</a></li>
-                <li><a href="resources/news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="company.html" class="nav-link">Company</a>
-              <ul class="dropdown">
-                <li><a href="company.html">About Us</a></li>
-                <li><a href="company/security.html">Security</a></li>
-                <li><a href="company/faq.html">FAQ</a></li>
-                <li><a href="investors.html">Investors</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content" style="max-width: 700px; margin: 0 auto; text-align: center;">
-          <span class="hero-badge">Professional Services</span>
-          <h1>Implementation & Support Built for Success</h1>
-          <p class="lead">From initial discovery to ongoing optimization, our services team ensures you realize the full value of the Elite Dental Force platform.</p>
-          <div class="hero-actions" style="justify-content: center;">
-            <a href="contact.html#demo" class="btn btn-white btn-lg">Book a Demo</a>
-          </div>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../index.html" class="flex items-center gap-3"><img src="../images/Transparent Logo.png" alt="Elite Dental Force" class="h-32 logo-white"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
         </div>
       </div>
-    </section>
-
-    <!-- Engagement Paths -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Engagement Options</span>
-          <h2>Flexible Paths to Get Started</h2>
-          <p>Choose the engagement model that fits your practice's needs and timeline.</p>
-        </div>
-
-        <div class="grid grid-2" style="gap: var(--space-8);">
-          <div class="feature-card" style="padding: var(--space-10);">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-              </svg>
-            </div>
-            <h3>Subscription Access</h3>
-            <p>Full platform access with standard onboarding for practices ready to get started quickly.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Self-service setup with guided tutorials</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Email and chat support</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Access to knowledge base and training videos</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Monthly pricing with no long-term commitment</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Best for: Single-location practices with technical familiarity</p>
-          </div>
-
-          <div class="feature-card" style="padding: var(--space-10);">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Guided Implementation</h3>
-            <p>Dedicated implementation support to ensure a smooth transition and rapid time-to-value.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Assigned implementation specialist</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Custom configuration and workflow setup</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Live training sessions for your team</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Go-live support and validation</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Best for: Multi-location groups wanting comprehensive support</p>
-          </div>
-
-          <div class="feature-card" style="padding: var(--space-10);">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
-            </div>
-            <h3>Enterprise Onboarding</h3>
-            <p>White-glove implementation for DSOs and large organizations with complex requirements.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Dedicated project manager</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Custom integrations and API configuration</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Phased rollout across locations</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Executive stakeholder alignment</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Best for: DSOs and enterprise organizations</p>
-          </div>
-
-          <div class="feature-card" style="padding: var(--space-10);">
-            <div class="feature-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <h3>Pilot Program</h3>
-            <p>Test the platform with a subset of your organization before full deployment.</p>
-            <ul style="margin: var(--space-4) 0;">
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Limited-scope implementation</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Defined success metrics</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">ROI analysis and reporting</li>
-              <li style="padding: var(--space-2) 0; color: var(--color-text-light); font-size: var(--text-sm);">Clear path to full deployment</li>
-            </ul>
-            <p style="font-size: var(--text-sm); color: var(--color-text-muted);">Best for: Organizations wanting to validate before committing</p>
-          </div>
+      <div class="relative has-dropdown">
+        <a href="services.html" class="nav-underline text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
         </div>
       </div>
-    </section>
-
-    <!-- Implementation Process -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Implementation</span>
-          <h2>Our Proven Process</h2>
-          <p>A structured approach designed to minimize disruption and maximize results.</p>
-        </div>
-
-        <div class="workflow-steps">
-          <div class="workflow-step">
-            <h4>Discovery</h4>
-            <p>We analyze your current workflows, systems, and goals to create a customized implementation plan.</p>
-          </div>
-          <div class="workflow-step">
-            <h4>Configuration</h4>
-            <p>Your dedicated team configures the platform to match your practice's specific requirements and workflows.</p>
-          </div>
-          <div class="workflow-step">
-            <h4>Training</h4>
-            <p>Comprehensive training ensures every team member is confident and capable with the new tools.</p>
-          </div>
-          <div class="workflow-step">
-            <h4>Go-Live</h4>
-            <p>Supported launch with real-time assistance to address questions and optimize performance.</p>
-          </div>
-        </div>
-
-        <div style="max-width: 800px; margin: var(--space-16) auto 0; background: var(--color-white); padding: var(--space-10); border-radius: var(--radius-xl); box-shadow: var(--shadow-md);">
-          <h3 style="text-align: center; margin-bottom: var(--space-6);">Ongoing Optimization</h3>
-          <p style="text-align: center; color: var(--color-text-light);">Implementation is just the beginning. Our success team provides continuous support through regular check-ins, performance reviews, and proactive optimization recommendations to ensure you're getting maximum value from the platform.</p>
+      <div class="relative has-dropdown">
+        <a href="resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
         </div>
       </div>
-    </section>
-
-    <!-- Services Inquiry Form -->
-    <section class="section" id="inquiry">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <span class="overline">Get Started</span>
-          <h2>Let's Discuss Your Needs</h2>
-          <p>Tell us about your practice and we'll recommend the best engagement path for you.</p>
-        </div>
-
-        <!-- GoHighLevel Form Placeholder -->
-        <div style="background: var(--color-bg-light); padding: var(--space-10); border-radius: var(--radius-xl); border: 2px dashed var(--color-border);">
-          <form data-validate>
-            <div class="form-group">
-              <label class="form-label" for="name">Full Name *</label>
-              <input type="text" id="name" name="name" class="form-input" required data-error-message="Please enter your name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="email">Email Address *</label>
-              <input type="email" id="email" name="email" class="form-input" required data-error-message="Please enter a valid email">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="practice">Practice Name *</label>
-              <input type="text" id="practice" name="practice" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="locations">Number of Locations</label>
-              <select id="locations" name="locations" class="form-select">
-                <option value="">Select...</option>
-                <option value="1">1 location</option>
-                <option value="2-5">2-5 locations</option>
-                <option value="6-20">6-20 locations</option>
-                <option value="20+">20+ locations</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="message">Tell us about your needs</label>
-              <textarea id="message" name="message" class="form-textarea" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Inquiry</button>
-          </form>
-          <p style="text-align: center; font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-4);">This form will be connected to GoHighLevel and tagged as "Services Inquiry"</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Ready to Get Started?</h2>
-        <p>Our team is ready to help you find the right engagement path for your practice.</p>
-        <div class="cta-band-actions">
-          <a href="contact.html#demo" class="btn btn-white btn-lg">Book a Demo</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Contact Sales</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="logo">
-            <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="platform.html">Overview</a></li>
-            <li><a href="ai-consultants.html">AI Consultants</a></li>
-            <li><a href="edifi.html">EDiFi Software</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources/blog.html">Blog</a></li>
-            <li><a href="resources/podcast.html">Podcast</a></li>
-            <li><a href="resources/webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="company.html">About Us</a></li>
-            <li><a href="company/security.html">Security</a></li>
-            <li><a href="company/faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="contact.html#sales">Sales</a></li>
-            <li><a href="contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
+      <div class="relative has-dropdown">
+        <a href="company.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="flex items-center gap-4">
+      <a href="contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
 
-  <script src="../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../enhancements/version-switcher.js"></script>
+<main class="pt-20">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-24 pb-28">
+  <div class="float-orb float-orb--cyan" style="width:400px;height:400px;top:10%;left:-10%"></div>
+  <div class="float-orb float-orb--purple" style="width:300px;height:300px;top:50%;right:-5%"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <div class="badge-glow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-6 font-mono">
+      <span class="material-symbols-outlined text-base">build</span>
+      Professional Services
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white leading-[1.08] tracking-tighter mb-6">
+      <span class="gradient-text">Implementation & Support</span> Built for Success
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-2xl mx-auto">From initial discovery to ongoing optimization, our services team ensures you realize the full value of the Elite Dental Force platform.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html#demo" class="btn-shimmer magnetic-btn px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all flex items-center gap-2 font-headline">Book a Demo <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT OPTIONS -->
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Engagement Options</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">Flexible Paths to Get Started</span></h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">Choose the engagement model that fits your practice's needs and timeline.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Subscription Access -->
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary-container text-2xl">inventory_2</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold text-white">Subscription Access</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm mb-5">Full platform access with standard onboarding for practices ready to get started quickly.</p>
+        <ul class="space-y-2.5 mb-5">
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Self-service setup with guided tutorials</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Email and chat support</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Access to knowledge base and training videos</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Monthly pricing with no long-term commitment</li>
+        </ul>
+        <p class="text-xs text-slate-500 font-mono">Best for: Single-location practices</p>
+      </div>
+
+      <!-- Guided Implementation -->
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary-container text-2xl">support_agent</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold text-white">Guided Implementation</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm mb-5">Dedicated implementation support to ensure a smooth transition and rapid time-to-value.</p>
+        <ul class="space-y-2.5 mb-5">
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Assigned implementation specialist</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Custom configuration and workflow setup</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Live training sessions for your team</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Go-live support and validation</li>
+        </ul>
+        <p class="text-xs text-slate-500 font-mono">Best for: Multi-location groups</p>
+      </div>
+
+      <!-- Enterprise Onboarding -->
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary-container text-2xl">corporate_fare</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold text-white">Enterprise Onboarding</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm mb-5">White-glove implementation for DSOs and large organizations with complex requirements.</p>
+        <ul class="space-y-2.5 mb-5">
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Dedicated project manager</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Custom integrations and API configuration</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Phased rollout across locations</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Executive stakeholder alignment</li>
+        </ul>
+        <p class="text-xs text-slate-500 font-mono">Best for: DSOs and enterprise organizations</p>
+      </div>
+
+      <!-- Pilot Program -->
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary-container text-2xl">science</span>
+          </div>
+          <h3 class="text-xl font-headline font-bold text-white">Pilot Program</h3>
+        </div>
+        <p class="text-on-surface-variant text-sm mb-5">Test the platform with a subset of your organization before full deployment.</p>
+        <ul class="space-y-2.5 mb-5">
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Limited-scope implementation</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Defined success metrics</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> ROI analysis and reporting</li>
+          <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-secondary-container mt-0.5">&#10003;</span> Clear path to full deployment</li>
+        </ul>
+        <p class="text-xs text-slate-500 font-mono">Best for: Organizations wanting to validate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPLEMENTATION PROCESS -->
+<section class="py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Implementation</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">Our Proven Process</span></h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">A structured approach designed to minimize disruption and maximize results.</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="reveal-item relative rounded-2xl bg-surface-container p-6 border-l-4 border-primary-container">
+        <div class="text-4xl font-headline font-extrabold text-primary-container/20 mb-2">01</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-2">Discovery</h4>
+        <p class="text-sm text-on-surface-variant">We analyze your current workflows, systems, and goals to create a customized implementation plan.</p>
+      </div>
+      <div class="reveal-item relative rounded-2xl bg-surface-container p-6 border-l-4 border-secondary-container">
+        <div class="text-4xl font-headline font-extrabold text-secondary-container/20 mb-2">02</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-2">Configure</h4>
+        <p class="text-sm text-on-surface-variant">Your dedicated team configures the platform to match your practice's specific requirements and workflows.</p>
+      </div>
+      <div class="reveal-item relative rounded-2xl bg-surface-container p-6 border-l-4 border-tertiary-container">
+        <div class="text-4xl font-headline font-extrabold text-tertiary-container/20 mb-2">03</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-2">Training</h4>
+        <p class="text-sm text-on-surface-variant">Comprehensive training ensures every team member is confident and capable with the new tools.</p>
+      </div>
+      <div class="reveal-item relative rounded-2xl bg-surface-container p-6 border-l-4 border-primary">
+        <div class="text-4xl font-headline font-extrabold text-primary/20 mb-2">04</div>
+        <h4 class="text-lg font-headline font-bold text-white mb-2">Go-Live</h4>
+        <p class="text-sm text-on-surface-variant">Supported launch with real-time assistance to address questions and optimize performance.</p>
+      </div>
+    </div>
+
+    <!-- Ongoing Optimization -->
+    <div class="max-w-3xl mx-auto mt-16 rounded-2xl bg-surface-container-high p-10 text-center glass-card">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="material-symbols-outlined text-secondary-container">trending_up</span>
+        <h3 class="text-xl font-headline font-bold text-white">Ongoing Optimization</h3>
+      </div>
+      <p class="text-on-surface-variant leading-relaxed">Implementation is just the beginning. Our success team provides continuous support through regular check-ins, performance reviews, and proactive optimization recommendations to ensure you're getting maximum value from the platform.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES INQUIRY FORM -->
+<section class="py-28 bg-surface-container-low" id="inquiry">
+  <div class="max-w-2xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Get Started</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">Let's Discuss Your Needs</span></h2>
+      <p class="text-on-surface-variant">Tell us about your practice and we'll recommend the best engagement path for you.</p>
+    </div>
+
+    <div class="rounded-2xl bg-surface-container p-8 md:p-10">
+      <form>
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Full Name *</label>
+            <input type="text" name="name" required placeholder="Your full name" class="rounded-xl">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Email Address *</label>
+            <input type="email" name="email" required placeholder="you@practice.com" class="rounded-xl">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Phone Number</label>
+            <input type="tel" name="phone" placeholder="(555) 123-4567" class="rounded-xl">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Practice Name *</label>
+            <input type="text" name="practice" required placeholder="Your practice name" class="rounded-xl">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Number of Locations</label>
+            <select name="locations" class="rounded-xl">
+              <option value="">Select...</option>
+              <option value="1">1 location</option>
+              <option value="2-5">2-5 locations</option>
+              <option value="6-20">6-20 locations</option>
+              <option value="20+">20+ locations</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-on-surface mb-2">Tell us about your needs</label>
+            <textarea name="message" rows="4" placeholder="Describe your practice's needs and goals..." class="rounded-xl"></textarea>
+          </div>
+          <button type="submit" class="btn-shimmer w-full py-3.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all font-headline text-sm">Submit Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 relative overflow-hidden">
+  <div class="float-orb float-orb--green" style="width:350px;height:350px;bottom:0;left:20%"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-3xl md:text-4xl font-headline font-extrabold text-white tracking-tight mb-6">Ready to Get Started?</h2>
+    <p class="text-on-surface-variant text-lg mb-10">Our team is ready to help you find the right engagement path for your practice.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html#demo" class="btn-shimmer magnetic-btn px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all font-headline">Book a Demo</a>
+      <a href="contact.html" class="px-8 py-4 bg-surface-container-high border border-outline-variant/15 text-white font-bold rounded-xl hover:bg-surface-container-highest transition-all font-headline">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../index.html"><img src="../images/Transparent Logo.png" alt="Elite Dental Force" class="h-24 mb-4 logo-white"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../js/v3.js"></script>
 </body>
 </html>

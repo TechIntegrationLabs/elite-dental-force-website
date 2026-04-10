@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,765 +8,403 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="../css/v3.css">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
 
-  <style>
-    /* About Page Specific Styles */
-    .about-hero {
-      position: relative;
-      padding: calc(100px + var(--space-16)) 0 var(--space-16);
-      overflow: hidden;
-    }
-
-    .about-hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .founder-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16);
-      align-items: center;
-    }
-
-    .founder-image {
-      position: relative;
-    }
-
-    .founder-image img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .founder-image::after {
-      content: '';
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: -20px;
-      bottom: -20px;
-      border: 2px solid var(--color-interactive);
-      border-radius: var(--radius-xl);
-      z-index: -1;
-      opacity: 0.3;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-8);
-    }
-
-    .team-card {
-      background: #e8eef4;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      transition: all var(--transition-base);
-      padding: var(--space-6);
-    }
-
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .team-card-image {
-      aspect-ratio: 1;
-      overflow: hidden;
-      border-radius: var(--radius-lg);
-      border: 4px solid rgba(0, 31, 113, 0.1);
-      margin-bottom: var(--space-4);
-    }
-
-    .team-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-base);
-    }
-
-    .team-card:hover .team-card-image img {
-      transform: scale(1.05);
-    }
-
-    .team-card-info {
-      text-align: center;
-    }
-
-    .team-card-info h4 {
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-2);
-      color: var(--color-brand);
-    }
-
-    .team-card-info .team-title {
-      font-size: var(--text-base);
-      font-style: italic;
-      font-weight: var(--font-semibold);
-      color: var(--color-brand);
-      margin-bottom: var(--space-3);
-    }
-
-    .team-card-info .team-bio {
-      font-size: var(--text-sm);
-      color: #4a5568;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .advisors-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: var(--space-8);
-    }
-
-    .advisor-card {
-      text-align: center;
-    }
-
-    .advisor-card-image {
-      width: 140px;
-      height: 140px;
-      border-radius: var(--radius-full);
-      overflow: hidden;
-      margin: 0 auto var(--space-4);
-      border: 3px solid var(--color-card-border);
-      transition: all var(--transition-base);
-    }
-
-    .advisor-card:hover .advisor-card-image {
-      border-color: var(--color-interactive);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .advisor-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-4);
-    }
-
-    .photo-gallery-item {
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-
-    .photo-gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-base);
-    }
-
-    .photo-gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .photo-gallery-item.featured {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-
-    .partners-scroll {
-      display: flex;
-      overflow: hidden;
-      position: relative;
-      padding: var(--space-8) 0;
-    }
-
-    .partners-scroll::before,
-    .partners-scroll::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .partners-scroll::before {
-      left: 0;
-      background: linear-gradient(to right, var(--color-deep) 0%, transparent 100%);
-    }
-
-    .partners-scroll::after {
-      right: 0;
-      background: linear-gradient(to left, var(--color-deep) 0%, transparent 100%);
-    }
-
-    .partners-logos {
-      display: flex;
-      align-items: center;
-      gap: var(--space-12);
-      animation: scroll-left 30s linear infinite;
-    }
-
-    .partners-logos img {
-      height: 50px;
-      width: auto;
-      opacity: 0.8;
-      filter: brightness(0) invert(1);
-      transition: all var(--transition-base);
-    }
-
-    .partners-logos img:hover {
-      opacity: 1;
-    }
-
-    .transformation-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-12);
-      align-items: center;
-    }
-
-    .transformation-image img {
-      width: 100%;
-      border-radius: var(--radius-xl);
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
-    }
-
-    .value-card {
-      background: var(--color-card-bg);
-      border: 1px solid var(--color-card-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
-      text-align: center;
-      transition: all var(--transition-base);
-    }
-
-    .value-card:hover {
-      border-color: var(--color-interactive);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .value-icon {
-      width: 64px;
-      height: 64px;
-      background: rgba(75, 168, 240, 0.1);
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-4);
-    }
-
-    .value-icon svg {
-      width: 32px;
-      height: 32px;
-      stroke: var(--color-interactive);
-    }
-
-    @media (max-width: 1024px) {
-      .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .advisors-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .founder-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .founder-image {
-        order: -1;
-        margin: 0 auto;
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background":"#071325","surface":"#071325","surface-bright":"#2e394d",
+            "surface-container":"#142032","surface-container-high":"#1f2a3d",
+            "surface-container-highest":"#2a3548","surface-container-low":"#101c2e",
+            "surface-container-lowest":"#030e20","surface-dim":"#071325",
+            "surface-tint":"#3cd7ff","surface-variant":"#2a3548",
+            "primary":"#a8e8ff","primary-container":"#00d4ff",
+            "secondary":"#f4fff8","secondary-container":"#00fdc6",
+            "tertiary":"#e7d8ff","tertiary-container":"#cfb7ff",
+            "error":"#ffb4ab","error-container":"#93000a",
+            "on-background":"#d7e3fc","on-surface":"#d7e3fc",
+            "on-surface-variant":"#bbc9cf","on-primary":"#003642",
+            "on-primary-container":"#00586b","on-secondary":"#00382a",
+            "on-secondary-container":"#007056","on-tertiary":"#3f008e",
+            "on-tertiary-container":"#6412d5","on-error":"#690005",
+            "on-error-container":"#ffdad6","outline":"#859398",
+            "outline-variant":"#3c494e","inverse-surface":"#d7e3fc",
+            "inverse-on-surface":"#253144","inverse-primary":"#00677e",
+            "primary-fixed":"#b4ebff","primary-fixed-dim":"#3cd7ff",
+            "secondary-fixed":"#2cffca","secondary-fixed-dim":"#00e0b0",
+            "tertiary-fixed":"#eaddff","tertiary-fixed-dim":"#d2bbff"
+          },
+          fontFamily: {
+            "headline":["Manrope","sans-serif"],
+            "body":["Inter","sans-serif"],
+            "mono":["JetBrains Mono","monospace"]
+          }
+        }
       }
     }
-
-    @media (max-width: 768px) {
-      .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .advisors-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .photo-gallery {
-        grid-template-columns: 1fr 1fr;
-      }
-      .photo-gallery-item.featured {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
-      .transformation-section {
-        grid-template-columns: 1fr;
-      }
-      .values-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  </script>
 </head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-inner">
-        <a href="../index.html" class="logo">
-          <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-        </a>
+<body class="bg-surface-dim text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div id="scroll-progress"></div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li class="has-dropdown">
-              <a href="platform.html" class="nav-link">Platform</a>
-              <ul class="dropdown">
-                <li><a href="platform.html">Platform Overview</a></li>
-                <li><a href="ai-consultants.html">AI Consultants</a></li>
-                <li><a href="edifi.html">EDiFi Software</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="services.html" class="nav-link">Solutions</a>
-              <ul class="dropdown">
-                <li><a href="services.html">Services</a></li>
-                <li><a href="partners.html">Partners</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="resources.html" class="nav-link">Resources</a>
-              <ul class="dropdown">
-                <li><a href="resources/blog.html">Blog</a></li>
-                <li><a href="resources/podcast.html">Podcast</a></li>
-                <li><a href="resources/webinars.html">Webinars</a></li>
-                <li><a href="resources/news.html">News</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="company.html" class="nav-link active">Company</a>
-              <ul class="dropdown">
-                <li><a href="company.html">About Us</a></li>
-                <li><a href="company/security.html">Security</a></li>
-                <li><a href="company/faq.html">FAQ</a></li>
-                <li><a href="investors.html">Investors</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="contact.html#sales" class="btn btn-primary">Book a Demo</a>
-          </div>
-        </nav>
-
-        <button class="mobile-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="about-hero hero">
-      <div class="container">
-        <div class="about-hero-content">
-          <span class="hero-badge">About Elite Dental Force</span>
-          <h1>Empowering Your Practice with AI Solutions</h1>
-          <p class="lead">We're building the infrastructure that transforms dental revenue operations from uncertainty to confidence.</p>
+<!-- HEADER -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-[#071325]/60 backdrop-blur-xl transition-all duration-300">
+  <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+    <a href="../index.html" class="flex items-center gap-3"><img src="../images/Transparent Logo.png" alt="Elite Dental Force" class="h-32 logo-white"></a>
+    <div class="hidden lg:flex items-center gap-x-8 font-headline font-bold tracking-tight text-sm">
+      <div class="relative has-dropdown">
+        <a href="platform.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Platform</a>
+        <div class="nav-dropdown">
+          <a href="platform.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Platform Overview</a>
+          <a href="ai-consultants.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">AI Consultants</a>
+          <a href="edifi.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">EDiFi Software</a>
         </div>
       </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section class="section">
-      <div class="container">
-        <div class="founder-section">
-          <div class="founder-content">
-            <span class="overline" style="color: var(--color-interactive); font-size: var(--text-sm); font-weight: var(--font-semibold); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-4);">Our Founder</span>
-            <h2>Alvin Uta'i</h2>
-            <p class="lead" style="color: var(--color-text-light);">Founder & CEO</p>
-            <p style="color: var(--color-text-light); margin-bottom: var(--space-6);">Alvin is an expert in AI-driven dental billing transformation, specializing in clean-claim automation, denial prevention, and scalable workflows. With deep roots in revenue cycle management, he recognized that dental practices were drowning in administrative complexity while leaving significant revenue on the table.</p>
-            <p style="color: var(--color-text-light); margin-bottom: var(--space-6);">His vision for Elite Dental Force was born from firsthand experience watching practices struggle with eligibility verification errors, mounting claim denials, and inefficient manual processes. Alvin set out to build an intelligent platform that eliminates these pain points through AI-powered automation and real-time analytics.</p>
-            <p style="color: var(--color-text-light);">Under his leadership, EDF has pioneered solutions that help practices achieve clean-claim rates exceeding 98%, reduce denial rates by up to 40%, and scale their operations without adding administrative overhead. Alvin's commitment to innovation continues to drive EDF's mission: empowering dental practices with the technology they need to thrive.</p>
-          </div>
-          <div class="founder-image">
-            <img src="../images/team/alvin-utai.png" alt="Alvin Uta'i - Founder & CEO">
-          </div>
+      <div class="relative has-dropdown">
+        <a href="services.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Solutions</a>
+        <div class="nav-dropdown">
+          <a href="services.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Services</a>
+          <a href="partners.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Partners</a>
         </div>
       </div>
-    </section>
-
-    <!-- Mission & Transformation -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="transformation-section">
-          <div class="transformation-content">
-            <span class="overline" style="color: var(--color-interactive); font-size: var(--text-sm); font-weight: var(--font-semibold); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: var(--space-4);">Our Mission</span>
-            <h2>From Chaos to Clarity</h2>
-            <p style="font-size: var(--text-lg); color: var(--color-text-light); margin-bottom: var(--space-6);">We believe dental practices shouldn't struggle with eligibility guesswork, claim denials, or inconsistent workflows. Our mission is to provide intelligent infrastructure that transforms revenue operations into a competitive advantage.</p>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Real-time eligibility verification
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                AI-powered decision support
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Standardized workflows at scale
-              </li>
-              <li style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0; color: var(--color-text-light);">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ba8f0" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Enterprise-grade analytics
-              </li>
-            </ul>
-          </div>
-          <div class="transformation-image">
-            <img src="../images/about/transformation.png" alt="Before and after transformation with EDiFi">
-          </div>
+      <div class="relative has-dropdown">
+        <a href="resources.html" class="nav-underline text-slate-300 hover:text-white transition-colors py-2">Resources</a>
+        <div class="nav-dropdown">
+          <a href="resources/blog.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Blog</a>
+          <a href="resources/podcast.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Podcast</a>
+          <a href="resources/webinars.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Webinars</a>
+          <a href="resources/news.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">News</a>
         </div>
       </div>
-    </section>
-
-    <!-- Core Values -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Our Values</span>
-          <h2>What Drives Us</h2>
-          <p>The principles that guide every decision we make.</p>
-        </div>
-
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-            <h3>Trust</h3>
-            <p style="color: var(--color-text-light);">We earn trust through transparency, security, and consistent delivery on our promises.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <h3>Innovation</h3>
-            <p style="color: var(--color-text-light);">We continuously push boundaries to deliver solutions that anticipate tomorrow's challenges.</p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <h3>Partnership</h3>
-            <p style="color: var(--color-text-light);">We succeed when our clients succeed. Your goals are our goals.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership Team -->
-    <section class="section bg-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Leadership</span>
-          <h2>Our Executive Team</h2>
-          <p>Experienced leaders driving innovation in dental revenue technology.</p>
-        </div>
-
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-card-image">
-              <img src="../images/team/alvin-utai.png" alt="Alvin T. Uta'i">
-            </div>
-            <div class="team-card-info">
-              <h4>Alvin T. Uta'i</h4>
-              <p class="team-title">Founder & CEO</p>
-              <p class="team-bio">Expert in AI-driven dental billing transformation, specializing in clean-claim automation, denial prevention, and scalable workflows.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div class="team-card-image">
-              <img src="../images/team/alex-furer.png" alt="Alex Furer">
-            </div>
-            <div class="team-card-info">
-              <h4>Alex Furer</h4>
-              <p class="team-title">Chief Technology Officer</p>
-              <p class="team-bio">30+ year expert in system connectivity, improving data exchange and automation for dental practices with interoperable technology.</p>
-            </div>
-          </div>
-
-          <div class="team-card">
-            <div class="team-card-image">
-              <img src="../images/team/seti-matua.png" alt="Seti Matua">
-            </div>
-            <div class="team-card-info">
-              <h4>Seti Matua</h4>
-              <p class="team-title">Chief Operating Officer</p>
-              <p class="team-bio">Executing product delivery with precision, aligning development and operations to ensure clients experience efficient, clean-claim workflows.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Advisors & Key Opinion Leaders -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Advisors</span>
-          <h2>Key Opinion Leaders</h2>
-          <p>Industry experts providing strategic guidance and domain expertise.</p>
-        </div>
-
-        <div class="advisors-grid">
-          <div class="advisor-card">
-            <div class="advisor-card-image">
-              <img src="../images/team/dr-mark-whitfield.png" alt="Dr. Mark Whitfield">
-            </div>
-            <h4 style="color: var(--color-white); margin-bottom: var(--space-1);">Dr. Mark Whitfield</h4>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive);">Clinical Advisor</p>
-          </div>
-
-          <div class="advisor-card">
-            <div class="advisor-card-image">
-              <img src="../images/team/dr-siona-motufau.png" alt="Dr. Siona Motufau">
-            </div>
-            <h4 style="color: var(--color-white); margin-bottom: var(--space-1);">Dr. Siona Motufau</h4>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive);">Practice Strategy</p>
-          </div>
-
-          <div class="advisor-card">
-            <div class="advisor-card-image">
-              <img src="../images/team/dr-sonya-reddy.png" alt="Dr. Sonya Reddy">
-            </div>
-            <h4 style="color: var(--color-white); margin-bottom: var(--space-1);">Dr. Sonya Reddy</h4>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive);">Revenue Optimization</p>
-          </div>
-
-          <div class="advisor-card">
-            <div class="advisor-card-image">
-              <img src="../images/team/dr-arrington.png" alt="Dr. Arrington">
-            </div>
-            <h4 style="color: var(--color-white); margin-bottom: var(--space-1);">Dr. Arrington</h4>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive);">DSO Operations</p>
-          </div>
-
-          <div class="advisor-card">
-            <div class="advisor-card-image">
-              <img src="../images/team/portrait-2.jpg" alt="Advisor">
-            </div>
-            <h4 style="color: var(--color-white); margin-bottom: var(--space-1);">Jennifer Walsh</h4>
-            <p style="font-size: var(--text-sm); color: var(--color-interactive);">Healthcare Tech</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Photo Gallery - Industry Events -->
-    <section class="section bg-light">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">In the Community</span>
-          <h2>Industry Presence</h2>
-          <p>Active participants in the dental community through conferences, partnerships, and thought leadership.</p>
-        </div>
-
-        <div class="photo-gallery">
-          <div class="photo-gallery-item featured">
-            <img src="../images/events/kol-team-pbf.jpg" alt="EDF team at industry conference">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/dental-nachos.jpg" alt="Partnership with Dental Nachos">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/team-event-1.jpg" alt="Team at dental event">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/conference-1.jpg" alt="Conference presentation">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/team-event-2.jpg" alt="Team collaboration">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/conference-2.jpg" alt="Industry networking">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/team-event-3.jpg" alt="Team building">
-          </div>
-          <div class="photo-gallery-item">
-            <img src="../images/events/team-event-4.jpg" alt="Company event">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Ecosystem</span>
-          <h2>Our Partners</h2>
-          <p>Strategic partnerships that extend our capabilities and reach.</p>
-        </div>
-      </div>
-
-      <div class="partners-scroll">
-        <div class="partners-logos">
-          <img src="../images/partners/veritas-dental.png" alt="Veritas Dental Resources">
-          <img src="../images/partners/ohana-dental.png" alt="Ohana Dental">
-          <img src="../images/partners/emerald-beacon.png" alt="Emerald Beacon">
-          <img src="../images/partners/drdds.png" alt="DrDDS">
-          <img src="../images/partners/heydonto.png" alt="HeyDonto">
-          <img src="../images/partners/mulligan-funding.webp" alt="Mulligan Funding">
-          <img src="../images/partners/clear-forward.webp" alt="Clear Forward">
-          <!-- Duplicate for seamless scroll -->
-          <img src="../images/partners/veritas-dental.png" alt="Veritas Dental Resources">
-          <img src="../images/partners/ohana-dental.png" alt="Ohana Dental">
-          <img src="../images/partners/emerald-beacon.png" alt="Emerald Beacon">
-          <img src="../images/partners/drdds.png" alt="DrDDS">
-          <img src="../images/partners/heydonto.png" alt="HeyDonto">
-          <img src="../images/partners/mulligan-funding.webp" alt="Mulligan Funding">
-          <img src="../images/partners/clear-forward.webp" alt="Clear Forward">
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="section bg-alt">
-      <div class="container">
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">500+</div>
-            <div class="metric-label">Practices Served</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">15+</div>
-            <div class="metric-label">Industry Events</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">50+</div>
-            <div class="metric-label">Podcast Episodes</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">20+</div>
-            <div class="metric-label">Strategic Partners</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DSO Network Visual -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="overline">Network</span>
-          <h2>Who We Serve</h2>
-          <p>From single-location practices to enterprise DSOs across the nation.</p>
-        </div>
-
-        <div style="text-align: center;">
-          <img src="../images/about/dso-network.png" alt="DSO Network Map" style="max-width: 100%; border-radius: var(--radius-xl);">
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Band -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>Ready to Join the Elite Dental Force Family?</h2>
-        <p>Discover how we can transform your practice's revenue operations.</p>
-        <div class="cta-band-actions">
-          <a href="contact.html#demo" class="btn btn-primary btn-lg">Book a Demo</a>
-          <a href="contact.html" class="btn btn-secondary btn-lg" style="border-color: white; color: white;">Contact Us</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="logo">
-            <img src="../images/Grayscale Transparent.png" alt="Elite Dental Force">
-          </a>
-          <p>The infrastructure leader in dental revenue intelligence.</p>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Platform</h5>
-          <ul class="footer-links">
-            <li><a href="platform.html">Overview</a></li>
-            <li><a href="ai-consultants.html">AI Consultants</a></li>
-            <li><a href="edifi.html">EDiFi Software</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Resources</h5>
-          <ul class="footer-links">
-            <li><a href="resources/blog.html">Blog</a></li>
-            <li><a href="resources/podcast.html">Podcast</a></li>
-            <li><a href="resources/webinars.html">Webinars</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="footer-links">
-            <li><a href="company.html">About Us</a></li>
-            <li><a href="company/security.html">Security</a></li>
-            <li><a href="company/faq.html">FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h5 class="footer-heading">Contact</h5>
-          <ul class="footer-links">
-            <li><a href="contact.html#sales">Sales</a></li>
-            <li><a href="contact.html#support">Support</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="terms.html">Terms of Service</a>
-          <a href="privacy.html">Privacy Policy</a>
+      <div class="relative has-dropdown">
+        <a href="company.html" class="nav-underline text-white transition-colors py-2">Company</a>
+        <div class="nav-dropdown">
+          <a href="company.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">About Us</a>
+          <a href="company/security.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Security</a>
+          <a href="company/faq.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">FAQ</a>
+          <a href="investors.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Investors</a>
+          <a href="contact.html" class="block px-5 py-2.5 text-slate-400 hover:text-[#00d4ff] hover:bg-surface-container-high/50 transition-all text-sm">Contact</a>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="flex items-center gap-4">
+      <a href="contact.html#sales" class="btn-shimmer px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] text-sm font-headline">Book a Demo</a>
+      <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu"><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span><span class="block w-6 h-0.5 bg-white"></span></button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="mobile-overlay font-headline text-2xl font-bold">
+  <a href="platform.html" class="text-white hover:text-[#00d4ff]">Platform</a>
+  <a href="services.html" class="text-white hover:text-[#00d4ff]">Solutions</a>
+  <a href="resources.html" class="text-white hover:text-[#00d4ff]">Resources</a>
+  <a href="company.html" class="text-white hover:text-[#00d4ff]">Company</a>
+  <a href="contact.html#sales" class="mt-4 px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-lg">Book a Demo</a>
+</div>
 
-  <script src="../js/main.js"></script>
-  <!-- Version Switcher: Triple-click logo to access -->
-  <script src="../enhancements/version-switcher.js"></script>
+<main class="pt-20">
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-24 pb-28">
+  <div class="float-orb float-orb--cyan" style="width:400px;height:400px;top:10%;left:-10%"></div>
+  <div class="float-orb float-orb--purple" style="width:300px;height:300px;top:50%;right:-5%"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <div class="badge-glow inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-highest text-secondary-fixed text-xs font-bold tracking-widest uppercase mb-6 font-mono">
+      <span class="material-symbols-outlined text-base">apartment</span>
+      About Elite Dental Force
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white leading-[1.08] tracking-tighter mb-6">
+      <span class="gradient-text">Empowering Your Practice</span> with AI Solutions
+    </h1>
+    <p class="text-lg text-on-surface-variant leading-relaxed max-w-2xl mx-auto">We're building the infrastructure that transforms dental revenue operations from uncertainty to confidence.</p>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="overline-dash"></span>
+          <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Our Founder</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight text-white mb-2">Alvin Uta'i</h2>
+        <p class="text-primary-container font-headline font-bold text-lg mb-6">Founder & CEO</p>
+        <p class="text-on-surface-variant leading-relaxed mb-5">Alvin is an expert in AI-driven dental billing transformation, specializing in clean-claim automation, denial prevention, and scalable workflows. With deep roots in revenue cycle management, he recognized that dental practices were drowning in administrative complexity while leaving significant revenue on the table.</p>
+        <p class="text-on-surface-variant leading-relaxed mb-5">His vision for Elite Dental Force was born from firsthand experience watching practices struggle with eligibility verification errors, mounting claim denials, and inefficient manual processes. Alvin set out to build an intelligent platform that eliminates these pain points through AI-powered automation and real-time analytics.</p>
+        <p class="text-on-surface-variant leading-relaxed">Under his leadership, EDF has pioneered solutions that help practices achieve clean-claim rates exceeding 98%, reduce denial rates by up to 40%, and scale their operations without adding administrative overhead. Alvin's commitment to innovation continues to drive EDF's mission: empowering dental practices with the technology they need to thrive.</p>
+      </div>
+      <div class="relative flex justify-center lg:justify-end">
+        <div class="relative">
+          <img src="../images/team/alvin-utai.png" alt="Alvin Uta'i - Founder & CEO" class="w-full max-w-md rounded-2xl shadow-2xl relative z-10">
+          <div class="absolute inset-0 rounded-2xl border-2 border-primary-container/20 translate-x-4 translate-y-4 z-0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="overline-dash"></span>
+          <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Our Mission</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-6"><span class="gradient-text">From Chaos to Clarity</span></h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-8">We believe dental practices shouldn't struggle with eligibility guesswork, claim denials, or inconsistent workflows. Our mission is to provide intelligent infrastructure that transforms revenue operations into a competitive advantage.</p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="text-secondary-container mt-1 text-lg">&#10003;</span>
+            <span class="text-on-surface-variant">Real-time eligibility verification</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-secondary-container mt-1 text-lg">&#10003;</span>
+            <span class="text-on-surface-variant">AI-powered decision support</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-secondary-container mt-1 text-lg">&#10003;</span>
+            <span class="text-on-surface-variant">Standardized workflows at scale</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-secondary-container mt-1 text-lg">&#10003;</span>
+            <span class="text-on-surface-variant">Enterprise-grade analytics</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img src="../images/about/transformation.png" alt="From chaos to clarity with EDiFi" class="w-full max-w-lg rounded-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Our Values</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">What Drives Us</span></h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">The principles that guide every decision we make.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="w-16 h-16 rounded-xl bg-primary-container/10 flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-primary-container text-3xl">shield</span>
+        </div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Trust</h3>
+        <p class="text-sm text-on-surface-variant">We earn trust through transparency, security, and consistent delivery on our promises.</p>
+      </div>
+
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="w-16 h-16 rounded-xl bg-secondary-container/10 flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-secondary-container text-3xl">bolt</span>
+        </div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Innovation</h3>
+        <p class="text-sm text-on-surface-variant">We continuously push boundaries to deliver solutions that anticipate tomorrow's challenges.</p>
+      </div>
+
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center transition-all duration-300 relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="w-16 h-16 rounded-xl bg-tertiary-container/10 flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-tertiary-container text-3xl">diversity_3</span>
+        </div>
+        <h3 class="text-xl font-headline font-bold text-white mb-3">Partnership</h3>
+        <p class="text-sm text-on-surface-variant">We succeed when our clients succeed. Your goals are our goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="py-28">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Leadership</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">Our Executive Team</span></h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">Experienced leaders driving innovation in dental revenue technology.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container overflow-hidden transition-all duration-300 relative">
+        <div class="card-spotlight"></div>
+        <div class="aspect-square overflow-hidden">
+          <img src="../images/team/alvin-utai.png" alt="Alvin T. Uta'i" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 text-center">
+          <h4 class="text-lg font-headline font-bold text-white mb-1">Alvin T. Uta'i</h4>
+          <p class="text-primary-container text-sm font-semibold mb-3">Founder & CEO</p>
+          <p class="text-xs text-on-surface-variant">Expert in AI-driven dental billing transformation, specializing in clean-claim automation, denial prevention, and scalable workflows.</p>
+        </div>
+      </div>
+
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container overflow-hidden transition-all duration-300 relative">
+        <div class="card-spotlight"></div>
+        <div class="aspect-square overflow-hidden">
+          <img src="../images/team/alex-furer.png" alt="Alex Furer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 text-center">
+          <h4 class="text-lg font-headline font-bold text-white mb-1">Alex Furer</h4>
+          <p class="text-primary-container text-sm font-semibold mb-3">Chief Technology Officer</p>
+          <p class="text-xs text-on-surface-variant">30+ year expert in system connectivity, improving data exchange and automation for dental practices with interoperable technology.</p>
+        </div>
+      </div>
+
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container overflow-hidden transition-all duration-300 relative">
+        <div class="card-spotlight"></div>
+        <div class="aspect-square overflow-hidden">
+          <img src="../images/team/seti-matua.png" alt="Seti Matua" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="p-6 text-center">
+          <h4 class="text-lg font-headline font-bold text-white mb-1">Seti Matua</h4>
+          <p class="text-primary-container text-sm font-semibold mb-3">Chief Operating Officer</p>
+          <p class="text-xs text-on-surface-variant">Executing product delivery with precision, aligning development and operations to ensure clients experience efficient, clean-claim workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORS -->
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="section-header-fade text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="overline-dash"></span>
+        <span class="text-xs font-mono font-bold tracking-[.2em] uppercase text-primary-container">Advisors</span>
+        <span class="overline-dash"></span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight mb-4"><span class="gradient-text">Key Opinion Leaders</span></h2>
+      <p class="text-on-surface-variant max-w-2xl mx-auto">Industry experts providing strategic guidance and domain expertise.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div class="reveal-item text-center group">
+        <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto mb-4 border-2 border-outline-variant/20 group-hover:border-primary-container transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+          <img src="../images/team/dr-mark-whitfield.png" alt="Dr. Mark Whitfield" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-sm font-headline font-bold text-white mb-1">Dr. Mark Whitfield</h4>
+        <p class="text-xs text-primary-container font-medium">Clinical Advisor</p>
+      </div>
+
+      <div class="reveal-item text-center group">
+        <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto mb-4 border-2 border-outline-variant/20 group-hover:border-primary-container transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+          <img src="../images/team/dr-siona-motufau.png" alt="Dr. Siona Motufau" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-sm font-headline font-bold text-white mb-1">Dr. Siona Motufau</h4>
+        <p class="text-xs text-primary-container font-medium">Practice Strategy</p>
+      </div>
+
+      <div class="reveal-item text-center group">
+        <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto mb-4 border-2 border-outline-variant/20 group-hover:border-primary-container transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+          <img src="../images/team/dr-sonya-reddy.png" alt="Dr. Sonya Reddy" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-sm font-headline font-bold text-white mb-1">Dr. Sonya Reddy</h4>
+        <p class="text-xs text-primary-container font-medium">Revenue Optimization</p>
+      </div>
+
+      <div class="reveal-item text-center group">
+        <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto mb-4 border-2 border-outline-variant/20 group-hover:border-primary-container transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+          <img src="../images/team/dr-arrington.png" alt="Dr. Arrington" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-sm font-headline font-bold text-white mb-1">Dr. Arrington</h4>
+        <p class="text-xs text-primary-container font-medium">DSO Operations</p>
+      </div>
+
+      <div class="reveal-item text-center group">
+        <div class="w-32 h-32 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto mb-4 border-2 border-outline-variant/20 group-hover:border-primary-container transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,212,255,0.15)]">
+          <img src="../images/team/portrait-2.jpg" alt="Jennifer Walsh" class="w-full h-full object-cover">
+        </div>
+        <h4 class="text-sm font-headline font-bold text-white mb-1">Jennifer Walsh</h4>
+        <p class="text-xs text-primary-container font-medium">Healthcare Tech</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-28">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="500">500</div>
+        <div class="text-sm text-on-surface-variant font-medium">Practices Served</div>
+      </div>
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="15">15</div>
+        <div class="text-sm text-on-surface-variant font-medium">Industry Events</div>
+      </div>
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="50">50</div>
+        <div class="text-sm text-on-surface-variant font-medium">Podcast Episodes</div>
+      </div>
+      <div class="tilt-card reveal-item rounded-2xl bg-surface-container p-8 text-center relative overflow-hidden">
+        <div class="card-spotlight"></div>
+        <div class="text-4xl md:text-5xl font-headline font-extrabold text-white mb-2" data-counter="20">20</div>
+        <div class="text-sm text-on-surface-variant font-medium">Strategic Partners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-28 bg-surface-container-low relative overflow-hidden">
+  <div class="float-orb float-orb--green" style="width:350px;height:350px;bottom:0;left:20%"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-3xl md:text-4xl font-headline font-extrabold text-white tracking-tight mb-6">Ready to Join the Elite Dental Force Family?</h2>
+    <p class="text-on-surface-variant text-lg mb-10">Discover how we can transform your practice's revenue operations.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="contact.html#demo" class="btn-shimmer magnetic-btn px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all font-headline">Book a Demo</a>
+      <a href="contact.html" class="px-8 py-4 bg-surface-container-high border border-outline-variant/15 text-white font-bold rounded-xl hover:bg-surface-container-highest transition-all font-headline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#030e20] w-full pt-20 pb-10 border-t border-outline-variant/10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-12 text-sm text-slate-400">
+    <div class="col-span-2">
+      <a href="../index.html"><img src="../images/Transparent Logo.png" alt="Elite Dental Force" class="h-24 mb-4 logo-white"></a>
+      <p class="max-w-xs leading-relaxed mb-6">The infrastructure leader in dental revenue intelligence. Transforming how dental practices manage eligibility, billing, and revenue optimization.</p>
+    </div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Platform</h5><ul class="space-y-3"><li><a href="platform.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Overview</a></li><li><a href="ai-consultants.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">AI Consultants</a></li><li><a href="edifi.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">EDiFi Software</a></li><li><a href="services.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Services</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Resources</h5><ul class="space-y-3"><li><a href="resources/blog.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Blog</a></li><li><a href="resources/podcast.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Podcast</a></li><li><a href="resources/webinars.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Webinars</a></li><li><a href="resources/news.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Latest News</a></li></ul></div>
+    <div><h5 class="text-white font-bold mb-6 font-headline">Company</h5><ul class="space-y-3"><li><a href="company.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">About Us</a></li><li><a href="company/security.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Security</a></li><li><a href="company/faq.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">FAQ</a></li><li><a href="partners.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Partners</a></li><li><a href="investors.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Investors</a></li><li><a href="contact.html" class="text-slate-500 hover:text-[#00d4ff] hover:translate-x-1 transition-all inline-block">Contact</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <p>&copy; 2025 Elite Dental Force Inc. All rights reserved.</p>
+    <div class="flex gap-6"><a href="terms.html" class="hover:text-[#00d4ff] transition-colors">Terms of Service</a><a href="privacy.html" class="hover:text-[#00d4ff] transition-colors">Privacy Policy</a></div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="../js/v3.js"></script>
 </body>
 </html>

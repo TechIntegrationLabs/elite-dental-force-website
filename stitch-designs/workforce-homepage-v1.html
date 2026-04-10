@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elite Workforce | Intelligent Workforce Optimization</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#00deec",
+              "on-background": "#ededf9",
+              "on-secondary-fixed-variant": "#4d536f",
+              "surface-container-lowest": "#000000",
+              "secondary-fixed-dim": "#c2c7e9",
+              "inverse-on-surface": "#53545e",
+              "secondary-container": "#404561",
+              "outline-variant": "#464751",
+              "on-tertiary-container": "#ffffff",
+              "error": "#ff716c",
+              "outline": "#74757f",
+              "on-surface-variant": "#aaaab6",
+              "error-container": "#9f0519",
+              "inverse-primary": "#006a71",
+              "on-secondary-fixed": "#313751",
+              "primary-fixed-dim": "#00deec",
+              "surface-tint": "#8ff5ff",
+              "on-secondary-container": "#c9cff0",
+              "error-dim": "#d7383b",
+              "on-tertiary-fixed": "#280047",
+              "primary": "#8ff5ff",
+              "tertiary-fixed": "#d199ff",
+              "tertiary": "#c47fff",
+              "on-surface": "#ededf9",
+              "tertiary-container": "#9d05ff",
+              "secondary-dim": "#c2c7e9",
+              "on-error-container": "#ffa8a3",
+              "inverse-surface": "#faf8ff",
+              "on-primary-container": "#005359",
+              "surface-container-high": "#1d1f2a",
+              "surface-container-low": "#11131c",
+              "on-tertiary": "#340059",
+              "on-secondary": "#444965",
+              "on-primary-fixed-variant": "#005e64",
+              "surface-variant": "#222531",
+              "tertiary-fixed-dim": "#c787ff",
+              "surface": "#0c0e16",
+              "surface-container-highest": "#222531",
+              "surface-container": "#171923",
+              "tertiary-dim": "#a533ff",
+              "primary-container": "#00eefc",
+              "on-primary": "#005d63",
+              "on-error": "#490006",
+              "on-tertiary-fixed-variant": "#580092",
+              "on-primary-fixed": "#003f43",
+              "secondary-fixed": "#d0d5f7",
+              "surface-bright": "#292c38",
+              "secondary": "#d0d5f7",
+              "surface-dim": "#0c0e16",
+              "primary-fixed": "#00eefc",
+              "background": "#0c0e16"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(34, 37, 49, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(143, 245, 255, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-[#0c0e16]/40 backdrop-blur-3xl border-b border-[#00F0FF]/10 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-[#00F0FF] drop-shadow-[0_0_8px_rgba(0,240,255,0.5)] font-headline">Elite Workforce</span>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-[#00F0FF] border-b-2 border-[#00F0FF] pb-1 font-['Space_Grotesk'] tracking-tighter uppercase text-sm font-bold" href="#">Nexus</a>
+<a class="text-[#d0d5f7]/60 hover:text-[#00F0FF] transition-colors duration-300 font-['Space_Grotesk'] tracking-tighter uppercase text-sm font-bold" href="#">Labor-Flow</a>
+<a class="text-[#d0d5f7]/60 hover:text-[#00F0FF] transition-colors duration-300 font-['Space_Grotesk'] tracking-tighter uppercase text-sm font-bold" href="#">Neural-Sync</a>
+<a class="text-[#d0d5f7]/60 hover:text-[#00F0FF] transition-colors duration-300 font-['Space_Grotesk'] tracking-tighter uppercase text-sm font-bold" href="#">Security</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex items-center gap-4">
+<span class="material-symbols-outlined text-[#d0d5f7]/60 hover:text-[#00F0FF] cursor-pointer transition-colors" data-icon="notifications_active">notifications_active</span>
+<span class="material-symbols-outlined text-[#d0d5f7]/60 hover:text-[#00F0FF] cursor-pointer transition-colors" data-icon="settings_input_component">settings_input_component</span>
+</div>
+<button class="bg-[#00F0FF] text-[#003f43] px-5 py-2 rounded-lg font-headline font-bold text-sm tracking-tighter uppercase hover:scale-105 transition-all active:scale-95">Initialize AI</button>
+<div class="w-10 h-10 rounded-full border border-[#00F0FF]/30 p-0.5 overflow-hidden">
+<img alt="User interface biometric profile" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500" data-alt="Close-up biometric profile headshot of a person with digital data overlays and blue tech lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc49HuW1AXzyfHBN-juq5mmgkNWA2iwGKLAOXib3-jOQQtYk_WV7pK20xkilSLzNBQAkcEjYsGNRW827uggq21-YncJVCodqXS3q3dEPZvPUO9x2a2Bjyf8rhiPGDffqyKJU5snYNmGHBQvLX53gV10GguV_4Pn4wJiRhe0b7JoMUVHfgfjK8OtyH-onaNagNYj5shJ6oWv1mGMclkaVmQUqeOObOIq6dn7gjfK1270_bp98MfedLAaU6l2n3NzY-W4pnYDhOCZPZr"/>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden px-8 hero-gradient">
+<div class="max-w-[1440px] mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8 z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label uppercase tracking-widest text-primary-dim">System Status: Active</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-bold tracking-tighter leading-[0.9] text-on-background">
+                        INTELLIGENT <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">WORKFORCE</span> <br/>
+                        OPTIMIZATION
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl font-body font-light leading-relaxed">
+                        Synthesizing labor data in real-time<span class="animate-pulse">...</span>
+</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-headline font-bold uppercase tracking-tight rounded-xl hover:shadow-[0_0_30px_rgba(143,245,255,0.4)] transition-all duration-300">
+                            Initialize Neural Sync
+                        </button>
+<button class="px-8 py-4 bg-transparent border border-primary/40 text-primary font-headline font-bold uppercase tracking-tight rounded-xl hover:bg-primary/5 transition-all duration-300">
+                            Explore Ecosystem
+                        </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<!-- AI Visualization Placeholder -->
+<div class="w-full aspect-square relative flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border border-primary/10 animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-8 rounded-full border border-tertiary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-16 rounded-full border border-primary/30 animate-[spin_10s_linear_infinite]"></div>
+<div class="w-64 h-64 glass-panel rounded-full flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-tertiary/10"></div>
+<span class="material-symbols-outlined text-7xl text-primary animate-pulse" data-icon="hub" data-weight="fill">hub</span>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] font-label text-primary/60 tracking-widest">NEURAL CORE V4.2</div>
+</div>
+<!-- Floating Particles/Code Nodes -->
+<div class="absolute top-1/4 right-0 glass-panel p-4 rounded-xl border border-primary/20 animate-bounce transition-all duration-[3000ms]">
+<div class="text-[10px] text-tertiary font-label uppercase mb-1">Efficiency</div>
+<div class="text-xl font-headline font-bold text-on-background">98.4%</div>
+</div>
+<div class="absolute bottom-1/4 left-0 glass-panel p-4 rounded-xl border border-primary/20 animate-pulse">
+<div class="text-[10px] text-primary font-label uppercase mb-1">Active Sync</div>
+<div class="text-xl font-headline font-bold text-on-background">12.8k</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOCIAL PROOF / METRICS -->
+<section class="py-12 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4">
+<div class="flex flex-col items-center">
+<div class="text-3xl md:text-4xl font-headline font-bold text-primary tracking-tighter">850+</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="dynamic_feed">dynamic_feed</span>
+                            Neural Nodes Active
+                        </div>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/20"></div>
+<div class="flex flex-col items-center">
+<div class="text-3xl md:text-4xl font-headline font-bold text-primary tracking-tighter">12ms</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span>
+                            Latency
+                        </div>
+</div>
+<div class="hidden md:block w-px h-12 bg-outline-variant/20"></div>
+<div class="flex flex-col items-center">
+<div class="text-3xl md:text-4xl font-headline font-bold text-primary tracking-tighter">99.9%</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="troubleshoot">troubleshoot</span>
+                            Prediction Accuracy
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- AI CAPABILITIES GRID -->
+<section class="py-24 px-8 relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tighter mb-4">ENGINEERED FOR ELITE OUTPUT</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body">Our proprietary neural network transforms raw enterprise data into actionable human capital intelligence.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="event_note">event_note</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Predictive Scheduling</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Anticipate labor surges before they happen using quantum temporal forecasting models.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" data-icon="psychology">psychology</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-tertiary transition-colors">Neural Talent Matching</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Align individual neuro-profiles with task complexity for 40% higher execution accuracy.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="gavel">gavel</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Automated Compliance</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Dynamic adherence to cross-jurisdictional labor protocols updated in real-cycle.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" data-icon="settings_accessibility">settings_accessibility</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-tertiary transition-colors">Sentiment Analysis</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Monitor workforce vibrational health and engagement levels through neural feedback.</p>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="timeline">timeline</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">Productivity Forecasting</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Real-time output simulation mapping current labor flow against quarterly targets.</p>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel p-8 rounded-xl hover:bg-surface-container-highest/60 transition-all duration-300 group">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" data-icon="query_stats">query_stats</span>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-3 group-hover:text-tertiary transition-colors">Quantum Analytics</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Process petabytes of workforce telemetry in sub-millisecond calculation intervals.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- INTEGRATIONS -->
+<section class="py-20 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto px-8 text-center">
+<h3 class="text-[12px] font-label uppercase tracking-[0.3em] text-primary/60 mb-10">Connected to Your Ecosystem</h3>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 hover:opacity-100 transition-opacity duration-700">
+<span class="text-2xl font-black font-headline tracking-tighter text-on-surface grayscale hover:grayscale-0 hover:text-primary transition-all cursor-pointer">SLACK</span>
+<span class="text-2xl font-black font-headline tracking-tighter text-on-surface grayscale hover:grayscale-0 hover:text-primary transition-all cursor-pointer">JIRA</span>
+<span class="text-2xl font-black font-headline tracking-tighter text-on-surface grayscale hover:grayscale-0 hover:text-primary transition-all cursor-pointer">SALESFORCE</span>
+<span class="text-2xl font-black font-headline tracking-tighter text-on-surface grayscale hover:grayscale-0 hover:text-primary transition-all cursor-pointer">AWS</span>
+<span class="text-2xl font-black font-headline tracking-tighter text-on-surface grayscale hover:grayscale-0 hover:text-primary transition-all cursor-pointer">GOOGLE_CLOUD</span>
+</div>
+</div>
+</section>
+<!-- TESTIMONIAL -->
+<section class="py-32 px-8 relative">
+<div class="max-w-4xl mx-auto">
+<div class="glass-panel p-12 rounded-3xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="format_quote">format_quote</span>
+</div>
+<div class="relative z-10 space-y-8">
+<p class="text-2xl md:text-3xl font-headline font-medium leading-snug text-on-background italic">
+                            "Elite Workforce didn't just automate our scheduling; it synchronized our entire corporate neural pattern. We've seen a 32% increase in productivity with a zero-friction deployment."
+                        </p>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-xl border border-primary/40 overflow-hidden relative">
+<img alt="Lead Systems Architect Biometric ID" class="w-full h-full object-cover" data-alt="Futuristic portrait of a high-level systems architect with subtle blue light and digital interface reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xP14Hj7sBAo1tlOd8XY2YJmurTrkMYgonv56eoFSqakk-jZGAXnOd1tS-JFm8nPsAx3HMXi0nLwP9ZnLBn17U0wCCAICOnj6mIpOc7IhpGGEZjiFL7aUC1MgGpR_SZ6CfUCikTX58JsfQv5ABvetmSAKUuEOZ2dCAVDb0OD6r8112n35l9L6FK0VaGlDdw6ZGPGBltUVzVtaxNla3C_Z7P35JtSA1pmH5po30oA5SbS1XXMo7hBEi7H3kVFhMXN5knua20aQD25a"/>
+<div class="absolute inset-0 border-2 border-primary/20 pointer-events-none"></div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-primary tracking-tight">Dr. Aris Vonn</h4>
+<p class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Lead Systems Architect // NeuralDynamics Corp</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRICING -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-bold tracking-tighter mb-4 uppercase">Sync Protocols</h2>
+<p class="text-on-surface-variant font-body">Scale your intelligence as your workforce evolves.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Pricing Card 1 -->
+<div class="glass-panel p-10 rounded-2xl flex flex-col border border-outline-variant/10 hover:border-primary/20 transition-all">
+<h3 class="text-lg font-headline font-bold text-on-surface-variant mb-2">Nexus Core</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-headline font-bold text-on-surface">$1,200</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">/cycle</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Up to 500 Active Nodes
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Standard Prediction Engine
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Basic Sync API
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary/20 text-primary font-headline font-bold text-xs uppercase tracking-widest hover:bg-primary/10 transition-all">Initialize Core</button>
+</div>
+<!-- Pricing Card 2 (Most Popular) -->
+<div class="glass-panel p-10 rounded-2xl flex flex-col relative scale-105 z-10 bg-surface-variant/40 border-primary/40 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-fixed text-[10px] font-label font-bold uppercase px-4 py-1 rounded-full tracking-[0.2em]">Most Popular</div>
+<h3 class="text-lg font-headline font-bold text-primary mb-2">Neural Pro</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-headline font-bold text-on-surface">$3,500</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">/cycle</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Unlimited Node Capacity
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Advanced Neural Analytics
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                Sentiment Synthesis
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="check_circle">check_circle</span>
+                                24/7 Synapse Support
+                            </li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-primary text-on-primary-fixed font-headline font-bold text-xs uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all">Go Neural Pro</button>
+</div>
+<!-- Pricing Card 3 -->
+<div class="glass-panel p-10 rounded-2xl flex flex-col border border-outline-variant/10 hover:border-tertiary/20 transition-all">
+<h3 class="text-lg font-headline font-bold text-tertiary mb-2">Quantum Enterprise</h3>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-headline font-bold text-on-surface">Custom</span>
+<span class="text-xs font-label text-on-surface-variant uppercase tracking-widest">/deployment</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle">check_circle</span>
+                                Private Neural Instance
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle">check_circle</span>
+                                Custom Model Training
+                            </li>
+<li class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-lg" data-icon="check_circle">check_circle</span>
+                                Global Compliance Protocol
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-tertiary/20 text-tertiary font-headline font-bold text-xs uppercase tracking-widest hover:bg-tertiary/10 transition-all">Contact Intelligence</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CALL TO ACTION -->
+<section class="py-32 px-8 bg-surface-container-highest relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-tertiary/5 opacity-50"></div>
+<div class="max-w-[1440px] mx-auto relative z-10 text-center">
+<h2 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter mb-10 max-w-4xl mx-auto">UPGRADE YOUR WORKFORCE INTELLIGENCE.</h2>
+<div class="flex justify-center">
+<button class="group relative px-12 py-6 bg-primary text-on-primary-fixed font-headline font-black text-xl uppercase tracking-tighter rounded-2xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_50px_rgba(0,240,255,0.5)] active:scale-95">
+<span class="relative z-10">Initialize Global Sync</span>
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+<p class="mt-12 text-on-surface-variant font-label text-sm tracking-[0.2em] uppercase">Estimated deployment window: 48 hours.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#11131c] full-width border-t border-[#00F0FF]/5">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1920px] mx-auto">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold text-[#d0d5f7] font-headline">Elite Workforce</span>
+<p class="font-['Manrope'] tracking-[0.05em] text-[10px] uppercase font-medium text-[#d0d5f7]/40">© 2124 KINETIC INTELLIGENCE. AI-STATUS: OPTIMAL.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] tracking-[0.05em] text-[10px] uppercase font-medium text-[#d0d5f7]/40 hover:text-[#00F0FF] transition-opacity duration-300" href="#">Quantum Compliance</a>
+<a class="font-['Manrope'] tracking-[0.05em] text-[10px] uppercase font-medium text-[#d0d5f7]/40 hover:text-[#00F0FF] transition-opacity duration-300" href="#">Neural Privacy</a>
+<a class="font-['Manrope'] tracking-[0.05em] text-[10px] uppercase font-medium text-[#d0d5f7]/40 hover:text-[#00F0FF] transition-opacity duration-300" href="#">Synapse Protocol</a>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#d0d5f7]/40 hover:text-[#00F0FF] cursor-pointer" data-icon="language">language</span>
+<span class="material-symbols-outlined text-[#d0d5f7]/40 hover:text-[#00F0FF] cursor-pointer" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+</body></html>
