@@ -153,34 +153,58 @@ function initHeroAnimations() {
   // Check for reduced motion preference
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  // Split hero title into characters
+  // Split hero title into characters, preserving .gradient-text spans
   const heroTitle = document.querySelector('[data-split-text]');
   if (heroTitle) {
-    const text = heroTitle.innerHTML;
-    // Split into words first, then chars within words
-    const words = text.split(/(\s+|&nbsp;)/);
-    heroTitle.innerHTML = '';
-
-    words.forEach(word => {
-      if (word.match(/^\s+$/) || word === '&nbsp;') {
-        heroTitle.innerHTML += ' ';
-        return;
-      }
-      const wordSpan = document.createElement('span');
-      wordSpan.style.display = 'inline-block';
-      wordSpan.style.whiteSpace = 'nowrap';
-
-      word.split('').forEach(char => {
-        const charSpan = document.createElement('span');
-        charSpan.className = 'char';
-        charSpan.textContent = char;
-        wordSpan.appendChild(charSpan);
+    function splitWordsToChars(text) {
+      var frag = document.createDocumentFragment();
+      var words = text.split(/(\s+)/);
+      words.forEach(function(word) {
+        if (/^\s+$/.test(word)) {
+          frag.appendChild(document.createTextNode(' '));
+          return;
+        }
+        var wordSpan = document.createElement('span');
+        wordSpan.style.display = 'inline-block';
+        wordSpan.style.whiteSpace = 'nowrap';
+        word.split('').forEach(function(c) {
+          var charSpan = document.createElement('span');
+          charSpan.className = 'char';
+          charSpan.textContent = c;
+          wordSpan.appendChild(charSpan);
+        });
+        frag.appendChild(wordSpan);
       });
+      return frag;
+    }
 
-      heroTitle.appendChild(wordSpan);
+    // Collect child nodes before clearing
+    var nodes = Array.from(heroTitle.childNodes);
+    // Clear using DOM methods
+    while (heroTitle.firstChild) {
+      heroTitle.removeChild(heroTitle.firstChild);
+    }
+
+    nodes.forEach(function(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        heroTitle.appendChild(splitWordsToChars(node.textContent));
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        // Preserve wrapper elements (e.g. .gradient-text) but split their text
+        var wrapper = document.createElement(node.tagName.toLowerCase());
+        wrapper.className = node.className;
+        Array.from(node.childNodes).forEach(function(inner) {
+          if (inner.nodeType === Node.TEXT_NODE) {
+            wrapper.appendChild(splitWordsToChars(inner.textContent));
+          } else {
+            wrapper.appendChild(inner.cloneNode(true));
+          }
+        });
+        wrapper.style.display = 'inline';
+        heroTitle.appendChild(wrapper);
+      }
     });
 
-    // Animate characters
+    // Animate all characters
     gsap.to('.hero-title .char', {
       opacity: 1,
       y: 0,

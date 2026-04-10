@@ -23,8 +23,8 @@
   // ── Scene Setup ──
   const scene = new THREE.Scene();
 
-  const camera = new THREE.PerspectiveCamera(35, container.clientWidth / container.clientHeight, 0.1, 100);
-  camera.position.set(-4, 1.5, 8);
+  const camera = new THREE.PerspectiveCamera(30, container.clientWidth / container.clientHeight, 0.1, 100);
+  camera.position.set(-1.5, 2, 9);
   camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({
@@ -78,9 +78,9 @@
     'models/laptop.glb',
     function (gltf) {
       laptopGroup = gltf.scene;
-      laptopGroup.scale.setScalar(1.6);
-      laptopGroup.position.set(0, -1.2, 0);
-      laptopGroup.rotation.set(0.05, -0.3, 0);
+      laptopGroup.scale.setScalar(1.8);
+      laptopGroup.position.set(0, -1.4, 0);
+      laptopGroup.rotation.set(0.08, -0.15, 0);
 
       // Apply screen texture to the matte/screen mesh
       laptopGroup.traverse(function (child) {
@@ -110,25 +110,25 @@
       scene.add(laptopGroup);
 
       // Entrance animation
-      laptopGroup.position.y = -3;
-      laptopGroup.rotation.x = 0.3;
+      laptopGroup.position.y = -3.5;
+      laptopGroup.rotation.x = 0.35;
 
       if (typeof gsap !== 'undefined') {
         gsap.to(laptopGroup.position, {
-          y: -1.2,
-          duration: 1.5,
+          y: -1.4,
+          duration: 1.8,
           ease: 'power3.out',
-          delay: 0.5,
+          delay: 0.6,
         });
         gsap.to(laptopGroup.rotation, {
-          x: 0.05,
-          duration: 1.5,
+          x: 0.08,
+          duration: 1.8,
           ease: 'power3.out',
-          delay: 0.5,
+          delay: 0.6,
         });
       } else {
-        laptopGroup.position.y = -1.2;
-        laptopGroup.rotation.x = 0.05;
+        laptopGroup.position.y = -1.4;
+        laptopGroup.rotation.x = 0.08;
       }
     },
     undefined,
@@ -162,20 +162,20 @@
   // ── Mouse Interaction ──
   let mouseX = 0;
   let mouseY = 0;
-  let targetRotationY = -0.3;
-  let targetRotationX = 0.05;
+  let targetRotationY = -0.15;
+  let targetRotationX = 0.08;
 
   container.addEventListener('mousemove', function (e) {
     const rect = container.getBoundingClientRect();
     mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
     mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-    targetRotationY = -0.3 + mouseX * 0.15;
-    targetRotationX = 0.05 - mouseY * 0.08;
+    targetRotationY = -0.15 + mouseX * 0.12;
+    targetRotationX = 0.08 - mouseY * 0.06;
   }, { passive: true });
 
   container.addEventListener('mouseleave', function () {
-    targetRotationY = -0.3;
-    targetRotationX = 0.05;
+    targetRotationY = -0.15;
+    targetRotationX = 0.08;
   });
 
   // ── Floating Animation ──
@@ -192,7 +192,7 @@
       laptopGroup.rotation.x += (targetRotationX - laptopGroup.rotation.x) * 0.05;
 
       // Gentle float
-      laptopGroup.position.y = -1.2 + Math.sin(floatTime) * 0.08;
+      laptopGroup.position.y = -1.4 + Math.sin(floatTime) * 0.06;
     }
 
     renderer.render(scene, camera);
