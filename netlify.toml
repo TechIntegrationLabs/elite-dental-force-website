@@ -1,24 +1,6 @@
 [build]
   publish = "."
 
-# Enable Netlify asset optimization
-[build.processing]
-  skip_processing = false
-
-[build.processing.css]
-  bundle = true
-  minify = true
-
-[build.processing.js]
-  bundle = false
-  minify = true
-
-[build.processing.html]
-  pretty_urls = false
-
-[build.processing.images]
-  compress = true
-
 # Cache static assets aggressively
 [[headers]]
   for = "/css/*"
@@ -44,9 +26,3 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=3600"
-
-# Fonts
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
