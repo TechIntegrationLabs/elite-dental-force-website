@@ -1,0 +1,16 @@
+# Old versions not used in production
+index-original.html
+index-v3.html
+index-v4-particles.html
+
+# Design mockups
+stitch-designs/
+
+# Video source files
+videos/edf-product-video-original.mp4
+
+# Remotion video project
+video/
+
+# Enhancement drafts
+enhancements/

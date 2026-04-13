@@ -8,8 +8,8 @@
 /* ============================================
    WHITE LOGO ON DARK BG
    ============================================ */
-.logo-white{transition:filter .3s,opacity .3s,transform .3s}
-.logo-white:hover{filter:drop-shadow(0 0 8px rgba(0,212,255,.4));transform:scale(1.03)}
+.logo-white{filter:brightness(0) invert(1);transition:filter .3s,opacity .3s,transform .3s}
+.logo-white:hover{filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(0,212,255,.4));transform:scale(1.03)}
 
 /* ============================================
    NOISE TEXTURE
