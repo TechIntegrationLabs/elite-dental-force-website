@@ -659,7 +659,8 @@
         <p>Screenshot feedback from the Elite Dental Force preview</p>
       </div>
       <div class="dash-actions">
-        <button class="dash-btn primary" id="copyAllBtn">Copy All Feedback</button>
+        <button class="dash-btn primary" id="sendToCcBtn" title="Mark all open feedback as in-progress and generate an implementation brief for Claude Code targeting edf-newpreview">⚡ Send to Claude for Implementation</button>
+        <button class="dash-btn" id="copyAllBtn">Copy All Feedback</button>
         <button class="dash-btn danger" id="clearAllBtn">Clear All</button>
         <a href="index.html" class="dash-btn">Back to Site</a>
       </div>
@@ -1138,6 +1139,153 @@
       activeStatusFilter = document.getElementById('filterStatus').value;
       updateStats();
       renderCards();
+    });
+
+    // ── Send to Claude Code for Implementation ──
+    // Marks all open items as in-progress and generates a structured brief
+    // targeting the NEW preview site (edf-newpreview.netlify.app).
+    document.getElementById('sendToCcBtn').addEventListener('click', async () => {
+      const OPEN_STATUSES = new Set(['pending', 'in-progress', 'dev-complete', 'blocked']);
+      const open = allItems.filter(i => OPEN_STATUSES.has(i.status || 'pending'));
+      if (!open.length) {
+        showToast('No open feedback items to send');
+        return;
+      }
+
+      const proceed = confirm(
+        `Send ${open.length} open feedback item${open.length === 1 ? '' : 's'} to Claude Code for implementation on edf-newpreview?\n\n` +
+        `Items will be marked "in-progress" with a queued-for-CC note. ` +
+        `A markdown brief will be copied to your clipboard — paste it into a fresh Claude Code session in BB1-Conversations to begin.`
+      );
+      if (!proceed) return;
+
+      const sendBtn = document.getElementById('sendToCcBtn');
+      sendBtn.disabled = true;
+      sendBtn.textContent = 'Queueing...';
+
+      const stamp = new Date().toISOString();
+      const batchId = 'cc-batch-' + Date.now().toString(36);
+      let queued = 0, failed = 0;
+
+      for (const item of open) {
+        try {
+          const note = (item.developerNotes ? item.developerNotes + '\n\n' : '') +
+            `[${stamp}] Queued for Claude Code implementation on edf-newpreview (batch ${batchId}).`;
+          const res = await fetch('/api/feedback', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: item.id, status: 'in-progress', developerNotes: note })
+          });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          queued++;
+        } catch (err) {
+          console.error('[cc-queue] failed for', item.id, err);
+          failed++;
+        }
+      }
+
+      // ── Build the markdown brief ──
+      const dashboardUrl = window.location.origin + '/feedback-dashboard.html';
+      const oldUrl = window.location.origin;
+      const newUrl = oldUrl.replace('edf-preview', 'edf-newpreview');
+
+      let md = '';
+      md += `# EDF Feedback Implementation Brief\n`;
+      md += `**Batch:** ${batchId} · **Generated:** ${new Date().toLocaleString()}\n`;
+      md += `**Items queued:** ${queued}${failed ? ` (${failed} failed to mark, see console)` : ''}\n\n`;
+      md += `## Targets\n`;
+      md += `- **Implement on:** ${newUrl} (NEW preview, jaymdenn baseline)\n`;
+      md += `- **Worktree:** \`~/Repos/elite-dental-force-website-new/\` (branch \`newpreview\`)\n`;
+      md += `- **Source of feedback:** ${oldUrl} (OLD preview)\n`;
+      md += `- **Live dashboard:** ${dashboardUrl}\n\n`;
+      md += `## Workflow Instructions for Claude\n`;
+      md += `1. Read each item below. Cross-reference screenshots via the dashboard URL or fetch via \`GET /api/feedback\` from ${oldUrl}.\n`;
+      md += `2. For each item, decide: apply directly, ask the user first, or push back.\n`;
+      md += `3. Implement in the worktree above. Test locally if possible.\n`;
+      md += `4. After implementing each item, mark it \`dev-complete\` with a note describing what changed:\n`;
+      md += `   \`\`\`bash\n   curl -X PUT ${oldUrl}/api/feedback -H "Content-Type: application/json" \\\n`;
+      md += `     -d '{"id":"<ITEM_ID>","action":"dev-complete","reviewerName":"Claude Code","reviewNotes":"<what you did>"}'\n   \`\`\`\n`;
+      md += `5. Commit incrementally on the \`newpreview\` branch with messages like \`feedback ${batchId}: <summary>\`.\n`;
+      md += `6. Push to \`til newpreview\` and run \`netlify deploy --prod\` from the worktree to update ${newUrl}.\n\n`;
+      md += `---\n\n`;
+      md += `## Items (${open.length})\n\n`;
+
+      open.forEach((item, idx) => {
+        const date = new Date(item.timestamp).toLocaleString();
+        const cat = (item.category || 'general').toString();
+        md += `### ${idx + 1}. ${cat.toUpperCase()} — ${item.id}\n`;
+        md += `- **Submitter:** ${item.name || 'Anonymous'}\n`;
+        md += `- **Submitted:** ${date}\n`;
+        md += `- **Page:** \`${item.page || '/'}\`${item.url ? ` (full: ${item.url})` : ''}\n`;
+        md += `- **Viewport:** ${item.viewport || 'unknown'}\n`;
+        md += `- **Prior status:** ${item.status || 'pending'}\n`;
+        if (item.developerNotes) md += `- **Existing dev notes:** ${item.developerNotes.replace(/\n/g, ' ')}\n`;
+        md += `\n**Feedback:**\n> ${(item.message || item.feedback || '').replace(/\n/g, '\n> ')}\n\n`;
+        if (item.screenshot) {
+          md += `**Screenshot:** view at ${dashboardUrl}#${item.id} · raw via \`GET ${oldUrl}/api/feedback\` (filter by id=\`${item.id}\`)\n\n`;
+        } else {
+          md += `**Screenshot:** none\n\n`;
+        }
+        md += `---\n\n`;
+      });
+
+      // ── Copy to clipboard + show modal ──
+      try {
+        await navigator.clipboard.writeText(md);
+      } catch (e) {
+        console.warn('clipboard write failed', e);
+      }
+
+      // Modal so user can re-copy or download
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:20px;';
+      const inner = document.createElement('div');
+      inner.style.cssText = 'background:#fff;border-radius:12px;padding:24px;max-width:780px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.4);';
+      inner.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <h3 style="margin:0;color:#192947;font-size:1.2rem;font-weight:700;">Brief ready — ${queued} items queued</h3>
+          <button id="ccCloseBtn" style="background:none;border:none;font-size:24px;cursor:pointer;color:#64748b;">×</button>
+        </div>
+        <p style="color:#64748b;font-size:0.9rem;margin-bottom:14px;">Markdown brief copied to clipboard. Paste it into a fresh Claude Code session in <code>BB1-Conversations</code> to start implementation. Items are now marked <strong>in-progress</strong>.</p>
+        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+          <button id="ccRecopyBtn" class="dash-btn primary">Copy Again</button>
+          <button id="ccDownloadBtn" class="dash-btn">Download as .md</button>
+          <button id="ccDoneBtn" class="dash-btn">Done</button>
+        </div>
+        <textarea id="ccBriefText" readonly style="width:100%;height:340px;padding:12px;border:1px solid #e2e8f0;border-radius:8px;font-family:'SFMono-Regular',Consolas,monospace;font-size:12px;background:#f8fafb;color:#1e293b;resize:vertical;"></textarea>
+      `;
+      modal.appendChild(inner);
+      document.body.appendChild(modal);
+      const ta = inner.querySelector('#ccBriefText');
+      ta.value = md;
+
+      const closeModal = () => modal.remove();
+      inner.querySelector('#ccCloseBtn').addEventListener('click', closeModal);
+      inner.querySelector('#ccDoneBtn').addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      inner.querySelector('#ccRecopyBtn').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(md);
+          showToast('Copied to clipboard');
+        } catch {
+          ta.select();
+          document.execCommand('copy');
+          showToast('Copied (fallback)');
+        }
+      });
+      inner.querySelector('#ccDownloadBtn').addEventListener('click', () => {
+        const blob = new Blob([md], { type: 'text/markdown' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `edf-feedback-brief-${batchId}.md`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      sendBtn.disabled = false;
+      sendBtn.textContent = '⚡ Send to Claude for Implementation';
+      showToast(`${queued} item${queued === 1 ? '' : 's'} queued · brief copied`);
+      await loadItems();
     });
 
     // ── Copy All (rich HTML with inline screenshots + plain text fallback) ──
