@@ -1,1 +1,282 @@
-!function(){"use strict";const e="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkZWp2ZWlrbWNtdGtkdmdwYnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2ODQ1NDYsImV4cCI6MjA1MzI2MDU0Nn0.gVLMSQkjGbFjAWFHCMrFRPbhSFQe2sIP7kJmnFMy0e4",n=["Design","Content","Navigation","Bug","Suggestion"];let t=null;const o=document.createElement("style");o.textContent="\n    /* Floating Trigger Button */\n    .edf-fb-trigger {\n      position: fixed;\n      bottom: 24px;\n      right: 24px;\n      z-index: 99990;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      width: 48px;\n      height: 48px;\n      border-radius: 24px;\n      background: var(--color-cyan, #00d4ff);\n      color: var(--color-brand, #0f1d35);\n      border: none;\n      cursor: pointer;\n      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35);\n      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n      overflow: hidden;\n      font-family: var(--font-body, 'Inter', sans-serif);\n      font-weight: 600;\n      font-size: 14px;\n      white-space: nowrap;\n    }\n    .edf-fb-trigger:hover {\n      width: 130px;\n      box-shadow: 0 6px 28px rgba(0, 212, 255, 0.5);\n    }\n    .edf-fb-trigger svg {\n      flex-shrink: 0;\n      width: 20px;\n      height: 20px;\n      transition: margin 0.3s;\n    }\n    .edf-fb-trigger .edf-fb-label {\n      max-width: 0;\n      opacity: 0;\n      overflow: hidden;\n      transition: max-width 0.3s, opacity 0.25s 0.05s, margin 0.3s;\n      margin-left: 0;\n    }\n    .edf-fb-trigger:hover .edf-fb-label {\n      max-width: 90px;\n      opacity: 1;\n      margin-left: 6px;\n    }\n\n    /* Overlay for region capture */\n    .edf-fb-overlay {\n      position: fixed;\n      inset: 0;\n      z-index: 99991;\n      cursor: crosshair;\n      background: rgba(0, 0, 0, 0.25);\n    }\n    .edf-fb-overlay-hint {\n      position: fixed;\n      top: 16px;\n      left: 50%;\n      transform: translateX(-50%);\n      z-index: 99992;\n      background: var(--color-brand, #0f1d35);\n      color: var(--color-text, #e8f0f8);\n      font-family: var(--font-body, 'Inter', sans-serif);\n      font-size: 14px;\n      padding: 10px 20px;\n      border-radius: 8px;\n      border: 1px solid var(--border-subtle, rgba(255,255,255,0.09));\n      box-shadow: var(--shadow-lg, 0 8px 32px rgba(0,0,0,0.5));\n    }\n    .edf-fb-selection {\n      position: fixed;\n      border: 2px solid var(--color-cyan, #00d4ff);\n      background: rgba(0, 212, 255, 0.08);\n      z-index: 99992;\n      pointer-events: none;\n    }\n\n    /* Modal Backdrop */\n    .edf-fb-backdrop {\n      position: fixed;\n      inset: 0;\n      z-index: 99993;\n      background: rgba(0, 0, 0, 0.65);\n      backdrop-filter: blur(4px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      opacity: 0;\n      transition: opacity 0.25s;\n    }\n    .edf-fb-backdrop.visible { opacity: 1; }\n\n    /* Modal */\n    .edf-fb-modal {\n      background: var(--color-brand, #0f1d35);\n      border: 1px solid var(--border-subtle, rgba(255,255,255,0.09));\n      border-radius: 16px;\n      width: 460px;\n      max-width: 94vw;\n      max-height: 90vh;\n      overflow-y: auto;\n      padding: 28px;\n      box-shadow: var(--shadow-xl, 0 16px 64px rgba(0,0,0,0.6));\n      transform: translateY(12px) scale(0.97);\n      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n      font-family: var(--font-body, 'Inter', sans-serif);\n      color: var(--color-text, #e8f0f8);\n      position: relative;\n    }\n    .edf-fb-backdrop.visible .edf-fb-modal {\n      transform: translateY(0) scale(1);\n    }\n    .edf-fb-modal h3 {\n      margin: 0 0 20px;\n      font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);\n      font-size: 20px;\n      font-weight: 700;\n      color: var(--color-white, #fff);\n    }\n\n    /* Screenshot preview */\n    .edf-fb-screenshot-wrap {\n      margin-bottom: 18px;\n      border-radius: 10px;\n      overflow: hidden;\n      border: 1px solid var(--border-subtle, rgba(255,255,255,0.09));\n      max-height: 180px;\n    }\n    .edf-fb-screenshot-wrap img {\n      width: 100%;\n      display: block;\n      object-fit: contain;\n    }\n\n    /* Category buttons */\n    .edf-fb-categories {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 8px;\n      margin-bottom: 16px;\n    }\n    .edf-fb-cat-btn {\n      padding: 6px 14px;\n      border-radius: 20px;\n      border: 1px solid var(--border-medium, rgba(255,255,255,0.14));\n      background: transparent;\n      color: var(--color-text-secondary, #94a3b8);\n      font-family: var(--font-body, 'Inter', sans-serif);\n      font-size: 13px;\n      cursor: pointer;\n      transition: all 0.2s;\n    }\n    .edf-fb-cat-btn:hover {\n      border-color: var(--color-cyan, #00d4ff);\n      color: var(--color-cyan, #00d4ff);\n    }\n    .edf-fb-cat-btn.active {\n      background: var(--color-cyan-dim, rgba(0,212,255,0.15));\n      border-color: var(--color-cyan, #00d4ff);\n      color: var(--color-cyan, #00d4ff);\n      font-weight: 600;\n    }\n\n    /* Form fields */\n    .edf-fb-field { margin-bottom: 14px; }\n    .edf-fb-field label {\n      display: block;\n      font-size: 13px;\n      color: var(--color-text-secondary, #94a3b8);\n      margin-bottom: 5px;\n    }\n    .edf-fb-field input,\n    .edf-fb-field textarea {\n      width: 100%;\n      padding: 10px 14px;\n      border-radius: 8px;\n      border: 1px solid var(--border-subtle, rgba(255,255,255,0.09));\n      background: var(--color-surface, #12203a);\n      color: var(--color-text, #e8f0f8);\n      font-family: var(--font-body, 'Inter', sans-serif);\n      font-size: 14px;\n      outline: none;\n      transition: border-color 0.2s;\n      box-sizing: border-box;\n    }\n    .edf-fb-field input:focus,\n    .edf-fb-field textarea:focus {\n      border-color: var(--color-cyan, #00d4ff);\n    }\n    .edf-fb-field textarea { resize: vertical; min-height: 90px; }\n\n    /* Submit button */\n    .edf-fb-submit {\n      width: 100%;\n      padding: 12px;\n      border: none;\n      border-radius: 10px;\n      background: var(--color-cyan, #00d4ff);\n      color: var(--color-brand, #0f1d35);\n      font-family: var(--font-body, 'Inter', sans-serif);\n      font-size: 15px;\n      font-weight: 700;\n      cursor: pointer;\n      transition: opacity 0.2s, transform 0.15s;\n    }\n    .edf-fb-submit:hover { opacity: 0.9; transform: translateY(-1px); }\n    .edf-fb-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }\n\n    /* Close button */\n    .edf-fb-close {\n      position: absolute;\n      top: 14px;\n      right: 14px;\n      background: none;\n      border: none;\n      color: var(--color-text-muted, #475569);\n      cursor: pointer;\n      padding: 4px;\n      font-size: 22px;\n      line-height: 1;\n      transition: color 0.2s;\n    }\n    .edf-fb-close:hover { color: var(--color-text, #e8f0f8); }\n\n    /* Success state */\n    .edf-fb-success {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      padding: 40px 20px;\n      text-align: center;\n    }\n    .edf-fb-checkmark {\n      width: 56px;\n      height: 56px;\n      color: var(--color-green, #00ffc8);\n      margin-bottom: 16px;\n      animation: edf-fb-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);\n    }\n    .edf-fb-success p {\n      font-size: 16px;\n      color: var(--color-text, #e8f0f8);\n      margin: 0;\n    }\n    @keyframes edf-fb-pop {\n      0% { transform: scale(0); opacity: 0; }\n      100% { transform: scale(1); opacity: 1; }\n    }\n  ",document.head.appendChild(o);const r=document.createElement("button");r.className="edf-fb-trigger",r.setAttribute("aria-label","Send feedback");const a=document.createElementNS("http://www.w3.org/2000/svg","svg");a.setAttribute("viewBox","0 0 24 24"),a.setAttribute("fill","none"),a.setAttribute("stroke","currentColor"),a.setAttribute("stroke-width","2"),a.setAttribute("stroke-linecap","round"),a.setAttribute("stroke-linejoin","round");const i=document.createElementNS("http://www.w3.org/2000/svg","path");i.setAttribute("d","M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"),a.appendChild(i),r.appendChild(a);const d=document.createElement("span");function s(){var o=null,r=document.createElement("div");r.className="edf-fb-backdrop";var a=document.createElement("div");a.className="edf-fb-modal";var i=document.createElement("button");i.className="edf-fb-close",i.setAttribute("aria-label","Close"),i.textContent="×",a.appendChild(i);var d=document.createElement("h3");if(d.textContent="Send Feedback",a.appendChild(d),t){var s=document.createElement("div");s.className="edf-fb-screenshot-wrap";var l=document.createElement("img");l.src=t,l.alt="Screenshot preview",s.appendChild(l),a.appendChild(s)}var f=document.createElement("div");f.className="edf-fb-categories",n.forEach(function(e){var n=document.createElement("button");n.type="button",n.className="edf-fb-cat-btn",n.dataset.cat=e,n.textContent=e,n.addEventListener("click",function(){f.querySelectorAll(".edf-fb-cat-btn").forEach(function(e){e.classList.remove("active")}),n.classList.add("active"),o=e}),f.appendChild(n)}),a.appendChild(f);var b=document.createElement("div");b.className="edf-fb-field";var p=document.createElement("label");p.setAttribute("for","edf-fb-name"),p.textContent="Name (optional)";var u=document.createElement("input");u.type="text",u.id="edf-fb-name",u.placeholder="Your name",b.appendChild(p),b.appendChild(u),a.appendChild(b);var m=document.createElement("div");m.className="edf-fb-field";var h=document.createElement("label");h.setAttribute("for","edf-fb-text"),h.textContent="Feedback *";var x=document.createElement("textarea");x.id="edf-fb-text",x.placeholder="Describe your feedback...",m.appendChild(h),m.appendChild(x),a.appendChild(m);var v=document.createElement("button");v.className="edf-fb-submit",v.textContent="Submit Feedback",a.appendChild(v),r.appendChild(a),document.body.appendChild(r),requestAnimationFrame(function(){r.classList.add("visible")}),i.addEventListener("click",function(){c(r)}),r.addEventListener("click",function(e){e.target===r&&c(r)}),v.addEventListener("click",function(){var n=x.value.trim();if(n){v.disabled=!0,v.textContent="Sending...";var i={name:u.value.trim()||null,category:o||"General",feedback:n,screenshot:t||null,page:window.location.href,viewport:window.innerWidth+"x"+window.innerHeight,browser:navigator.userAgent,status:"pending"};fetch("https://zdejveikmcmtkdvgpbzi.supabase.co/rest/v1/edf_feedback",{method:"POST",headers:{apikey:e,Authorization:"Bearer "+e,"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify(i)}).then(function(e){if(!e.ok)throw new Error("HTTP "+e.status);!function(e,n){for(;e.firstChild;)e.removeChild(e.firstChild);var t=document.createElement("div");t.className="edf-fb-success";var o=document.createElementNS("http://www.w3.org/2000/svg","svg");o.setAttribute("class","edf-fb-checkmark"),o.setAttribute("viewBox","0 0 24 24"),o.setAttribute("fill","none"),o.setAttribute("stroke","currentColor"),o.setAttribute("stroke-width","2.5"),o.setAttribute("stroke-linecap","round"),o.setAttribute("stroke-linejoin","round");var r=document.createElementNS("http://www.w3.org/2000/svg","path");r.setAttribute("d","M20 6 9 17l-5-5"),o.appendChild(r),t.appendChild(o);var a=document.createElement("p");a.textContent="Thank you for your feedback!",t.appendChild(a),e.appendChild(t),setTimeout(function(){c(n)},2200)}(a,r)}).catch(function(e){console.error("Feedback submission failed:",e),v.disabled=!1,v.textContent="Retry",v.style.background="#ef4444"})}else x.style.borderColor="#ef4444"})}function c(e){e.classList.remove("visible"),setTimeout(function(){e.remove(),r.style.display="",t=null},280)}d.className="edf-fb-label",d.textContent="Feedback",r.appendChild(d),document.body.appendChild(r),r.addEventListener("click",function(){r.style.display="none";const e=document.createElement("div");e.className="edf-fb-overlay";const n=document.createElement("div");n.className="edf-fb-overlay-hint",n.textContent="Drag to select a region, or click anywhere to skip screenshot",document.body.appendChild(e),document.body.appendChild(n);let o,a,i,d=!1;function c(){e.remove(),n.remove(),i&&i.remove()}e.addEventListener("mousedown",function(e){d=!0,o=e.clientX,a=e.clientY,i=document.createElement("div"),i.className="edf-fb-selection",document.body.appendChild(i)}),e.addEventListener("mousemove",function(e){if(d&&i){var n=Math.min(e.clientX,o),t=Math.min(e.clientY,a),r=Math.abs(e.clientX-o),s=Math.abs(e.clientY-a);i.style.left=n+"px",i.style.top=t+"px",i.style.width=r+"px",i.style.height=s+"px"}}),e.addEventListener("mouseup",function(e){var n=e.clientX,r=e.clientY,i=Math.abs(n-o),d=Math.abs(r-a);if(c(),i<10||d<10)return t=null,void s();(function(e){return (window.html2canvas?Promise.resolve():new Promise(function(r){var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";s.onload=r;document.head.appendChild(s)})).then(function(){return html2canvas(document.body,{x:e.x,y:e.y,width:e.width,height:e.height,scale:1,useCORS:!0,logging:!1})}).then(function(e){t=e.toDataURL("image/png")}).catch(function(e){console.warn("Screenshot capture failed:",e),t=null})})({x:Math.min(o,n)+window.scrollX,y:Math.min(a,r)+window.scrollY,width:i,height:d}).then(function(){s()})}),e.addEventListener("keydown",function(e){"Escape"===e.key&&(c(),r.style.display="")}),e.setAttribute("tabindex","0"),e.focus()})}();
+/**
+ * EDF Preview — Feedback Widget
+ * Posts to /api/feedback (Netlify function backed by Netlify Blobs).
+ * Mirrors pair-dental's submit/dashboard contract: 7-state workflow,
+ * dual approval, audit log, region screenshot, await+res.ok safety.
+ */
+(function () {
+  "use strict";
+
+  const ENDPOINT = "/api/feedback";
+  const CATEGORIES = ["Design", "Content", "Navigation", "Bug", "Suggestion"];
+  let pendingScreenshot = null;
+
+  // ── Inject styles ──
+  const css = `
+    .edf-fb-trigger{position:fixed;bottom:24px;right:24px;z-index:99990;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:24px;background:var(--color-cyan,#00d4ff);color:var(--color-brand,#0f1d35);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,212,255,.35);transition:all .3s cubic-bezier(.4,0,.2,1);overflow:hidden;font-family:var(--font-body,'Inter',sans-serif);font-weight:600;font-size:14px;white-space:nowrap}
+    .edf-fb-trigger:hover{width:130px;box-shadow:0 6px 28px rgba(0,212,255,.5)}
+    .edf-fb-trigger svg{flex-shrink:0;width:20px;height:20px}
+    .edf-fb-trigger .edf-fb-label{max-width:0;opacity:0;overflow:hidden;transition:max-width .3s,opacity .25s .05s,margin .3s;margin-left:0}
+    .edf-fb-trigger:hover .edf-fb-label{max-width:90px;opacity:1;margin-left:6px}
+    .edf-fb-overlay{position:fixed;inset:0;z-index:99991;cursor:crosshair;background:rgba(0,0,0,.25)}
+    .edf-fb-overlay-hint{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:99992;background:var(--color-brand,#0f1d35);color:var(--color-text,#e8f0f8);font-family:var(--font-body,'Inter',sans-serif);font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid rgba(255,255,255,.09);box-shadow:0 8px 32px rgba(0,0,0,.5)}
+    .edf-fb-selection{position:fixed;border:2px solid var(--color-cyan,#00d4ff);background:rgba(0,212,255,.08);z-index:99992;pointer-events:none}
+    .edf-fb-backdrop{position:fixed;inset:0;z-index:99993;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+    .edf-fb-backdrop.visible{opacity:1}
+    .edf-fb-modal{background:var(--color-brand,#0f1d35);border:1px solid rgba(255,255,255,.09);border-radius:16px;width:460px;max-width:94vw;max-height:90vh;overflow-y:auto;padding:28px;box-shadow:0 16px 64px rgba(0,0,0,.6);transform:translateY(12px) scale(.97);transition:transform .3s cubic-bezier(.4,0,.2,1);font-family:var(--font-body,'Inter',sans-serif);color:var(--color-text,#e8f0f8);position:relative}
+    .edf-fb-backdrop.visible .edf-fb-modal{transform:none}
+    .edf-fb-modal h3{margin:0 0 20px;font-family:var(--font-heading,'Plus Jakarta Sans',sans-serif);font-size:20px;font-weight:700;color:#fff}
+    .edf-fb-screenshot-wrap{margin-bottom:18px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.09);max-height:180px}
+    .edf-fb-screenshot-wrap img{width:100%;display:block;object-fit:contain}
+    .edf-fb-categories{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+    .edf-fb-cat-btn{padding:6px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.14);background:transparent;color:#94a3b8;font-family:var(--font-body,'Inter',sans-serif);font-size:13px;cursor:pointer;transition:all .2s}
+    .edf-fb-cat-btn:hover{border-color:var(--color-cyan,#00d4ff);color:var(--color-cyan,#00d4ff)}
+    .edf-fb-cat-btn.active{background:rgba(0,212,255,.15);border-color:var(--color-cyan,#00d4ff);color:var(--color-cyan,#00d4ff);font-weight:600}
+    .edf-fb-field{margin-bottom:14px}
+    .edf-fb-field label{display:block;font-size:13px;color:#94a3b8;margin-bottom:5px}
+    .edf-fb-field input,.edf-fb-field textarea{width:100%;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.09);background:#12203a;color:var(--color-text,#e8f0f8);font-family:var(--font-body,'Inter',sans-serif);font-size:14px;outline:none;transition:border-color .2s;box-sizing:border-box}
+    .edf-fb-field input:focus,.edf-fb-field textarea:focus{border-color:var(--color-cyan,#00d4ff)}
+    .edf-fb-field textarea{resize:vertical;min-height:90px}
+    .edf-fb-submit{width:100%;padding:12px;border:none;border-radius:10px;background:var(--color-cyan,#00d4ff);color:var(--color-brand,#0f1d35);font-family:var(--font-body,'Inter',sans-serif);font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s}
+    .edf-fb-submit:hover{opacity:.9;transform:translateY(-1px)}
+    .edf-fb-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .edf-fb-error-banner{margin-bottom:14px;padding:10px 14px;border-radius:8px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.45);color:#fca5a5;font-size:13px;display:none}
+    .edf-fb-error-banner.visible{display:block}
+    .edf-fb-close{position:absolute;top:14px;right:14px;background:none;border:none;color:#475569;cursor:pointer;padding:4px;font-size:22px;line-height:1;transition:color .2s}
+    .edf-fb-close:hover{color:#e8f0f8}
+    .edf-fb-success{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}
+    .edf-fb-checkmark{width:56px;height:56px;color:#00ffc8;margin-bottom:16px;animation:edf-fb-pop .4s cubic-bezier(.34,1.56,.64,1)}
+    .edf-fb-success p{font-size:16px;color:var(--color-text,#e8f0f8);margin:0}
+    @keyframes edf-fb-pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+  `;
+  const styleEl = document.createElement("style");
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
+
+  // ── Trigger button ──
+  const trigger = document.createElement("button");
+  trigger.className = "edf-fb-trigger";
+  trigger.setAttribute("aria-label", "Send feedback");
+  trigger.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+  '<span class="edf-fb-label">Feedback</span>';
+  document.body.appendChild(trigger);
+
+  // ── Helpers ──
+  function close(el) {
+    el.classList.remove("visible");
+    setTimeout(() => {
+      el.remove();
+      trigger.style.display = "";
+      pendingScreenshot = null;
+    }, 280);
+  }
+
+  async function loadHtml2Canvas() {
+    if (window.html2canvas) return;
+    await new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  async function captureRegion(rect) {
+    try {
+      await loadHtml2Canvas();
+      const canvas = await window.html2canvas(document.body, {
+        x: rect.x, y: rect.y, width: rect.width, height: rect.height,
+        scale: 1, useCORS: true, logging: false,
+      });
+      pendingScreenshot = canvas.toDataURL("image/png");
+    } catch (err) {
+      console.warn("[edf-fb] screenshot failed:", err);
+      pendingScreenshot = null;
+    }
+  }
+
+  // ── Modal ──
+  function openModal() {
+    let chosenCategory = null;
+    const backdrop = document.createElement("div");
+    backdrop.className = "edf-fb-backdrop";
+    const modal = document.createElement("div");
+    modal.className = "edf-fb-modal";
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "edf-fb-close";
+    closeBtn.setAttribute("aria-label", "Close");
+    closeBtn.textContent = "×";
+    modal.appendChild(closeBtn);
+
+    const title = document.createElement("h3");
+    title.textContent = "Send Feedback";
+    modal.appendChild(title);
+
+    const errorBanner = document.createElement("div");
+    errorBanner.className = "edf-fb-error-banner";
+    modal.appendChild(errorBanner);
+
+    if (pendingScreenshot) {
+      const wrap = document.createElement("div");
+      wrap.className = "edf-fb-screenshot-wrap";
+      const img = document.createElement("img");
+      img.src = pendingScreenshot;
+      img.alt = "Screenshot preview";
+      wrap.appendChild(img);
+      modal.appendChild(wrap);
+    }
+
+    const catRow = document.createElement("div");
+    catRow.className = "edf-fb-categories";
+    CATEGORIES.forEach((cat) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "edf-fb-cat-btn";
+      b.textContent = cat;
+      b.addEventListener("click", () => {
+        catRow.querySelectorAll(".edf-fb-cat-btn").forEach((x) => x.classList.remove("active"));
+        b.classList.add("active");
+        chosenCategory = cat;
+      });
+      catRow.appendChild(b);
+    });
+    modal.appendChild(catRow);
+
+    const nameField = document.createElement("div");
+    nameField.className = "edf-fb-field";
+    nameField.innerHTML = '<label for="edf-fb-name">Name (optional)</label><input type="text" id="edf-fb-name" placeholder="Your name">';
+    modal.appendChild(nameField);
+
+    const textField = document.createElement("div");
+    textField.className = "edf-fb-field";
+    textField.innerHTML = '<label for="edf-fb-text">Feedback *</label><textarea id="edf-fb-text" placeholder="Describe your feedback..."></textarea>';
+    modal.appendChild(textField);
+
+    const submit = document.createElement("button");
+    submit.className = "edf-fb-submit";
+    submit.textContent = "Submit Feedback";
+    modal.appendChild(submit);
+
+    backdrop.appendChild(modal);
+    document.body.appendChild(backdrop);
+    requestAnimationFrame(() => backdrop.classList.add("visible"));
+
+    closeBtn.addEventListener("click", () => close(backdrop));
+    backdrop.addEventListener("click", (e) => { if (e.target === backdrop) close(backdrop); });
+
+    submit.addEventListener("click", async () => {
+      const textArea = modal.querySelector("#edf-fb-text");
+      const nameInput = modal.querySelector("#edf-fb-name");
+      const feedbackText = textArea.value.trim();
+      if (!feedbackText) {
+        textArea.style.borderColor = "#ef4444";
+        return;
+      }
+      submit.disabled = true;
+      submit.textContent = "Sending...";
+      errorBanner.classList.remove("visible");
+
+      const payload = {
+        name: nameInput.value.trim() || null,
+        category: (chosenCategory || "general").toLowerCase(),
+        feedback: feedbackText,
+        screenshot: pendingScreenshot || null,
+        page: window.location.pathname + window.location.hash,
+        url: window.location.href,
+        viewport: window.innerWidth + "x" + window.innerHeight,
+        browser: navigator.userAgent,
+        ts: Date.now(),
+      };
+
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) {
+          let detail = "";
+          try { detail = (await res.json()).error || ""; } catch {}
+          throw new Error("HTTP " + res.status + (detail ? " — " + detail : ""));
+        }
+        const json = await res.json();
+        if (!json || !json.ok || !json.id) {
+          throw new Error("Server did not confirm save");
+        }
+        // ── Success ──
+        while (modal.firstChild) modal.removeChild(modal.firstChild);
+        const success = document.createElement("div");
+        success.className = "edf-fb-success";
+        success.innerHTML =
+          '<svg class="edf-fb-checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' +
+          '<p>Thank you for your feedback!</p>';
+        modal.appendChild(success);
+        setTimeout(() => close(backdrop), 2200);
+      } catch (err) {
+        console.error("[edf-fb] submission failed:", err);
+        errorBanner.textContent = "Couldn't save your feedback: " + (err.message || "unknown error") + ". Click Retry.";
+        errorBanner.classList.add("visible");
+        submit.disabled = false;
+        submit.textContent = "Retry";
+        submit.style.background = "#ef4444";
+        submit.style.color = "#fff";
+      }
+    });
+  }
+
+  // ── Region capture flow ──
+  trigger.addEventListener("click", () => {
+    trigger.style.display = "none";
+    const overlay = document.createElement("div");
+    overlay.className = "edf-fb-overlay";
+    const hint = document.createElement("div");
+    hint.className = "edf-fb-overlay-hint";
+    hint.textContent = "Drag to select a region, or click anywhere to skip screenshot · Esc to cancel";
+    document.body.appendChild(overlay);
+    document.body.appendChild(hint);
+
+    let dragging = false, startX, startY, sel;
+    function cleanup() {
+      overlay.remove(); hint.remove();
+      if (sel) sel.remove();
+    }
+    overlay.addEventListener("mousedown", (e) => {
+      dragging = true;
+      startX = e.clientX; startY = e.clientY;
+      sel = document.createElement("div");
+      sel.className = "edf-fb-selection";
+      document.body.appendChild(sel);
+    });
+    overlay.addEventListener("mousemove", (e) => {
+      if (!dragging || !sel) return;
+      const x = Math.min(e.clientX, startX), y = Math.min(e.clientY, startY);
+      const w = Math.abs(e.clientX - startX), h = Math.abs(e.clientY - startY);
+      sel.style.cssText += `;left:${x}px;top:${y}px;width:${w}px;height:${h}px`;
+    });
+    overlay.addEventListener("mouseup", async (e) => {
+      const w = Math.abs(e.clientX - startX), h = Math.abs(e.clientY - startY);
+      cleanup();
+      if (w < 10 || h < 10) {
+        pendingScreenshot = null;
+        openModal();
+        return;
+      }
+      await captureRegion({
+        x: Math.min(startX, e.clientX) + window.scrollX,
+        y: Math.min(startY, e.clientY) + window.scrollY,
+        width: w, height: h,
+      });
+      openModal();
+    });
+    document.addEventListener("keydown", function escHandler(e) {
+      if (e.key === "Escape") {
+        cleanup();
+        trigger.style.display = "";
+        document.removeEventListener("keydown", escHandler);
+      }
+    });
+  });
+})();

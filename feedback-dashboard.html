@@ -2,516 +2,1260 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feedback Dashboard - Elite Dental Force</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Feedback Dashboard — Elite Dental Force</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --color-brand: #0f1d35;
-      --color-brand-light: #162644;
-      --color-surface: #12203a;
-      --color-surface-raised: rgba(255, 255, 255, 0.05);
-      --color-cyan: #00d4ff;
-      --color-cyan-dim: rgba(0, 212, 255, 0.15);
-      --color-purple: #7c3aed;
-      --color-purple-dim: rgba(124, 58, 237, 0.15);
-      --color-green: #00ffc8;
-      --color-green-dim: rgba(0, 255, 200, 0.15);
-      --color-gold: #f59e0b;
-      --color-text: #e8f0f8;
-      --color-text-secondary: #94a3b8;
-      --color-text-muted: #475569;
-      --color-white: #ffffff;
-      --border-subtle: rgba(255, 255, 255, 0.09);
-      --border-medium: rgba(255, 255, 255, 0.14);
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-    }
+    /* ── Reset & Variables ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #192947;
+      --teal: #0D99AA;
+      --bg: #f8fafb;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+      --border: #e2e8f0;
+      --border-hover: #cbd5e1;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-lg: 0 4px 16px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.06);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--color-brand);
-      color: var(--color-text);
-      font-family: var(--font-body);
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
       min-height: 100vh;
     }
-    a { color: var(--color-cyan); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    img { max-width: 100%; display: block; }
 
+    /* ── Layout ── */
+    .dash-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    /* ── Header ── */
     .dash-header {
-      padding: 24px 32px;
-      border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 32px;
       flex-wrap: wrap;
-      gap: 12px;
-    }
-    .dash-header h1 {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--color-white);
-    }
-    .dash-back {
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .dash-container { max-width: 1200px; margin: 0 auto; padding: 28px 24px; }
-
-    /* Stats row */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 16px;
-      margin-bottom: 28px;
     }
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
-    .stat-card .stat-number {
-      font-family: var(--font-heading);
-      font-size: 32px;
+    .dash-header-left h1 {
+      font-size: 1.75rem;
       font-weight: 800;
-      color: var(--color-white);
+      color: var(--navy);
+      letter-spacing: -0.03em;
     }
-    .stat-card .stat-label {
-      font-size: 13px;
-      color: var(--color-text-secondary);
+    .dash-header-left p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
       margin-top: 4px;
     }
-    .stat-card.cyan .stat-number { color: var(--color-cyan); }
-    .stat-card.gold .stat-number { color: var(--color-gold); }
-    .stat-card.purple .stat-number { color: var(--color-purple); }
-    .stat-card.green .stat-number { color: var(--color-green); }
-
-    /* Filters */
-    .filters-row {
+    .dash-actions {
       display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .dash-btn {
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .dash-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+    .dash-btn.primary {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    .dash-btn.primary:hover {
+      background: #0b8899;
+    }
+    .dash-btn.danger {
+      color: #dc2626;
+      border-color: rgba(220,38,38,0.25);
+    }
+    .dash-btn.danger:hover {
+      background: rgba(220,38,38,0.06);
+    }
+
+    /* ── Stats ── */
+    .dash-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
       gap: 12px;
+      margin-bottom: 28px;
+    }
+    .dash-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .dash-stat:hover, .dash-stat.active {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 2px rgba(13,153,170,0.15);
+    }
+    .dash-stat-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+    .dash-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* ── Filters ── */
+    .dash-filters {
+      display: flex;
+      gap: 10px;
       margin-bottom: 24px;
       flex-wrap: wrap;
-    }
-    .filters-row select {
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border-subtle);
-      background: var(--color-surface);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      font-size: 14px;
-      outline: none;
-      cursor: pointer;
-    }
-    .filters-row select:focus { border-color: var(--color-cyan); }
-
-    /* Feedback cards */
-    .fb-list { display: flex; flex-direction: column; gap: 16px; }
-    .fb-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      transition: border-color 0.2s;
-    }
-    .fb-card:hover { border-color: var(--border-medium); }
-    .fb-card.no-screenshot { grid-template-columns: 1fr; }
-
-    .fb-thumb {
-      width: 140px;
-      height: 100px;
-      border-radius: 8px;
-      object-fit: cover;
-      border: 1px solid var(--border-subtle);
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .fb-thumb:hover { opacity: 0.8; }
-
-    .fb-body { min-width: 0; }
-    .fb-meta {
-      display: flex;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
     }
-
-    .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
+    .dash-filter-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.5px;
     }
-    .badge-pending { background: rgba(245, 158, 11, 0.15); color: var(--color-gold); }
-    .badge-in-progress { background: var(--color-purple-dim); color: var(--color-purple); }
-    .badge-completed { background: var(--color-green-dim); color: var(--color-green); }
-    .badge-category {
-      background: var(--color-cyan-dim);
-      color: var(--color-cyan);
+    .dash-filter {
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-family: var(--font);
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      -webkit-appearance: none;
+    }
+    .dash-filter:focus,
+    .dash-filter:hover {
+      border-color: var(--teal);
+      color: var(--text);
     }
 
-    .fb-text {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--color-text);
-      margin-bottom: 10px;
-      word-break: break-word;
-    }
-    .fb-details {
-      font-size: 12px;
-      color: var(--color-text-muted);
+    /* ── Cards ── */
+    .dash-cards {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 14px;
     }
 
-    /* Status change & notes */
-    .fb-actions {
-      margin-top: 12px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      flex-wrap: wrap;
+    .dash-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
     }
-    .fb-actions select {
-      padding: 6px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
-      background: var(--color-surface);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      font-size: 13px;
-      outline: none;
+    .dash-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-lg);
     }
-    .fb-notes {
-      flex: 1;
-      min-width: 200px;
-    }
-    .fb-notes textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
-      background: var(--color-surface);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      font-size: 13px;
-      outline: none;
-      resize: vertical;
-      min-height: 34px;
-      transition: border-color 0.2s;
-    }
-    .fb-notes textarea:focus { border-color: var(--color-cyan); }
-    .fb-notes .notes-save {
-      margin-top: 4px;
-      padding: 4px 12px;
-      border: none;
-      border-radius: 5px;
-      background: var(--color-cyan);
-      color: var(--color-brand);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      display: none;
-    }
-    .fb-notes .notes-save.show { display: inline-block; }
+    .dash-card.status-resolved { border-left: 3px solid #16a34a; }
+    .dash-card.status-in-progress { border-left: 3px solid #2563eb; }
+    .dash-card.status-dev-complete { border-left: 3px solid #6366f1; }
+    .dash-card.status-approved { border-left: 3px solid #16a34a; }
+    .dash-card.status-rejected { border-left: 3px solid #f43f5e; }
+    .dash-card.status-blocked { border-left: 3px solid #dc2626; }
+    .dash-card.status-wont-fix { border-left: 3px solid #94a3b8; }
 
-    /* Screenshot modal */
-    .ss-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(6px);
+    .dash-card-top {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .dash-card-screenshot {
+      width: 120px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      background: #f1f5f9;
+      flex-shrink: 0;
+    }
+    .dash-card-screenshot:hover {
+      transform: scale(1.03);
+    }
+    .dash-card-no-screenshot {
+      width: 120px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: #f1f5f9;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+    .dash-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .dash-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .dash-card-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+    .dash-card-time {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .dash-card-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    /* Category badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .badge-design { background: #dbeafe; color: #1d4ed8; }
+    .badge-content { background: #d1fae5; color: #047857; }
+    .badge-navigation { background: #cffafe; color: #0e7490; }
+    .badge-bug { background: #fee2e2; color: #dc2626; }
+    .badge-suggestion { background: #fef3c7; color: #b45309; }
+    .badge-default { background: #f1f5f9; color: #64748b; }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .status-pending { background: #fef3c7; color: #b45309; }
+    .status-pending::before { background: #f59e0b; }
+    .status-in-progress { background: #dbeafe; color: #1d4ed8; }
+    .status-in-progress::before { background: #2563eb; }
+    .status-dev-complete { background: #e0e7ff; color: #4338ca; }
+    .status-dev-complete::before { background: #6366f1; }
+    .status-approved { background: #d1fae5; color: #047857; }
+    .status-approved::before { background: #16a34a; }
+    .status-rejected { background: #ffe4e6; color: #be123c; }
+    .status-rejected::before { background: #f43f5e; }
+    .status-resolved { background: #d1fae5; color: #047857; }
+    .status-resolved::before { background: #16a34a; }
+    .status-blocked { background: #fee2e2; color: #dc2626; }
+    .status-blocked::before { background: #dc2626; }
+    .status-wont-fix { background: #f1f5f9; color: #64748b; }
+    .status-wont-fix::before { background: #94a3b8; }
+
+    /* ── Approval Pipeline ── */
+    .approval-pipeline {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .approval-pipeline-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .approval-pipeline-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--navy);
+    }
+    .approval-progress {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .approval-progress-bar {
+      width: 60px;
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .approval-progress-fill {
+      height: 100%;
+      background: #16a34a;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    .approval-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .approval-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    .approval-item .check { color: #16a34a; font-weight: 700; }
+    .approval-item .pending-dot { color: #94a3b8; }
+    .approval-item .rejected-x { color: #dc2626; font-weight: 700; }
+    .approval-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .approval-btn {
+      padding: 6px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid;
+      transition: all 0.2s ease;
+    }
+    .approval-btn.approve {
+      background: #d1fae5;
+      color: #047857;
+      border-color: #86efac;
+    }
+    .approval-btn.approve:hover {
+      background: #bbf7d0;
+      border-color: #4ade80;
+    }
+    .approval-btn.reject {
+      background: #ffe4e6;
+      color: #be123c;
+      border-color: #fda4af;
+    }
+    .approval-btn.reject:hover {
+      background: #fecdd3;
+      border-color: #fb7185;
+    }
+    .review-notes-input {
+      width: 100%;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .review-notes-input:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+    .reviewer-name-input {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 0.8rem;
+      color: var(--text);
+      font-weight: 500;
+      width: 140px;
+    }
+    .reviewer-name-input:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+    .dev-completed-by {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .dash-card-page {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      background: #f1f5f9;
+      padding: 1px 8px;
+      border-radius: 4px;
+    }
+    .dash-card-viewport {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    .dash-card-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    /* ── Card actions row ── */
+    .dash-card-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      padding: 5px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+    .action-btn:hover {
+      border-color: var(--border-hover);
+      color: var(--text);
+    }
+    .action-btn.delete:hover {
+      border-color: #fca5a5;
+      color: #dc2626;
+      background: #fef2f2;
+    }
+    .action-btn.expand:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: #f0fdfa;
+    }
+
+    /* Status select in card */
+    .status-select {
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      -webkit-appearance: none;
+    }
+    .status-select:hover, .status-select:focus {
+      border-color: var(--teal);
+      outline: none;
+    }
+
+    /* Dev notes */
+    .dash-card-notes {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .notes-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .notes-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      resize: vertical;
+      min-height: 36px;
+      max-height: 120px;
+      transition: border-color 0.2s ease;
+    }
+    .notes-input:focus {
+      outline: none;
+      border-color: var(--teal);
+    }
+    .notes-input::placeholder {
+      color: var(--text-muted);
+    }
+    .notes-saved {
+      font-size: 0.7rem;
+      color: #16a34a;
+      font-weight: 500;
+      margin-left: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .notes-saved.show { opacity: 1; }
+
+    /* ── Screenshot Lightbox ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
       cursor: zoom-out;
     }
-    .ss-modal-backdrop img {
-      max-width: 92vw;
-      max-height: 90vh;
-      border-radius: 10px;
-      box-shadow: var(--shadow-lg);
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
     }
+    .lightbox-close {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.3); }
 
-    .empty-state {
+    /* ── Empty state ── */
+    .dash-empty {
       text-align: center;
-      padding: 60px 20px;
-      color: var(--color-text-muted);
-      font-size: 16px;
+      padding: 80px 20px;
+      color: var(--text-muted);
+    }
+    .dash-empty svg {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      opacity: 0.3;
+    }
+    .dash-empty p {
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 640px) {
-      .fb-card { grid-template-columns: 1fr; }
-      .fb-thumb { width: 100%; height: auto; }
-      .dash-header { padding: 16px; }
-      .dash-container { padding: 16px; }
+    /* ── Toast ── */
+    .dash-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 10001;
+    }
+    .dash-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .dash-header { flex-direction: column; align-items: flex-start; }
+      .dash-card-top { flex-direction: column; }
+      .dash-card-screenshot, .dash-card-no-screenshot { width: 100%; height: 120px; }
+    }
+    @media (max-width: 480px) {
+      .dash-container { padding: 16px 12px 48px; }
+      .dash-stats { grid-template-columns: 1fr 1fr; }
+      .dash-filters { flex-direction: column; }
+      .dash-filter { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <header class="dash-header">
-    <h1>Feedback Dashboard</h1>
-    <a href="index.html" class="dash-back">&larr; Back to site</a>
-  </header>
 
   <div class="dash-container">
-    <div class="stats-row" id="statsRow">
-      <div class="stat-card cyan"><div class="stat-number" id="statTotal">-</div><div class="stat-label">Total</div></div>
-      <div class="stat-card gold"><div class="stat-number" id="statPending">-</div><div class="stat-label">Pending</div></div>
-      <div class="stat-card purple"><div class="stat-number" id="statProgress">-</div><div class="stat-label">In Progress</div></div>
-      <div class="stat-card green"><div class="stat-number" id="statCompleted">-</div><div class="stat-label">Completed</div></div>
+    <!-- Header -->
+    <div class="dash-header">
+      <div class="dash-header-left">
+        <h1>Feedback Dashboard</h1>
+        <p>Screenshot feedback from the Elite Dental Force preview</p>
+      </div>
+      <div class="dash-actions">
+        <button class="dash-btn primary" id="copyAllBtn">Copy All Feedback</button>
+        <button class="dash-btn danger" id="clearAllBtn">Clear All</button>
+        <a href="index.html" class="dash-btn">Back to Site</a>
+      </div>
     </div>
 
-    <div class="filters-row">
-      <select id="filterStatus">
+    <!-- Stats (clickable = filter by status) -->
+    <div class="dash-stats" id="statsBar">
+      <div class="dash-stat" data-status="">
+        <div class="dash-stat-value" id="statTotal">0</div>
+        <div class="dash-stat-label">Total</div>
+      </div>
+      <div class="dash-stat" data-status="pending">
+        <div class="dash-stat-value" id="statPending">0</div>
+        <div class="dash-stat-label">Pending</div>
+      </div>
+      <div class="dash-stat" data-status="in-progress">
+        <div class="dash-stat-value" id="statInProgress">0</div>
+        <div class="dash-stat-label">In Progress</div>
+      </div>
+      <div class="dash-stat" data-status="dev-complete">
+        <div class="dash-stat-value" id="statDevComplete">0</div>
+        <div class="dash-stat-label">Needs Review</div>
+      </div>
+      <div class="dash-stat" data-status="approved">
+        <div class="dash-stat-value" id="statApproved">0</div>
+        <div class="dash-stat-label">Approved</div>
+      </div>
+      <div class="dash-stat" data-status="rejected">
+        <div class="dash-stat-value" id="statRejected">0</div>
+        <div class="dash-stat-label">Rejected</div>
+      </div>
+      <div class="dash-stat" data-status="blocked">
+        <div class="dash-stat-value" id="statBlocked">0</div>
+        <div class="dash-stat-label">Blocked</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="dash-filters">
+      <span class="dash-filter-label">Filter:</span>
+      <select class="dash-filter" id="filterCategory">
+        <option value="">All Categories</option>
+        <option value="design">Design</option>
+        <option value="content">Content</option>
+        <option value="navigation">Navigation</option>
+        <option value="bug">Bug</option>
+        <option value="suggestion">Suggestion</option>
+      </select>
+      <select class="dash-filter" id="filterPage">
+        <option value="">All Pages</option>
+      </select>
+      <select class="dash-filter" id="filterStatus">
         <option value="">All Statuses</option>
         <option value="pending">Pending</option>
         <option value="in-progress">In Progress</option>
-        <option value="completed">Completed</option>
-      </select>
-      <select id="filterCategory">
-        <option value="">All Categories</option>
-        <option value="Design">Design</option>
-        <option value="Content">Content</option>
-        <option value="Navigation">Navigation</option>
-        <option value="Bug">Bug</option>
-        <option value="Suggestion">Suggestion</option>
-        <option value="General">General</option>
+        <option value="dev-complete">Needs Review</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+        <option value="blocked">Blocked</option>
+        <option value="wont-fix">Won't Fix</option>
       </select>
     </div>
 
-    <div class="fb-list" id="fbList"></div>
+    <!-- Cards -->
+    <div class="dash-cards" id="cardsList"></div>
   </div>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="Full screenshot">
+  </div>
+
+  <!-- Toast -->
+  <div class="dash-toast" id="toast"></div>
+
   <script>
-    (function () {
-      'use strict';
+    /* ═══════════════════════════════════════════════════════
+       FEEDBACK DASHBOARD -- API-powered (Netlify Blobs)
+       With status tracking, audit log, and dev notes
+       ═══════════════════════════════════════════════════════ */
 
-      var SUPABASE_URL = 'https://zdejveikmcmtkdvgpbzi.supabase.co';
-      var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkZWp2ZWlrbWNtdGtkdmdwYnppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2ODQ1NDYsImV4cCI6MjA1MzI2MDU0Nn0.gVLMSQkjGbFjAWFHCMrFRPbhSFQe2sIP7kJmnFMy0e4';
+    let allItems = [];
+    let activeStatusFilter = '';
 
-      var allItems = [];
-      var fbList = document.getElementById('fbList');
-      var filterStatus = document.getElementById('filterStatus');
-      var filterCategory = document.getElementById('filterCategory');
+    const STATUS_LABELS = {
+      'pending': 'Pending',
+      'in-progress': 'In Progress',
+      'dev-complete': 'Needs Review',
+      'approved': 'Approved',
+      'rejected': 'Rejected',
+      'blocked': 'Blocked',
+      'wont-fix': "Won't Fix",
+      'resolved': 'Resolved (Legacy)'
+    };
 
-      function headers(extra) {
-        var h = {
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
-          'Content-Type': 'application/json',
-        };
-        if (extra) Object.keys(extra).forEach(function (k) { h[k] = extra[k]; });
-        return h;
+    const REQUIRED_APPROVALS = 2;
+
+    // ── Load from API ──
+    async function loadItems() {
+      try {
+        const res = await fetch('/api/feedback');
+        const data = await res.json();
+        allItems = (data.feedback || []).map(item => ({
+          ...item,
+          message: item.feedback || item.message || '',
+          timestamp: item.ts ? new Date(item.ts).toISOString() : item.timestamp || new Date().toISOString()
+        }));
+      } catch (e) {
+        console.error('Failed to load feedback from API:', e);
+        allItems = [];
+      }
+      allItems.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      updateStats();
+      populatePageFilter();
+      renderCards();
+    }
+
+    // ── Stats ──
+    function updateStats() {
+      document.getElementById('statTotal').textContent = allItems.length;
+      document.getElementById('statPending').textContent = allItems.filter(i => (i.status || 'pending') === 'pending').length;
+      document.getElementById('statInProgress').textContent = allItems.filter(i => i.status === 'in-progress' || i.status === 'rejected').length;
+      document.getElementById('statDevComplete').textContent = allItems.filter(i => i.status === 'dev-complete').length;
+      document.getElementById('statApproved').textContent = allItems.filter(i => i.status === 'approved' || i.status === 'resolved').length;
+      document.getElementById('statRejected').textContent = allItems.filter(i => i.status === 'rejected').length;
+      document.getElementById('statBlocked').textContent = allItems.filter(i => i.status === 'blocked').length;
+
+      document.querySelectorAll('.dash-stat').forEach(el => {
+        el.classList.toggle('active', el.dataset.status === activeStatusFilter);
+      });
+    }
+
+    // ── Clickable stats = filter by status ──
+    document.querySelectorAll('.dash-stat').forEach(el => {
+      el.addEventListener('click', () => {
+        const status = el.dataset.status;
+        activeStatusFilter = (activeStatusFilter === status) ? '' : status;
+        document.getElementById('filterStatus').value = activeStatusFilter;
+        updateStats();
+        renderCards();
+      });
+    });
+
+    // ── Page filter ──
+    function populatePageFilter() {
+      const pages = [...new Set(allItems.map(i => i.page).filter(Boolean))].sort();
+      const sel = document.getElementById('filterPage');
+      const current = sel.value;
+      sel.innerHTML = '<option value="">All Pages</option>';
+      pages.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p;
+        opt.textContent = p;
+        sel.appendChild(opt);
+      });
+      sel.value = current;
+    }
+
+    // ── Render cards ──
+    function renderCards() {
+      const catFilter = document.getElementById('filterCategory').value;
+      const pageFilter = document.getElementById('filterPage').value;
+      const statusFilter = activeStatusFilter || document.getElementById('filterStatus').value;
+
+      let filtered = allItems;
+      if (catFilter) filtered = filtered.filter(i => i.category === catFilter);
+      if (pageFilter) filtered = filtered.filter(i => i.page === pageFilter);
+      if (statusFilter) filtered = filtered.filter(i => (i.status || 'pending') === statusFilter);
+
+      const container = document.getElementById('cardsList');
+
+      if (!filtered.length) {
+        container.innerHTML = '<div class="dash-empty">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+          '<path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>' +
+          '</svg>' +
+          '<p>No feedback found</p></div>';
+        return;
       }
 
-      function fetchItems() {
-        fetch(SUPABASE_URL + '/rest/v1/edf_feedback?select=*&order=created_at.desc', {
-          headers: headers(),
-        })
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            allItems = data || [];
-            updateStats();
-            renderList();
-          })
-          .catch(function (err) {
-            console.error('Failed to fetch feedback:', err);
-            fbList.textContent = 'Failed to load feedback.';
-          });
-      }
+      container.innerHTML = filtered.map(item => cardHTML(item)).join('');
+      bindCardEvents();
+    }
 
-      function updateStats() {
-        document.getElementById('statTotal').textContent = allItems.length;
-        document.getElementById('statPending').textContent = allItems.filter(function (i) { return i.status === 'pending'; }).length;
-        document.getElementById('statProgress').textContent = allItems.filter(function (i) { return i.status === 'in-progress'; }).length;
-        document.getElementById('statCompleted').textContent = allItems.filter(function (i) { return i.status === 'completed'; }).length;
-      }
+    function cardHTML(item) {
+      const date = new Date(item.timestamp);
+      const timeStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        + ' at ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-      function renderList() {
-        var statusVal = filterStatus.value;
-        var catVal = filterCategory.value;
-        var filtered = allItems.filter(function (item) {
-          if (statusVal && item.status !== statusVal) return false;
-          if (catVal && item.category !== catVal) return false;
-          return true;
+      const catClass = item.category ? 'badge-' + item.category : 'badge-default';
+      const catLabel = item.category || 'general';
+      const status = item.status || 'pending';
+      const statusClass = 'status-' + status;
+
+      const screenshotHTML = item.screenshot
+        ? '<img class="dash-card-screenshot" src="' + esc(item.screenshot) + '" alt="Screenshot" data-id="' + esc(item.id) + '">'
+        : '<div class="dash-card-no-screenshot">No screenshot</div>';
+
+      const browserShort = parseBrowser(item.browser || '');
+
+      // Status select dropdown (exclude approval-only statuses from manual selection)
+      const manualStatuses = ['pending', 'in-progress', 'blocked', 'wont-fix'];
+      const statusOptions = manualStatuses.map(s =>
+        '<option value="' + s + '"' + (s === status ? ' selected' : '') + '>' + STATUS_LABELS[s] + '</option>'
+      ).join('');
+
+      // Approval pipeline section
+      const approvals = item.approvals || [];
+      const rejections = item.rejections || [];
+      const required = item.requiredApprovals || REQUIRED_APPROVALS;
+      const approvalPct = Math.min(100, Math.round((approvals.length / required) * 100));
+
+      let approvalHTML = '';
+      if (status === 'dev-complete' || status === 'approved' || status === 'rejected') {
+        let approvalListHTML = '';
+        approvals.forEach(a => {
+          const aDate = new Date(a.ts).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+          approvalListHTML += '<div class="approval-item"><span class="check">&#10003;</span> ' + esc(a.name) + ' approved' + (a.notes ? ' — <em>' + esc(a.notes) + '</em>' : '') + ' <span style="color:var(--text-muted);font-size:0.7rem;">' + aDate + '</span></div>';
+        });
+        // Show remaining needed
+        for (let i = approvals.length; i < required; i++) {
+          approvalListHTML += '<div class="approval-item"><span class="pending-dot">&#9675;</span> Awaiting reviewer ' + (i + 1) + '</div>';
+        }
+        // Show rejections if any
+        rejections.forEach(r => {
+          const rDate = new Date(r.ts).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+          approvalListHTML += '<div class="approval-item"><span class="rejected-x">&#10007;</span> ' + esc(r.name) + ' rejected' + (r.notes ? ' — <em>' + esc(r.notes) + '</em>' : '') + ' <span style="color:var(--text-muted);font-size:0.7rem;">' + rDate + '</span></div>';
         });
 
-        while (fbList.firstChild) fbList.removeChild(fbList.firstChild);
-
-        if (filtered.length === 0) {
-          var empty = document.createElement('div');
-          empty.className = 'empty-state';
-          empty.textContent = allItems.length === 0 ? 'No feedback submitted yet.' : 'No items match current filters.';
-          fbList.appendChild(empty);
-          return;
+        let actionsHTML = '';
+        if (status === 'dev-complete') {
+          actionsHTML = '<div class="approval-actions">' +
+            '<input class="reviewer-name-input" data-id="' + esc(item.id) + '" placeholder="Your name" />' +
+            '<input class="review-notes-input" data-id="' + esc(item.id) + '" placeholder="Review notes (optional)" style="width:200px;" />' +
+            '<button class="approval-btn approve" data-action="approve" data-id="' + esc(item.id) + '">&#10003; Approve</button>' +
+            '<button class="approval-btn reject" data-action="reject" data-id="' + esc(item.id) + '">&#10007; Reject</button>' +
+          '</div>';
         }
 
-        filtered.forEach(function (item) {
-          var card = document.createElement('div');
-          card.className = 'fb-card' + (item.screenshot ? '' : ' no-screenshot');
+        approvalHTML = '<div class="approval-pipeline">' +
+          '<div class="approval-pipeline-header">' +
+            '<span class="approval-pipeline-title">' + (status === 'approved' ? '&#10003; Fully Approved' : status === 'rejected' ? '&#10007; Rejected — Needs Rework' : 'Dual Approval Required') + '</span>' +
+            '<span class="approval-progress">' +
+              '<span class="approval-progress-bar"><span class="approval-progress-fill" style="width:' + approvalPct + '%"></span></span>' +
+              approvals.length + '/' + required +
+            '</span>' +
+          '</div>' +
+          '<div class="approval-list">' + approvalListHTML + '</div>' +
+          actionsHTML +
+          (item.devCompletedBy ? '<div class="dev-completed-by">Dev completed by ' + esc(item.devCompletedBy) + (item.devCompletedAt ? ' on ' + new Date(item.devCompletedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '') + '</div>' : '') +
+        '</div>';
+      }
 
-          // Screenshot thumbnail
-          if (item.screenshot) {
-            var thumb = document.createElement('img');
-            thumb.className = 'fb-thumb';
-            thumb.src = item.screenshot;
-            thumb.alt = 'Screenshot';
-            thumb.addEventListener('click', function () { openScreenshotModal(item.screenshot); });
-            card.appendChild(thumb);
-          }
+      // "Mark Dev Complete" button for in-progress items
+      let devCompleteBtn = '';
+      if (status === 'in-progress' || status === 'rejected') {
+        devCompleteBtn = '<button class="action-btn" style="background:#e0e7ff;color:#4338ca;border-color:#c7d2fe;" data-action="dev-complete" data-id="' + esc(item.id) + '">&#10003; Mark Dev Complete</button>';
+      }
 
-          var body = document.createElement('div');
-          body.className = 'fb-body';
+      return '<div class="dash-card ' + statusClass + '" data-id="' + esc(item.id) + '">' +
+        '<div class="dash-card-top">' +
+          screenshotHTML +
+          '<div class="dash-card-info">' +
+            '<div class="dash-card-meta">' +
+              '<span class="dash-card-name">' + esc(item.name || 'Anonymous') + '</span>' +
+              '<span class="status-badge ' + statusClass + '">' + (STATUS_LABELS[status] || status) + '</span>' +
+              '<span class="dash-card-time">' + timeStr + '</span>' +
+            '</div>' +
+            '<div class="dash-card-badges">' +
+              '<span class="badge ' + catClass + '">' + esc(catLabel) + '</span>' +
+              (item.page ? '<span class="dash-card-page">' + esc(item.page) + '</span>' : '') +
+            '</div>' +
+            (item.viewport ? '<span class="dash-card-viewport">' + esc(item.viewport) + (browserShort ? ' / ' + browserShort : '') + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="dash-card-text">' + esc(item.message || 'No message.') + '</div>' +
+        '<div class="dash-card-actions">' +
+          '<select class="status-select" data-action="status" data-id="' + esc(item.id) + '">' + statusOptions + '</select>' +
+          devCompleteBtn +
+          (item.screenshot ? '<button class="action-btn expand" data-action="expand" data-id="' + esc(item.id) + '">View Screenshot</button>' : '') +
+          '<button class="action-btn delete" data-action="delete" data-id="' + esc(item.id) + '">Delete</button>' +
+        '</div>' +
+        approvalHTML +
+        '<div class="dash-card-notes">' +
+          '<div class="notes-label">Dev Notes <span class="notes-saved" id="saved-' + esc(item.id) + '">Saved</span></div>' +
+          '<textarea class="notes-input" data-action="notes" data-id="' + esc(item.id) + '" placeholder="Add developer notes...">' + esc(item.developerNotes || '') + '</textarea>' +
+        '</div>' +
+      '</div>';
+    }
 
-          // Meta badges
-          var meta = document.createElement('div');
-          meta.className = 'fb-meta';
+    function parseBrowser(ua) {
+      if (!ua) return '';
+      if (ua.includes('Chrome/') && !ua.includes('Edg/')) return 'Chrome';
+      if (ua.includes('Edg/')) return 'Edge';
+      if (ua.includes('Firefox/')) return 'Firefox';
+      if (ua.includes('Safari/') && !ua.includes('Chrome/')) return 'Safari';
+      return '';
+    }
 
-          var statusBadge = document.createElement('span');
-          statusBadge.className = 'badge badge-' + (item.status || 'pending');
-          statusBadge.textContent = item.status || 'pending';
-          meta.appendChild(statusBadge);
+    function esc(str) {
+      if (!str) return '';
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
 
-          if (item.category) {
-            var catBadge = document.createElement('span');
-            catBadge.className = 'badge badge-category';
-            catBadge.textContent = item.category;
-            meta.appendChild(catBadge);
-          }
+    // ── Card events ──
+    let notesTimers = {};
 
-          body.appendChild(meta);
-
-          // Feedback text
-          var text = document.createElement('div');
-          text.className = 'fb-text';
-          text.textContent = item.feedback;
-          body.appendChild(text);
-
-          // Details
-          var details = document.createElement('div');
-          details.className = 'fb-details';
-
-          if (item.name) {
-            var nameSpan = document.createElement('span');
-            nameSpan.textContent = 'By: ' + item.name;
-            details.appendChild(nameSpan);
-          }
-
-          var dateSpan = document.createElement('span');
-          dateSpan.textContent = item.created_at ? new Date(item.created_at).toLocaleString() : '';
-          details.appendChild(dateSpan);
-
-          if (item.page) {
-            var pageSpan = document.createElement('span');
-            pageSpan.textContent = item.page;
-            details.appendChild(pageSpan);
-          }
-
-          body.appendChild(details);
-
-          // Actions row
-          var actions = document.createElement('div');
-          actions.className = 'fb-actions';
-
-          // Status selector
-          var statusSelect = document.createElement('select');
-          ['pending', 'in-progress', 'completed'].forEach(function (s) {
-            var opt = document.createElement('option');
-            opt.value = s;
-            opt.textContent = s.charAt(0).toUpperCase() + s.slice(1);
-            if (s === (item.status || 'pending')) opt.selected = true;
-            statusSelect.appendChild(opt);
-          });
-          statusSelect.addEventListener('change', function () {
-            updateField(item.id, 'status', statusSelect.value);
-          });
-          actions.appendChild(statusSelect);
-
-          // Dev notes
-          var notesWrap = document.createElement('div');
-          notesWrap.className = 'fb-notes';
-          var notesArea = document.createElement('textarea');
-          notesArea.placeholder = 'Developer notes...';
-          notesArea.value = item.dev_notes || '';
-          notesArea.rows = 1;
-          notesWrap.appendChild(notesArea);
-
-          var saveBtn = document.createElement('button');
-          saveBtn.className = 'notes-save';
-          saveBtn.textContent = 'Save';
-          notesWrap.appendChild(saveBtn);
-
-          notesArea.addEventListener('input', function () {
-            saveBtn.classList.add('show');
-          });
-          saveBtn.addEventListener('click', function () {
-            updateField(item.id, 'dev_notes', notesArea.value);
-            saveBtn.classList.remove('show');
-          });
-
-          actions.appendChild(notesWrap);
-          body.appendChild(actions);
-
-          card.appendChild(body);
-          fbList.appendChild(card);
+    function bindCardEvents() {
+      // Expand screenshot (lightbox)
+      document.querySelectorAll('.action-btn[data-action="expand"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const item = allItems.find(i => i.id === id);
+          if (item && item.screenshot) showLightbox(item.screenshot);
         });
-      }
+      });
 
-      function updateField(id, field, value) {
-        var payload = {};
-        payload[field] = value;
-        fetch(SUPABASE_URL + '/rest/v1/edf_feedback?id=eq.' + id, {
-          method: 'PATCH',
-          headers: headers({ 'Prefer': 'return=minimal' }),
-          body: JSON.stringify(payload),
-        }).then(function (res) {
-          if (!res.ok) throw new Error('Update failed');
-          // Re-fetch for accurate stats
-          fetchItems();
-        }).catch(function (err) {
-          console.error('Update failed:', err);
+      // Click screenshot thumbnail to lightbox
+      document.querySelectorAll('.dash-card-screenshot').forEach(img => {
+        img.addEventListener('click', () => showLightbox(img.src));
+      });
+
+      // Status change
+      document.querySelectorAll('.status-select[data-action="status"]').forEach(sel => {
+        sel.addEventListener('change', async () => {
+          const id = sel.dataset.id;
+          const newStatus = sel.value;
+          try {
+            await fetch('/api/feedback', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id, status: newStatus })
+            });
+            showToast('Status updated to ' + STATUS_LABELS[newStatus]);
+            loadItems();
+          } catch (e) {
+            console.error('Status update failed:', e);
+            showToast('Failed to update status');
+          }
         });
+      });
+
+      // Mark Dev Complete
+      document.querySelectorAll('.action-btn[data-action="dev-complete"]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          try {
+            await fetch('/api/feedback', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id, action: 'dev-complete', reviewerName: 'Will' })
+            });
+            showToast('Marked as dev complete — awaiting dual approval');
+            loadItems();
+          } catch (e) {
+            console.error('Dev complete failed:', e);
+            showToast('Failed to update');
+          }
+        });
+      });
+
+      // Approve
+      document.querySelectorAll('.approval-btn.approve').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const card = btn.closest('.approval-pipeline');
+          const name = card.querySelector('.reviewer-name-input').value.trim();
+          const notes = card.querySelector('.review-notes-input').value.trim();
+          if (!name) { showToast('Please enter your name to approve'); return; }
+          try {
+            const res = await fetch('/api/feedback', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id, action: 'approve', reviewerName: name, reviewNotes: notes })
+            });
+            const data = await res.json();
+            if (data.error) { showToast(data.error); return; }
+            if (data.entry && data.entry.status === 'approved') {
+              showToast('Fully approved! Ready for production deploy.');
+            } else {
+              showToast('Approval recorded — ' + (data.entry.approvals.length) + '/' + REQUIRED_APPROVALS + ' approvals');
+            }
+            loadItems();
+          } catch (e) {
+            console.error('Approve failed:', e);
+            showToast('Failed to approve');
+          }
+        });
+      });
+
+      // Reject
+      document.querySelectorAll('.approval-btn.reject').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          const card = btn.closest('.approval-pipeline');
+          const name = card.querySelector('.reviewer-name-input').value.trim();
+          const notes = card.querySelector('.review-notes-input').value.trim();
+          if (!name) { showToast('Please enter your name to reject'); return; }
+          if (!notes) { showToast('Please provide a reason for rejection'); return; }
+          try {
+            await fetch('/api/feedback', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id, action: 'reject', reviewerName: name, reviewNotes: notes })
+            });
+            showToast('Rejected — sent back to development');
+            loadItems();
+          } catch (e) {
+            console.error('Reject failed:', e);
+            showToast('Failed to reject');
+          }
+        });
+      });
+
+      // Dev notes (debounced auto-save)
+      document.querySelectorAll('.notes-input[data-action="notes"]').forEach(textarea => {
+        textarea.addEventListener('input', () => {
+          const id = textarea.dataset.id;
+          clearTimeout(notesTimers[id]);
+          notesTimers[id] = setTimeout(async () => {
+            try {
+              await fetch('/api/feedback', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, developerNotes: textarea.value })
+              });
+              const item = allItems.find(i => i.id === id);
+              if (item) item.developerNotes = textarea.value;
+              const saved = document.getElementById('saved-' + id);
+              if (saved) {
+                saved.classList.add('show');
+                setTimeout(() => saved.classList.remove('show'), 1500);
+              }
+            } catch (e) {
+              console.error('Notes save failed:', e);
+            }
+          }, 800);
+        });
+      });
+
+      // Delete
+      document.querySelectorAll('.action-btn[data-action="delete"]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.dataset.id;
+          try {
+            await fetch('/api/feedback?id=' + encodeURIComponent(id), { method: 'DELETE' });
+          } catch (e) { console.error('Delete failed:', e); }
+          loadItems();
+          showToast('Feedback deleted (archived in audit log)');
+        });
+      });
+    }
+
+    // ── Lightbox ──
+    function showLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = src;
+      lb.classList.add('active');
+    }
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget || e.target.id === 'lightboxClose') {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    });
+    document.getElementById('lightboxClose').addEventListener('click', () => {
+      document.getElementById('lightbox').classList.remove('active');
+    });
+
+    // ── Filters ──
+    document.getElementById('filterCategory').addEventListener('change', renderCards);
+    document.getElementById('filterPage').addEventListener('change', renderCards);
+    document.getElementById('filterStatus').addEventListener('change', () => {
+      activeStatusFilter = document.getElementById('filterStatus').value;
+      updateStats();
+      renderCards();
+    });
+
+    // ── Copy All (rich HTML with inline screenshots + plain text fallback) ──
+    document.getElementById('copyAllBtn').addEventListener('click', async () => {
+      if (!allItems.length) {
+        showToast('No feedback to copy');
+        return;
       }
 
-      function openScreenshotModal(src) {
-        var backdrop = document.createElement('div');
-        backdrop.className = 'ss-modal-backdrop';
-        var img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Screenshot full size';
-        backdrop.appendChild(img);
-        backdrop.addEventListener('click', function () { backdrop.remove(); });
-        document.body.appendChild(backdrop);
+      showToast('Preparing feedback with screenshots...');
+
+      const generated = new Date().toLocaleString();
+      const screenshotCount = allItems.filter(i => i.screenshot).length;
+
+      let html = '<h1>Elite Dental Force — Feedback Report</h1>';
+      html += '<p>Generated: ' + esc(generated) + ' | Total: ' + allItems.length + ' items (' + screenshotCount + ' with screenshots)</p><hr>';
+
+      let md = '# Elite Dental Force — Feedback Report\n\n';
+      md += 'Generated: ' + generated + '\n';
+      md += 'Total items: ' + allItems.length + ' (' + screenshotCount + ' with screenshots)\n\n---\n\n';
+
+      allItems.forEach((item, idx) => {
+        const date = new Date(item.timestamp).toLocaleString();
+        const cat = item.category ? item.category.toUpperCase() : 'GENERAL';
+        const name = item.name || 'Anonymous';
+        const page = item.page || 'unknown';
+        const viewport = item.viewport || 'unknown';
+        const browser = parseBrowser(item.browser || '');
+        const msg = item.message || 'No message.';
+        const status = STATUS_LABELS[item.status || 'pending'];
+        const notes = item.developerNotes || '';
+
+        // HTML version
+        html += '<h2>' + (idx + 1) + '. [' + esc(cat) + '] ' + esc(name) + ' -- <em>' + esc(status) + '</em></h2>';
+        html += '<p><strong>Date:</strong> ' + esc(date) + ' | <strong>Page:</strong> <code>' + esc(page) + '</code> | <strong>Viewport:</strong> ' + esc(viewport);
+        if (browser) html += ' | <strong>Browser:</strong> ' + esc(browser);
+        html += '</p>';
+        html += '<blockquote>' + esc(msg) + '</blockquote>';
+        if (notes) html += '<p><strong>Dev Notes:</strong> ' + esc(notes) + '</p>';
+        if (item.screenshot) {
+          html += '<p><strong>Screenshot:</strong></p>';
+          html += '<img src="' + item.screenshot + '" alt="Screenshot for feedback #' + (idx + 1) + '" style="max-width:600px;border:1px solid #e2e8f0;border-radius:8px;">';
+        }
+        html += '<hr>';
+
+        // Plain-text markdown version
+        md += '## ' + (idx + 1) + '. [' + cat + '] ' + name + ' -- ' + status + '\n\n';
+        md += '- **Date:** ' + date + '\n';
+        md += '- **Page:** `' + page + '`\n';
+        md += '- **Status:** ' + status + '\n';
+        md += '- **Viewport:** ' + viewport + '\n';
+        if (browser) md += '- **Browser:** ' + browser + '\n';
+        md += '\n> ' + msg + '\n\n';
+        if (notes) md += '**Dev Notes:** ' + notes + '\n\n';
+        if (item.screenshot) {
+          md += '**Screenshot:**\n\n![Screenshot ' + (idx + 1) + '](' + item.screenshot + ')\n\n';
+        }
+        md += '---\n\n';
+      });
+
+      try {
+        const htmlBlob = new Blob([html], { type: 'text/html' });
+        const textBlob = new Blob([md], { type: 'text/plain' });
+        await navigator.clipboard.write([
+          new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })
+        ]);
+        showToast('Copied with ' + screenshotCount + ' screenshot(s) -- paste into Notion/Docs for images');
+      } catch (richErr) {
+        try {
+          await navigator.clipboard.writeText(md);
+          showToast('Copied as markdown (with image data URIs)');
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = md;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          showToast('Copied as markdown');
+        }
       }
+    });
 
-      filterStatus.addEventListener('change', renderList);
-      filterCategory.addEventListener('change', renderList);
+    // ── Clear All ──
+    document.getElementById('clearAllBtn').addEventListener('click', async () => {
+      if (!allItems.length) {
+        showToast('No feedback to clear');
+        return;
+      }
+      if (!confirm('Delete all ' + allItems.length + ' feedback items? They will be preserved in the audit log.')) return;
+      try {
+        for (const item of allItems) {
+          await fetch('/api/feedback?id=' + encodeURIComponent(item.id), { method: 'DELETE' });
+        }
+      } catch (e) { console.error('Clear all failed:', e); }
+      allItems = [];
+      loadItems();
+      showToast('All feedback cleared (archived in audit log)');
+    });
 
-      fetchItems();
-    })();
+    // ── Toast ──
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ── Init ──
+    loadItems();
   </script>
+
+  <!-- Minimal footer -->
+  <footer style="text-align:center;padding:24px;font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);">
+    <span>&copy; 2026 Elite Dental Force.</span>
+    <a href="index.html" style="color:var(--text-secondary);margin-left:12px;">Back to Site</a>
+  </footer>
+
+  <script src="env-banner.js"></script>
 </body>
 </html>
